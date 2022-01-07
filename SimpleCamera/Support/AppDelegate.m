@@ -20,7 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.scWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     SCCameraViewController *mainVC = [[SCCameraViewController alloc] init];
-    self.scWindow.rootViewController = mainVC;
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    self.scWindow.rootViewController = navigationVC;
     [self.scWindow makeKeyAndVisible];
     return YES;
 }
