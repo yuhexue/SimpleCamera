@@ -34,6 +34,12 @@
 		502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 502522742788766B0060AB1F /* SCPhotoResultViewController+Private.m */; };
 		502522792788766B0060AB1F /* SCPhotoResultViewController+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 502522772788766B0060AB1F /* SCPhotoResultViewController+UI.m */; };
 		502AF8A927872CB4000CBB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502AF8A527872CB4000CBB12 /* LaunchScreen.storyboard */; };
+		50CF75E7278F0D3F00415211 /* SCFilterMaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75E5278F0D3F00415211 /* SCFilterMaterialModel.m */; };
+		50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75E9278F0D9600415211 /* SCFilterManager.m */; };
+		50CF75F1278F0EE000415211 /* SCFilterBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75EB278F0EE000415211 /* SCFilterBarView.m */; };
+		50CF75F2278F0EE000415211 /* SCFilterMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75ED278F0EE000415211 /* SCFilterMaterialView.m */; };
+		50CF75F3278F0EE000415211 /* SCFilterMaterialViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75F0278F0EE000415211 /* SCFilterMaterialViewCell.m */; };
+		50CF75F7278F0FD800415211 /* SCFilterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75F5278F0FD800415211 /* SCFilterHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +109,19 @@
 		5025227C278879B20060AB1F /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		5025227D27887A670060AB1F /* SimpleCamera-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleCamera-Prefix.pch"; sourceTree = "<group>"; };
 		502AF8A627872CB4000CBB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50CF75E4278F0C9300415211 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		50CF75E5278F0D3F00415211 /* SCFilterMaterialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterMaterialModel.m; sourceTree = "<group>"; };
+		50CF75E6278F0D3F00415211 /* SCFilterMaterialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterMaterialModel.h; sourceTree = "<group>"; };
+		50CF75E8278F0D9600415211 /* SCFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterManager.h; sourceTree = "<group>"; };
+		50CF75E9278F0D9600415211 /* SCFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterManager.m; sourceTree = "<group>"; };
+		50CF75EB278F0EE000415211 /* SCFilterBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterBarView.m; sourceTree = "<group>"; };
+		50CF75EC278F0EE000415211 /* SCFilterBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterBarView.h; sourceTree = "<group>"; };
+		50CF75ED278F0EE000415211 /* SCFilterMaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterMaterialView.m; sourceTree = "<group>"; };
+		50CF75EE278F0EE000415211 /* SCFilterMaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterMaterialView.h; sourceTree = "<group>"; };
+		50CF75EF278F0EE000415211 /* SCFilterMaterialViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterMaterialViewCell.h; sourceTree = "<group>"; };
+		50CF75F0278F0EE000415211 /* SCFilterMaterialViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterMaterialViewCell.m; sourceTree = "<group>"; };
+		50CF75F5278F0FD800415211 /* SCFilterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterHelper.m; sourceTree = "<group>"; };
+		50CF75F6278F0FD800415211 /* SCFilterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterHelper.h; sourceTree = "<group>"; };
 		C6F47952E47F7F4765EA50D8 /* Pods-SimpleCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleCamera.release.xcconfig"; path = "Target Support Files/Pods-SimpleCamera/Pods-SimpleCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +247,7 @@
 		19A3BACD2787164B0027386F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				50CF75F4278F0FD800415211 /* Utils */,
 				5025227A278879B20060AB1F /* Define */,
 				19A3BACE2787164B0027386F /* ViewController */,
 			);
@@ -289,6 +309,10 @@
 			children = (
 				19A3BB1C278851480027386F /* SCCameraManager.h */,
 				19A3BB1D2788514E0027386F /* SCCameraManager.m */,
+				50CF75E6278F0D3F00415211 /* SCFilterMaterialModel.h */,
+				50CF75E5278F0D3F00415211 /* SCFilterMaterialModel.m */,
+				50CF75E8278F0D9600415211 /* SCFilterManager.h */,
+				50CF75E9278F0D9600415211 /* SCFilterManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +322,12 @@
 			children = (
 				19A3BB2C27885D1B0027386F /* SCCapturingButton.h */,
 				19A3BB2E27885D260027386F /* SCCapturingButton.m */,
+				50CF75EF278F0EE000415211 /* SCFilterMaterialViewCell.h */,
+				50CF75F0278F0EE000415211 /* SCFilterMaterialViewCell.m */,
+				50CF75EE278F0EE000415211 /* SCFilterMaterialView.h */,
+				50CF75ED278F0EE000415211 /* SCFilterMaterialView.m */,
+				50CF75EC278F0EE000415211 /* SCFilterBarView.h */,
+				50CF75EB278F0EE000415211 /* SCFilterBarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +358,7 @@
 			children = (
 				5025227B278879B20060AB1F /* metamacros.h */,
 				5025227C278879B20060AB1F /* EXTScope.h */,
+				50CF75E4278F0C9300415211 /* Common.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -338,6 +369,15 @@
 				502AF8A527872CB4000CBB12 /* LaunchScreen.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		50CF75F4278F0FD800415211 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				50CF75F6278F0FD800415211 /* SCFilterHelper.h */,
+				50CF75F5278F0FD800415211 /* SCFilterHelper.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		9A83309209E1C0B6BE8235D8 /* Pods */ = {
@@ -544,12 +584,18 @@
 				19A3BA64278710830027386F /* main.m in Sources */,
 				502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */,
 				502522792788766B0060AB1F /* SCPhotoResultViewController+UI.m in Sources */,
+				50CF75E7278F0D3F00415211 /* SCFilterMaterialModel.m in Sources */,
 				19A3BAD12787164B0027386F /* SCViewController.m in Sources */,
+				50CF75F2278F0EE000415211 /* SCFilterMaterialView.m in Sources */,
 				19A3BACC278716410027386F /* SCCameraViewController.m in Sources */,
 				19A3BB3027885D260027386F /* SCCapturingButton.m in Sources */,
+				50CF75F1278F0EE000415211 /* SCFilterBarView.m in Sources */,
 				19A3BB2427885C850027386F /* SCCameraViewController+Private.m in Sources */,
 				19A3BB2727885C990027386F /* SCCameraViewController+UI.m in Sources */,
 				19A3BB1E2788514E0027386F /* SCCameraManager.m in Sources */,
+				50CF75F7278F0FD800415211 /* SCFilterHelper.m in Sources */,
+				50CF75F3278F0EE000415211 /* SCFilterMaterialViewCell.m in Sources */,
+				50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */,
 				19A3BB33278862C80027386F /* SCCameraViewController+Filter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
