@@ -1,29 +1,29 @@
 //
-//  SCPhotoResultViewController+UI.m
+//  SCVideoResultViewController+UI.m
 //  SimpleCamera
 //
-//  Created by maxslma on 2022/1/7.
+//  Created by maxslma on 2022/2/12.
 //
 
-#import "SCPhotoResultViewController+UI.h"
-#import "SCPhotoResultViewController+Private.h"
+#import "SCVideoResultViewController+Private.h"
+#import "SCVideoResultViewController+UI.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
-@implementation SCPhotoResultViewController (UI)
+@implementation SCVideoResultViewController (UI)
 
 - (void)setupUI {
     self.view.backgroundColor = [UIColor whiteColor];
-    [self setupContentImageView];
+    [self setupPlayerContainerView];
     [self setupConfirmButton];
     [self setupCancelButton];
 }
 
-- (void)setupContentImageView {
-    self.contentImageView = [[UIImageView alloc] init];
-    [self.view addSubview:self.contentImageView];
-    [self.contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+- (void)setupPlayerContainerView {
+    self.playerContainerView = [[UIView alloc] init];
+    [self.view addSubview:self.playerContainerView];
+    [self.playerContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
 }

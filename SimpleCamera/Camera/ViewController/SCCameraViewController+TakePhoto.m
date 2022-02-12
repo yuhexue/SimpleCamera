@@ -21,6 +21,7 @@
         SCPhotoResultViewController *resultVC = [[SCPhotoResultViewController alloc] init];
         resultVC.resultImage = resultImage;
         [self.navigationController pushViewController:resultVC animated:NO];
+        [self forwardToPhotoResultWith:resultImage];
     }];
 }
 

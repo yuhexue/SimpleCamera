@@ -71,7 +71,6 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
 
 - (void)selectIndex:(NSIndexPath *)indexPath {
     _currentIndex = indexPath.row;
-    [_collectionView reloadData];
     [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(filterMaterialView:didScrollToIndex:)]) {

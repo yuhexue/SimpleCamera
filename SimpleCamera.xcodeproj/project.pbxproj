@@ -34,6 +34,15 @@
 		502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 502522742788766B0060AB1F /* SCPhotoResultViewController+Private.m */; };
 		502522792788766B0060AB1F /* SCPhotoResultViewController+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 502522772788766B0060AB1F /* SCPhotoResultViewController+UI.m */; };
 		502AF8A927872CB4000CBB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502AF8A527872CB4000CBB12 /* LaunchScreen.storyboard */; };
+		50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD027B7712A00200CCF /* SCCameraTopView.m */; };
+		50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD327B7793800200CCF /* SCFileHelper.m */; };
+		50B5DCD827B783C500200CCF /* SCCameraViewController+RecordVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD727B783C500200CCF /* SCCameraViewController+RecordVideo.m */; };
+		50B5DCE127B7852300200CCF /* SCVideoResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCDB27B7852300200CCF /* SCVideoResultViewController.m */; };
+		50B5DCE227B7852300200CCF /* SCVideoResultViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCDD27B7852300200CCF /* SCVideoResultViewController+Private.m */; };
+		50B5DCE327B7852300200CCF /* SCVideoResultViewController+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCDE27B7852300200CCF /* SCVideoResultViewController+UI.m */; };
+		50B5DCE627B78D7300200CCF /* SCVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCE527B78D7300200CCF /* SCVideoModel.m */; };
+		50B5DCE927B79C1600200CCF /* SCCapturingModeSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCE727B79C1500200CCF /* SCCapturingModeSwitchView.m */; };
+		50B5DCED27B7A12B00200CCF /* UIView+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCEC27B7A12B00200CCF /* UIView+Extention.m */; };
 		50CF75E7278F0D3F00415211 /* SCFilterMaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75E5278F0D3F00415211 /* SCFilterMaterialModel.m */; };
 		50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75E9278F0D9600415211 /* SCFilterManager.m */; };
 		50CF75F1278F0EE000415211 /* SCFilterBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CF75EB278F0EE000415211 /* SCFilterBarView.m */; };
@@ -109,6 +118,24 @@
 		5025227C278879B20060AB1F /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		5025227D27887A670060AB1F /* SimpleCamera-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleCamera-Prefix.pch"; sourceTree = "<group>"; };
 		502AF8A627872CB4000CBB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50B5DCD027B7712A00200CCF /* SCCameraTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCameraTopView.m; sourceTree = "<group>"; };
+		50B5DCD227B7717600200CCF /* SCCameraTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCameraTopView.h; sourceTree = "<group>"; };
+		50B5DCD327B7793800200CCF /* SCFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFileHelper.m; sourceTree = "<group>"; };
+		50B5DCD427B7793800200CCF /* SCFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFileHelper.h; sourceTree = "<group>"; };
+		50B5DCD627B783B500200CCF /* SCCameraViewController+RecordVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCCameraViewController+RecordVideo.h"; sourceTree = "<group>"; };
+		50B5DCD727B783C500200CCF /* SCCameraViewController+RecordVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCCameraViewController+RecordVideo.m"; sourceTree = "<group>"; };
+		50B5DCDB27B7852300200CCF /* SCVideoResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCVideoResultViewController.m; sourceTree = "<group>"; };
+		50B5DCDC27B7852300200CCF /* SCVideoResultViewController+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCVideoResultViewController+UI.h"; sourceTree = "<group>"; };
+		50B5DCDD27B7852300200CCF /* SCVideoResultViewController+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCVideoResultViewController+Private.m"; sourceTree = "<group>"; };
+		50B5DCDE27B7852300200CCF /* SCVideoResultViewController+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCVideoResultViewController+UI.m"; sourceTree = "<group>"; };
+		50B5DCDF27B7852300200CCF /* SCVideoResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCVideoResultViewController.h; sourceTree = "<group>"; };
+		50B5DCE027B7852300200CCF /* SCVideoResultViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCVideoResultViewController+Private.h"; sourceTree = "<group>"; };
+		50B5DCE427B78D7300200CCF /* SCVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCVideoModel.h; sourceTree = "<group>"; };
+		50B5DCE527B78D7300200CCF /* SCVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCVideoModel.m; sourceTree = "<group>"; };
+		50B5DCE727B79C1500200CCF /* SCCapturingModeSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCapturingModeSwitchView.m; sourceTree = "<group>"; };
+		50B5DCE827B79C1500200CCF /* SCCapturingModeSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCapturingModeSwitchView.h; sourceTree = "<group>"; };
+		50B5DCEB27B7A12B00200CCF /* UIView+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extention.h"; sourceTree = "<group>"; };
+		50B5DCEC27B7A12B00200CCF /* UIView+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extention.m"; sourceTree = "<group>"; };
 		50CF75E4278F0C9300415211 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		50CF75E5278F0D3F00415211 /* SCFilterMaterialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterMaterialModel.m; sourceTree = "<group>"; };
 		50CF75E6278F0D3F00415211 /* SCFilterMaterialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterMaterialModel.h; sourceTree = "<group>"; };
@@ -176,11 +203,12 @@
 		19A3BA50278710820027386F /* SimpleCamera */ = {
 			isa = PBXGroup;
 			children = (
-				19A3BB34278863CB0027386F /* PhotoResult */,
 				19A3BAD9278719A10027386F /* Resource */,
 				19A3BA862787109E0027386F /* Support */,
-				19A3BAC8278716410027386F /* Camera */,
 				19A3BACD2787164B0027386F /* Common */,
+				19A3BB34278863CB0027386F /* PhotoResult */,
+				50B5DCD927B7852300200CCF /* VideoResult */,
+				19A3BAC8278716410027386F /* Camera */,
 				19A3BB17278723800027386F /* Info.plist */,
 				19A3BAD2278717270027386F /* Assets.xcassets */,
 				502AF8A427872CB4000CBB12 /* Base.lproj */,
@@ -238,6 +266,8 @@
 				19A3BB2627885C990027386F /* SCCameraViewController+UI.m */,
 				19A3BB2827885CAF0027386F /* SCCameraViewController+TakePhoto.h */,
 				19A3BB2927885CAF0027386F /* SCCameraViewController+TakePhoto.m */,
+				50B5DCD627B783B500200CCF /* SCCameraViewController+RecordVideo.h */,
+				50B5DCD727B783C500200CCF /* SCCameraViewController+RecordVideo.m */,
 				19A3BB31278862C80027386F /* SCCameraViewController+Filter.h */,
 				19A3BB32278862C80027386F /* SCCameraViewController+Filter.m */,
 			);
@@ -247,6 +277,7 @@
 		19A3BACD2787164B0027386F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				50B5DCEA27B7A0D800200CCF /* Category */,
 				50CF75F4278F0FD800415211 /* Utils */,
 				5025227A278879B20060AB1F /* Define */,
 				19A3BACE2787164B0027386F /* ViewController */,
@@ -309,6 +340,8 @@
 			children = (
 				19A3BB1C278851480027386F /* SCCameraManager.h */,
 				19A3BB1D2788514E0027386F /* SCCameraManager.m */,
+				50B5DCE427B78D7300200CCF /* SCVideoModel.h */,
+				50B5DCE527B78D7300200CCF /* SCVideoModel.m */,
 				50CF75E6278F0D3F00415211 /* SCFilterMaterialModel.h */,
 				50CF75E5278F0D3F00415211 /* SCFilterMaterialModel.m */,
 				50CF75E8278F0D9600415211 /* SCFilterManager.h */,
@@ -328,6 +361,10 @@
 				50CF75ED278F0EE000415211 /* SCFilterMaterialView.m */,
 				50CF75EC278F0EE000415211 /* SCFilterBarView.h */,
 				50CF75EB278F0EE000415211 /* SCFilterBarView.m */,
+				50B5DCD227B7717600200CCF /* SCCameraTopView.h */,
+				50B5DCD027B7712A00200CCF /* SCCameraTopView.m */,
+				50B5DCE827B79C1500200CCF /* SCCapturingModeSwitchView.h */,
+				50B5DCE727B79C1500200CCF /* SCCapturingModeSwitchView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,11 +408,43 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		50B5DCD927B7852300200CCF /* VideoResult */ = {
+			isa = PBXGroup;
+			children = (
+				50B5DCDA27B7852300200CCF /* ViewController */,
+			);
+			path = VideoResult;
+			sourceTree = "<group>";
+		};
+		50B5DCDA27B7852300200CCF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50B5DCDF27B7852300200CCF /* SCVideoResultViewController.h */,
+				50B5DCDB27B7852300200CCF /* SCVideoResultViewController.m */,
+				50B5DCDC27B7852300200CCF /* SCVideoResultViewController+UI.h */,
+				50B5DCDE27B7852300200CCF /* SCVideoResultViewController+UI.m */,
+				50B5DCE027B7852300200CCF /* SCVideoResultViewController+Private.h */,
+				50B5DCDD27B7852300200CCF /* SCVideoResultViewController+Private.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		50B5DCEA27B7A0D800200CCF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				50B5DCEB27B7A12B00200CCF /* UIView+Extention.h */,
+				50B5DCEC27B7A12B00200CCF /* UIView+Extention.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		50CF75F4278F0FD800415211 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				50CF75F6278F0FD800415211 /* SCFilterHelper.h */,
 				50CF75F5278F0FD800415211 /* SCFilterHelper.m */,
+				50B5DCD427B7793800200CCF /* SCFileHelper.h */,
+				50B5DCD327B7793800200CCF /* SCFileHelper.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -579,12 +648,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A3BA53278710820027386F /* AppDelegate.m in Sources */,
+				50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */,
 				19A3BB38278863F10027386F /* SCPhotoResultViewController.m in Sources */,
 				19A3BB2A27885CAF0027386F /* SCCameraViewController+TakePhoto.m in Sources */,
+				50B5DCE227B7852300200CCF /* SCVideoResultViewController+Private.m in Sources */,
 				19A3BA64278710830027386F /* main.m in Sources */,
 				502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */,
+				50B5DCE327B7852300200CCF /* SCVideoResultViewController+UI.m in Sources */,
 				502522792788766B0060AB1F /* SCPhotoResultViewController+UI.m in Sources */,
 				50CF75E7278F0D3F00415211 /* SCFilterMaterialModel.m in Sources */,
+				50B5DCE127B7852300200CCF /* SCVideoResultViewController.m in Sources */,
 				19A3BAD12787164B0027386F /* SCViewController.m in Sources */,
 				50CF75F2278F0EE000415211 /* SCFilterMaterialView.m in Sources */,
 				19A3BACC278716410027386F /* SCCameraViewController.m in Sources */,
@@ -594,8 +667,13 @@
 				19A3BB2727885C990027386F /* SCCameraViewController+UI.m in Sources */,
 				19A3BB1E2788514E0027386F /* SCCameraManager.m in Sources */,
 				50CF75F7278F0FD800415211 /* SCFilterHelper.m in Sources */,
+				50B5DCD827B783C500200CCF /* SCCameraViewController+RecordVideo.m in Sources */,
 				50CF75F3278F0EE000415211 /* SCFilterMaterialViewCell.m in Sources */,
 				50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */,
+				50B5DCED27B7A12B00200CCF /* UIView+Extention.m in Sources */,
+				50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */,
+				50B5DCE927B79C1600200CCF /* SCCapturingModeSwitchView.m in Sources */,
+				50B5DCE627B78D7300200CCF /* SCVideoModel.m in Sources */,
 				19A3BB33278862C80027386F /* SCCameraViewController+Filter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

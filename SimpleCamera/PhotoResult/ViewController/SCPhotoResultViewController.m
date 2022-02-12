@@ -19,12 +19,15 @@ static NSString* const kSimpleCameraAlbumName = @"SimpleCamera";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self commonInit];
+    [self setupUI];
     self.contentImageView.image = self.resultImage;
 }
 
-#pragma mark - Action
+- (void)backToCamera {
+    [self.navigationController popViewControllerAnimated:NO];
+}
 
+#pragma mark - Action
 - (void)confirmAction:(id)sender {
     @weakify(self);
     [self writeImageToPhotosAlbum:self.resultImage completion:^(BOOL success) {
@@ -44,17 +47,7 @@ static NSString* const kSimpleCameraAlbumName = @"SimpleCamera";
     [self backToCamera];
 }
 
-
-#pragma mark - Private
-
-- (void)commonInit {
-    [self setupUI];
-}
-
-- (void)backToCamera {
-    [self.navigationController popViewControllerAnimated:NO];
-}
-
+#pragma mark - PhotosAlbum
 // 保存图片到相册
 - (void)writeImageToPhotosAlbum:(UIImage *)image completion:(void (^)(BOOL success))completion {
     if (!image) {

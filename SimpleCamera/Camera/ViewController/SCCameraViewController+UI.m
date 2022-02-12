@@ -19,6 +19,8 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
     [self setupCameraView];
     [self setupCapturingButton];
     [self setupFilterButton];
+    [self setupCameraTopView];
+    [self setupModeSwitchView];
 }
 
 - (void)setupCameraView {
@@ -48,13 +50,14 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
 
 - (void)setupFilterButton {
     self.filterButton = [[UIButton alloc] init];
-    self.filterButton.backgroundColor = [UIColor redColor];
+    [self.filterButton setImage:[UIImage imageNamed:@"btn_filter"]
+                            forState:UIControlStateNormal];
     [self.filterButton addTarget:self action:@selector(filterAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.filterButton];
     [self.filterButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.size.mas_equalTo(CGSizeMake(35, 35));
         make.centerY.equalTo(self.capturingButton);
-        make.right.equalTo(self.capturingButton.mas_left).offset(-30);
+        make.right.equalTo(self.capturingButton.mas_left).offset(-35);
     }];
 }
 
@@ -70,6 +73,31 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
     [self.filterBarView layoutIfNeeded];
 }
 
+- (void)setupCameraTopView {
+    self.cameraTopView = [[SCCameraTopView alloc] init];
+     self.cameraTopView.delegate = self;
+     [self.view addSubview:self.cameraTopView];
+     [self.cameraTopView mas_makeConstraints:^(MASConstraintMaker *make) {
+         if (@available(iOS 11.0, *)) {
+             make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop);
+         } else {
+             make.top.mas_equalTo(self.view.mas_top);
+         }
+         make.left.right.equalTo(self.view);
+         make.height.mas_equalTo(60);
+     }];
+}
+
+- (void)setupModeSwitchView {
+    self.modeSwitchView = [[SCCapturingModeSwitchView alloc] init];
+    self.modeSwitchView.delegate = self;
+    [self.view addSubview:self.modeSwitchView];
+    [self.modeSwitchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.capturingButton);
+        make.top.equalTo(self.capturingButton.mas_bottom).offset(0);
+        make.size.mas_equalTo(CGSizeMake(100, 40));
+    }];
+}
 #pragma mark - Update
 
 - (void)setFilterBarViewHidden:(BOOL)hidden animated:(BOOL)animated {

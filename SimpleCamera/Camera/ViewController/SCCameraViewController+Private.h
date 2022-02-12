@@ -11,18 +11,29 @@
 #import "SCFilterBarView.h"
 #import "SCCameraManager.h"
 #import "SCFilterManager.h"
+#import "SCCameraTopView.h"
+#import "SCVideoModel.h"
+#import "SCPhotoResultViewController.h"
+#import "SCVideoResultViewController.h"
+#import "SCCapturingModeSwitchView.h"
+#import "UIView+Extention.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SCCameraViewController () <SCCapturingButtonDelegate, SCFilterBarViewDelegate, UIGestureRecognizerDelegate>
+@interface SCCameraViewController () <SCCapturingButtonDelegate, SCFilterBarViewDelegate, SCCameraTopViewDelegate, SCCapturingModeSwitchViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) GPUImageView *cameraView;
 @property (nonatomic, strong) SCCapturingButton *capturingButton;
 @property (nonatomic, strong) SCFilterBarView *filterBarView;
 @property (nonatomic, strong) UIButton *filterButton;
+@property (nonatomic, strong) SCCameraTopView *cameraTopView;
+@property (nonatomic, strong) SCCapturingModeSwitchView *modeSwitchView;
 
 @property (nonatomic, strong) GPUImageOutput<GPUImageInput> *currentFilters;
 @property (nonatomic, copy) NSArray<SCFilterMaterialModel *> *defaultFilterMaterials;
+
+@property (nonatomic, assign) BOOL isRecordingVideo;  // 是否正在录制视频
+@property (nonatomic, strong) NSMutableArray<SCVideoModel *> *videos;
 
 #pragma mark - UI
 
@@ -42,6 +53,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - TakePhoto
 
 - (void)takePhoto;
+
+- (void)startRecordVideo;
+
+- (void)stopRecordVideo;
+
+- (void)forwardToPhotoResultWith:(UIImage *)image;
+
+- (void)forwardToVideoResult;
 
 #pragma mark - Action
 
