@@ -16,7 +16,7 @@ static SCCameraManager *_cameraManager;
 @property (nonatomic, weak) GPUImageOutput<GPUImageInput> *currentFilters;
 @property (nonatomic, strong) GPUImageOutput <GPUImageInput> *movieWriterFilters; //movieWriter的滤镜
 @property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
- @property (nonatomic, copy) NSString *currentTmpVideoPath;
+@property (nonatomic, copy) NSString *currentTmpVideoPath;
 
 @end
 
@@ -69,7 +69,9 @@ static SCCameraManager *_cameraManager;
     }
     [output addTarget:self.outputView];
     
-    [self.camera startCameraCapture];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.camera startCameraCapture];
+    });
 }
 
 /**

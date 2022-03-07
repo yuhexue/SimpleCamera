@@ -17,6 +17,14 @@
     self.currentFilters = [[GPUImageFilter alloc] init];
 }
 
+- (void)addBeautifyFilter {
+
+}
+
+- (void)removeBeautifyFilter {
+
+}
+
 @end
 
 #pragma clang diagnostic pop

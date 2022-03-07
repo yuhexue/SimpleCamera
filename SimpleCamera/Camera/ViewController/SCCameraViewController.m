@@ -66,6 +66,16 @@
     }
 }
 
+- (void)refreshNextButton {
+    self.nextButton.hidden = self.videos.count == 0;
+}
+
+- (void)nextAction:(id)sender {
+    [self forwardToVideoResult];
+    [self refreshNextButton];
+    [self.modeSwitchView setHidden:NO animated:NO completion:NULL];
+ }
+
 #pragma mark - SCCapturingButtonDelegate
 
 - (void)capturingButtonDidClicked:(SCCapturingButton *)button {
@@ -74,8 +84,10 @@
     } else if (self.modeSwitchView.type == SCCapturingModeSwitchTypeVideo) {
         if (self.isRecordingVideo) {
             [self stopRecordVideo];
+            button.capturingState = SCCapturingButtonStateNormal;
         } else {
             [self startRecordVideo];
+            button.capturingState = SCCapturingButtonStateRecording;
         }
     }
 }
@@ -94,6 +106,13 @@
     [cameraManager setCameraFilters:self.currentFilters];
 }
 
+- (void)filterBarView:(SCFilterBarView *)filterBarView beautifySwitchIsOn:(BOOL)isOn {
+    if (isOn) {
+        [self addBeautifyFilter];
+    } else {
+        [self removeBeautifyFilter];
+    }
+}
 #pragma mark - SCCameraTopViewDelegate
 - (void)cameraTopViewDidClickRotateButton:(SCCameraTopView *)cameraTopView {
     dispatch_async(dispatch_get_main_queue(), ^{

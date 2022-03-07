@@ -9,6 +9,17 @@
 
 @class SCCapturingButton;
 
+/**
+  按钮状态
+
+  - SCCapturingButtonStateNormal: 默认
+  - SCCapturingButtonStateRecording: 录制中
+  */
+typedef NS_ENUM(NSUInteger, SCCapturingButtonState) {
+    SCCapturingButtonStateNormal,
+    SCCapturingButtonStateRecording,
+};
+
 @protocol SCCapturingButtonDelegate <NSObject>
 
 /**
@@ -21,6 +32,7 @@
 
 @interface SCCapturingButton : UIButton
 
+@property (nonatomic, assign) SCCapturingButtonState capturingState;
 @property (nonatomic, weak) id <SCCapturingButtonDelegate> delegate;
 
 @end

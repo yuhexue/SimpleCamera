@@ -18,6 +18,8 @@
     [self setupPlayerContainerView];
     [self setupConfirmButton];
     [self setupCancelButton];
+    
+    [self.view layoutIfNeeded];
 }
 
 - (void)setupPlayerContainerView {

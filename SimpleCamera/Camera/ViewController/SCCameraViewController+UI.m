@@ -19,6 +19,7 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
     [self setupCameraView];
     [self setupCapturingButton];
     [self setupFilterButton];
+    [self setupNextButton];
     [self setupCameraTopView];
     [self setupModeSwitchView];
 }
@@ -50,16 +51,46 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
 
 - (void)setupFilterButton {
     self.filterButton = [[UIButton alloc] init];
-    [self.filterButton setImage:[UIImage imageNamed:@"btn_filter"]
-                            forState:UIControlStateNormal];
+    [self.filterButton setImage:[UIImage imageNamed:@"btn_filter"] forState:UIControlStateNormal];
     [self.filterButton addTarget:self action:@selector(filterAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.filterButton];
+    
+    UIView *layoutGuide = [[UIView alloc] init];
+    layoutGuide.userInteractionEnabled = NO;
+    [self.view addSubview:layoutGuide];
+    [layoutGuide mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.capturingButton.mas_left);
+    }];
+    
     [self.filterButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(35, 35));
         make.centerY.equalTo(self.capturingButton);
-        make.right.equalTo(self.capturingButton.mas_left).offset(-35);
+        make.centerX.equalTo(layoutGuide);
     }];
 }
+
+- (void)setupNextButton {
+     self.nextButton = [[UIButton alloc] init];
+     self.nextButton.hidden = YES;
+     [self.nextButton setImage:[UIImage imageNamed:@"btn_next"] forState:UIControlStateNormal];
+     [self.nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+     [self.view addSubview:self.nextButton];
+
+     UIView *layoutGuide = [[UIView alloc] init];
+     layoutGuide.userInteractionEnabled = NO;
+     [self.view addSubview:layoutGuide];
+     [layoutGuide mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.left.equalTo(self.capturingButton.mas_right);
+         make.right.equalTo(self.view);
+     }];
+
+     [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.size.mas_equalTo(CGSizeMake(35, 35));
+         make.centerY.equalTo(self.capturingButton);
+         make.centerX.equalTo(layoutGuide);
+     }];
+ }
 
 - (void)setupFilterBarView {
     self.filterBarView = [[SCFilterBarView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 0)];

@@ -38,10 +38,7 @@
          [self.videos addObject:videoModel];
 
          dispatch_async(dispatch_get_main_queue(), ^{
-             SCVideoResultViewController *vc = [[SCVideoResultViewController alloc] init];
-             vc.videos = self.videos;
-             [self.navigationController pushViewController:vc animated:NO];
-             [self forwardToVideoResult];
+             [self refreshNextButton];
          });
      }];
  }

@@ -17,6 +17,7 @@
 #import "SCVideoResultViewController.h"
 #import "SCCapturingModeSwitchView.h"
 #import "UIView+Extention.h"
+#import "GPUImageBeautifyFilter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SCCapturingButton *capturingButton;
 @property (nonatomic, strong) SCFilterBarView *filterBarView;
 @property (nonatomic, strong) UIButton *filterButton;
+@property (nonatomic, strong) UIButton *nextButton;
 @property (nonatomic, strong) SCCameraTopView *cameraTopView;
 @property (nonatomic, strong) SCCapturingModeSwitchView *modeSwitchView;
 
@@ -46,10 +48,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setFilterBarViewHidden:(BOOL)hidden animated:(BOOL)animated;
 
+/// 刷新下一步按钮的显示状态
+- (void)refreshNextButton;
+
 #pragma mark - Filter
 
 - (void)setupFilters;
-
+/// 添加美颜滤镜，会做为滤镜链的第一个
+- (void)addBeautifyFilter;
+/// 移除美颜滤镜
+- (void)removeBeautifyFilter;
 #pragma mark - TakePhoto
 
 - (void)takePhoto;

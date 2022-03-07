@@ -34,6 +34,10 @@
 		502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 502522742788766B0060AB1F /* SCPhotoResultViewController+Private.m */; };
 		502522792788766B0060AB1F /* SCPhotoResultViewController+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 502522772788766B0060AB1F /* SCPhotoResultViewController+UI.m */; };
 		502AF8A927872CB4000CBB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502AF8A527872CB4000CBB12 /* LaunchScreen.storyboard */; };
+		504AB41527D6385000A05DDD /* SCGPUImageMovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB41427D6385000A05DDD /* SCGPUImageMovieWriter.m */; };
+		504AB41827D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB41727D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.m */; };
+		504AB41C27D6413F00A05DDD /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB41B27D6413E00A05DDD /* GPUImageBeautifyFilter.m */; };
+		509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */; };
 		50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD027B7712A00200CCF /* SCCameraTopView.m */; };
 		50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD327B7793800200CCF /* SCFileHelper.m */; };
 		50B5DCD827B783C500200CCF /* SCCameraViewController+RecordVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD727B783C500200CCF /* SCCameraViewController+RecordVideo.m */; };
@@ -118,6 +122,14 @@
 		5025227C278879B20060AB1F /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		5025227D27887A670060AB1F /* SimpleCamera-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleCamera-Prefix.pch"; sourceTree = "<group>"; };
 		502AF8A627872CB4000CBB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		504AB41327D6385000A05DDD /* SCGPUImageMovieWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageMovieWriter.h; sourceTree = "<group>"; };
+		504AB41427D6385000A05DDD /* SCGPUImageMovieWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageMovieWriter.m; sourceTree = "<group>"; };
+		504AB41627D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GPUImageMovieWriter+BugFix.h"; sourceTree = "<group>"; };
+		504AB41727D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GPUImageMovieWriter+BugFix.m"; sourceTree = "<group>"; };
+		504AB41A27D6413E00A05DDD /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
+		504AB41B27D6413E00A05DDD /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
+		509FBA2627CF9CF9002D0E64 /* SCAssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAssetHelper.h; sourceTree = "<group>"; };
+		509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAssetHelper.m; sourceTree = "<group>"; };
 		50B5DCD027B7712A00200CCF /* SCCameraTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCameraTopView.m; sourceTree = "<group>"; };
 		50B5DCD227B7717600200CCF /* SCCameraTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCameraTopView.h; sourceTree = "<group>"; };
 		50B5DCD327B7793800200CCF /* SCFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFileHelper.m; sourceTree = "<group>"; };
@@ -203,6 +215,7 @@
 		19A3BA50278710820027386F /* SimpleCamera */ = {
 			isa = PBXGroup;
 			children = (
+				504AB41927D6413E00A05DDD /* ThirdDemo */,
 				19A3BAD9278719A10027386F /* Resource */,
 				19A3BA862787109E0027386F /* Support */,
 				19A3BACD2787164B0027386F /* Common */,
@@ -338,6 +351,8 @@
 		19A3BB1A2788511B0027386F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				504AB41327D6385000A05DDD /* SCGPUImageMovieWriter.h */,
+				504AB41427D6385000A05DDD /* SCGPUImageMovieWriter.m */,
 				19A3BB1C278851480027386F /* SCCameraManager.h */,
 				19A3BB1D2788514E0027386F /* SCCameraManager.m */,
 				50B5DCE427B78D7300200CCF /* SCVideoModel.h */,
@@ -408,6 +423,15 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		504AB41927D6413E00A05DDD /* ThirdDemo */ = {
+			isa = PBXGroup;
+			children = (
+				504AB41A27D6413E00A05DDD /* GPUImageBeautifyFilter.h */,
+				504AB41B27D6413E00A05DDD /* GPUImageBeautifyFilter.m */,
+			);
+			path = ThirdDemo;
+			sourceTree = "<group>";
+		};
 		50B5DCD927B7852300200CCF /* VideoResult */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +458,8 @@
 			children = (
 				50B5DCEB27B7A12B00200CCF /* UIView+Extention.h */,
 				50B5DCEC27B7A12B00200CCF /* UIView+Extention.m */,
+				504AB41627D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.h */,
+				504AB41727D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -441,6 +467,8 @@
 		50CF75F4278F0FD800415211 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				509FBA2627CF9CF9002D0E64 /* SCAssetHelper.h */,
+				509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */,
 				50CF75F6278F0FD800415211 /* SCFilterHelper.h */,
 				50CF75F5278F0FD800415211 /* SCFilterHelper.m */,
 				50B5DCD427B7793800200CCF /* SCFileHelper.h */,
@@ -666,14 +694,18 @@
 				19A3BB2427885C850027386F /* SCCameraViewController+Private.m in Sources */,
 				19A3BB2727885C990027386F /* SCCameraViewController+UI.m in Sources */,
 				19A3BB1E2788514E0027386F /* SCCameraManager.m in Sources */,
+				504AB41C27D6413F00A05DDD /* GPUImageBeautifyFilter.m in Sources */,
 				50CF75F7278F0FD800415211 /* SCFilterHelper.m in Sources */,
+				504AB41827D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.m in Sources */,
 				50B5DCD827B783C500200CCF /* SCCameraViewController+RecordVideo.m in Sources */,
 				50CF75F3278F0EE000415211 /* SCFilterMaterialViewCell.m in Sources */,
 				50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */,
 				50B5DCED27B7A12B00200CCF /* UIView+Extention.m in Sources */,
+				504AB41527D6385000A05DDD /* SCGPUImageMovieWriter.m in Sources */,
 				50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */,
 				50B5DCE927B79C1600200CCF /* SCCapturingModeSwitchView.m in Sources */,
 				50B5DCE627B78D7300200CCF /* SCVideoModel.m in Sources */,
+				509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */,
 				19A3BB33278862C80027386F /* SCCameraViewController+Filter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
