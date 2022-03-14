@@ -78,6 +78,10 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
     }
 }
 
+- (void)scrollToTop {
+    [self.collectionView setContentOffset:CGPointMake(0, 0)];
+}
+
 #pragma mark - Custom Accessor
 - (void)setItemList:(NSArray<SCFilterMaterialModel *> *)itemList {
     _itemList = [itemList copy];

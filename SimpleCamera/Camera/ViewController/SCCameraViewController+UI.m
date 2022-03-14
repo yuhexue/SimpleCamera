@@ -22,6 +22,7 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
     [self setupNextButton];
     [self setupCameraTopView];
     [self setupModeSwitchView];
+    [self setupCameraFocusView];
 }
 
 - (void)setupCameraView {
@@ -31,6 +32,11 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
         make.left.top.right.equalTo(self.view);
         make.height.mas_equalTo(self.view.mas_height);
     }];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cameraViewTapAction:)];
+    [self.cameraView addGestureRecognizer:tap];
+    
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(cameraViewPinchAction:)];
+    [self.cameraView addGestureRecognizer:pinch];
 }
 
 - (void)setupCapturingButton {
@@ -71,25 +77,25 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
 }
 
 - (void)setupNextButton {
-     self.nextButton = [[UIButton alloc] init];
-     self.nextButton.hidden = YES;
-     [self.nextButton setImage:[UIImage imageNamed:@"btn_next"] forState:UIControlStateNormal];
-     [self.nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
-     [self.view addSubview:self.nextButton];
+    self.nextButton = [[UIButton alloc] init];
+    self.nextButton.alpha = 0;
+    [self.nextButton setImage:[UIImage imageNamed:@"btn_next"] forState:UIControlStateNormal];
+    [self.nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nextButton];
 
-     UIView *layoutGuide = [[UIView alloc] init];
-     layoutGuide.userInteractionEnabled = NO;
-     [self.view addSubview:layoutGuide];
-     [layoutGuide mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.left.equalTo(self.capturingButton.mas_right);
-         make.right.equalTo(self.view);
-     }];
+    UIView *layoutGuide = [[UIView alloc] init];
+    layoutGuide.userInteractionEnabled = NO;
+    [self.view addSubview:layoutGuide];
+    [layoutGuide mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.capturingButton.mas_right);
+        make.right.equalTo(self.view);
+    }];
 
-     [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.size.mas_equalTo(CGSizeMake(35, 35));
-         make.centerY.equalTo(self.capturingButton);
-         make.centerX.equalTo(layoutGuide);
-     }];
+    [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(35, 35));
+        make.centerY.equalTo(self.capturingButton);
+        make.centerX.equalTo(layoutGuide);
+    }];
  }
 
 - (void)setupFilterBarView {
@@ -129,6 +135,21 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
         make.size.mas_equalTo(CGSizeMake(100, 40));
     }];
 }
+
+- (void)setupCameraFocusView {
+    self.cameraFocusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+    self.cameraFocusView.alpha = 0;
+    [self.cameraView addSubview:self.cameraFocusView];
+
+    CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+    layer.frame = self.cameraFocusView.bounds;
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.cameraFocusView.bounds];
+    layer.strokeColor = [UIColor whiteColor].CGColor;
+    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.path = path.CGPath;
+    [self.cameraFocusView.layer addSublayer:layer];
+}
+
 #pragma mark - Update
 
 - (void)setFilterBarViewHidden:(BOOL)hidden animated:(BOOL)animated {
@@ -162,6 +183,38 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
         updateBlock();
         self.filterBarView.showing = !hidden;
     }
+}
+
+- (void)updateFlashButtonWithFlashMode:(SCCameraFlashMode)mode {
+    switch (mode) {
+        case SCCameraFlashModeOff:
+            [self.cameraTopView.flashButton setImage:[UIImage imageNamed:@"btn_flash_off"] forState:UIControlStateNormal];
+            break;
+        case SCCameraFlashModeOn:
+            [self.cameraTopView.flashButton setImage:[UIImage imageNamed:@"btn_flash_on"] forState:UIControlStateNormal];
+            break;
+        case SCCameraFlashModeAuto:
+            [self.cameraTopView.flashButton setImage:[UIImage imageNamed:@"btn_flash_auto"] forState:UIControlStateNormal];
+            break;
+        case SCCameraFlashModeTorch:
+            [self.cameraTopView.flashButton setImage:[UIImage imageNamed:@"btn_flash_torch"] forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)showFocusViewAtLocation:(CGPoint)location {
+    self.cameraFocusView.center = location;
+    self.cameraFocusView.transform = CGAffineTransformMakeScale(1.6, 1.6);
+    [self.cameraFocusView setHidden:NO animated:YES completion:NULL];
+    [UIView animateWithDuration:0.15 animations:^{
+        self.cameraFocusView.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        [UIView animateKeyframesWithDuration:0.2 delay:0.8 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            self.cameraFocusView.alpha = 0;
+        } completion:NULL];
+    }];
 }
 
 @end

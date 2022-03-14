@@ -6,6 +6,7 @@
 //
 
 #import "SCPhotoResultViewController.h"
+#import <GPUImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

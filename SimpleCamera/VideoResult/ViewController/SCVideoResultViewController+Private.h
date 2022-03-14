@@ -10,6 +10,7 @@
 #import "SCVideoResultViewController.h"
 #import "SCAssetHelper.h"
 #import "SCFileHelper.h"
+#import <GPUImage.h>
 
 @interface SCVideoResultViewController ()
 

@@ -23,6 +23,10 @@ static NSString* const kSimpleCameraAlbumName = @"SimpleCamera";
     self.contentImageView.image = self.resultImage;
 }
 
+- (void)dealloc {
+     [[GPUImageContext sharedImageProcessingContext].framebufferCache purgeAllUnassignedFramebuffers];
+ }
+
 - (void)backToCamera {
     [self.navigationController popViewControllerAnimated:NO];
 }

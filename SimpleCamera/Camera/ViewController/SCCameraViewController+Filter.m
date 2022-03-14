@@ -13,16 +13,22 @@
 
 @implementation SCCameraViewController (Filter)
 
-- (void)setupFilters {
-    self.currentFilters = [[GPUImageFilter alloc] init];
-}
-
 - (void)addBeautifyFilter {
-
+    GPUImageFilter *beautifyFilter = (GPUImageFilter *)[[GPUImageBeautifyFilter alloc] init];
+    [[SCCameraManager shareInstance].currentFilterHandler setBeautifyFilter:beautifyFilter];
 }
 
 - (void)removeBeautifyFilter {
+    [[SCCameraManager shareInstance].currentFilterHandler setBeautifyFilter:nil];
+}
 
+- (NSArray<SCFilterMaterialModel *> *)filtersWithCategoryIndex:(NSInteger)index {
+    if (index == 0) {
+        return self.defaultFilterMaterials;
+    } else if (index == 1) {
+        return self.tikTokFilterMaterials;
+    }
+    return nil;
 }
 
 @end

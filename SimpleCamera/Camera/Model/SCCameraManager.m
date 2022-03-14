@@ -7,14 +7,15 @@
 #import "SCFileHelper.h"
 #import "SCCameraManager.h"
 
+static CGFloat const kMaxVideoScale = 6.0f;
+static CGFloat const kMinVideoScale = 1.0f;
 static SCCameraManager *_cameraManager;
 
 @interface SCCameraManager ()
 
 @property (nonatomic, strong, readwrite) GPUImageStillCamera *camera;
 @property (nonatomic, weak) GPUImageView *outputView;
-@property (nonatomic, weak) GPUImageOutput<GPUImageInput> *currentFilters;
-@property (nonatomic, strong) GPUImageOutput <GPUImageInput> *movieWriterFilters; //movieWriter的滤镜
+@property (nonatomic, strong, readwrite) SCFilterHandler *currentFilterHandler;
 @property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
 @property (nonatomic, copy) NSString *currentTmpVideoPath;
 
@@ -31,27 +32,105 @@ static SCCameraManager *_cameraManager;
     return _cameraManager;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    [self setupFilterHandler];
+    _videoScale = 1;
+}
+
+/**
+  初始化 FilterHandler
+  */
+- (void)setupFilterHandler {
+    self.currentFilterHandler = [[SCFilterHandler alloc] init];
+    [self.currentFilterHandler setBeautifyFilter:nil];
+    [self.currentFilterHandler setEffectFilter:nil];
+}
+
+- (void)setFocusPoint:(CGPoint)focusPoint {
+    _focusPoint = focusPoint;
+
+    AVCaptureDevice *device = self.camera.inputCamera;
+
+    // 坐标转换
+    CGPoint currentPoint = CGPointMake(focusPoint.y / self.outputView.bounds.size.height, 1 - focusPoint.x / self.outputView.bounds.size.width);
+    if (self.camera.cameraPosition == AVCaptureDevicePositionFront) {
+        currentPoint = CGPointMake(currentPoint.x, 1 - currentPoint.y);
+    }
+
+    [device lockForConfiguration:nil];
+
+    if ([device isFocusPointOfInterestSupported] &&
+        [device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+        [device setFocusPointOfInterest:currentPoint];
+        [device setFocusMode:AVCaptureFocusModeAutoFocus];
+    }
+    if ([device isExposurePointOfInterestSupported] &&
+        [device isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
+        [device setExposurePointOfInterest:currentPoint];
+        [device setExposureMode:AVCaptureExposureModeAutoExpose];
+    }
+
+    [device unlockForConfiguration];
+}
+
+- (CGFloat)availableVideoScaleWithScale:(CGFloat)scale {
+    AVCaptureDevice *device = self.camera.inputCamera;
+
+    CGFloat maxScale = kMaxVideoScale;
+    CGFloat minScale = kMinVideoScale;
+    if (@available(iOS 11.0, *)) {
+     maxScale = device.maxAvailableVideoZoomFactor;
+    }
+
+    scale = MAX(scale, minScale);
+    scale = MIN(scale, maxScale);
+
+    return scale;
+}
+
 #pragma mark - Public
+
+- (void)setVideoScale:(CGFloat)videoScale {
+    _videoScale = videoScale;
+
+    videoScale = [self availableVideoScaleWithScale:videoScale];
+
+    AVCaptureDevice *device = self.camera.inputCamera;
+    [device lockForConfiguration:nil];
+    device.videoZoomFactor = videoScale;
+    [device unlockForConfiguration];
+}
 
 - (void)addOutputView:(GPUImageView *)outputView {
     self.outputView = outputView;
 }
 
-- (void)setCameraFilters:(GPUImageOutput<GPUImageInput> *)filters {
-    if (self.currentFilters) {
-        [self.currentFilters removeTarget:self.outputView];
-        [self.camera removeTarget:self.currentFilters];
-    }
-    
-    self.currentFilters = filters;
-    if (filters) {
-        [self.camera addTarget:self.currentFilters];
-        [self.currentFilters addTarget:self.outputView];
+- (void)rotateCamera {
+    [self.camera rotateCamera];
+    // 切换摄像头，同步一下闪光灯
+    [self syncFlashState];
+}
+
+- (void)closeFlashIfNeed {
+    AVCaptureDevice *device = self.camera.inputCamera;
+    if ([device hasFlash] && device.torchMode == AVCaptureTorchModeOn) {
+        [device lockForConfiguration:nil];
+        device.torchMode = AVCaptureTorchModeOff;
+        device.flashMode = AVCaptureFlashModeOff;
+        [device unlockForConfiguration];
     }
 }
 
-- (void)rotateCamera {
-    [self.camera rotateCamera];
+- (void)updateFlash {
+    [self syncFlashState];
 }
 
 - (void)startCapturing {
@@ -60,14 +139,8 @@ static SCCameraManager *_cameraManager;
         return;
     }
     [self setupCamera];
-    //如果没有滤镜：camera->outputView
-    //如果有滤镜：camera->currentFilters->outputView
-    GPUImageOutput *output = self.camera;
-    if (self.currentFilters) {
-        [self.camera addTarget:self.currentFilters];
-        output = self.currentFilters;
-    }
-    [output addTarget:self.outputView];
+    [self.camera addTarget:self.currentFilterHandler.firstFilter];
+    [self.currentFilterHandler.lastFilter addTarget:self.outputView];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.camera startCameraCapture];
@@ -82,11 +155,13 @@ static SCCameraManager *_cameraManager;
     self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
     self.camera.horizontallyMirrorFrontFacingCamera = YES;
     [self.camera addAudioInputsAndOutputs];
+    
+    self.currentFilterHandler.source = self.camera;
 }
 
-
-- (void)takePhotoWithFilters:(GPUImageOutput<GPUImageInput> *)filters completion:(TakePhotoResult)completion {
-    [self.camera capturePhotoAsJPEGProcessedUpToFilter:filters withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+- (void)takePhotoWithCompletion:(TakePhotoResult)completion {
+    GPUImageFilter *lastFilter = self.currentFilterHandler.lastFilter;
+    [self.camera capturePhotoAsJPEGProcessedUpToFilter:lastFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
         if (error && completion) {
             completion(nil, error);
             return;
@@ -98,25 +173,27 @@ static SCCameraManager *_cameraManager;
     }];
 }
 
-- (void)recordVideoWithFilters:(GPUImageOutput<GPUImageInput> *)filters {
-     if (filters) {
-         self.movieWriterFilters = filters;
-         [self.camera addTarget:filters];
-     }
-     [self setupMovieWriter];
-     [self.movieWriter startRecording];
- }
+- (void)setFlashMode:(SCCameraFlashMode)flashMode {
+    _flashMode = flashMode;
 
- - (void)stopRecordVideoWithCompletion:(RecordVideoResult)completion {
-     @weakify(self);
-     [self.movieWriter finishRecordingWithCompletionHandler:^{
-         @strongify(self);
-         [self removeMovieWriter];
-         if (completion) {
-             completion(self.currentTmpVideoPath);
-         }
-     }];
- }
+    [self syncFlashState];
+}
+
+- (void)recordVideo {
+    [self setupMovieWriter];
+    [self.movieWriter startRecording];
+}
+
+- (void)stopRecordVideoWithCompletion:(RecordVideoResult)completion {
+    @weakify(self);
+    [self.movieWriter finishRecordingWithCompletionHandler:^{
+        @strongify(self);
+        [self removeMovieWriter];
+        if (completion) {
+            completion(self.currentTmpVideoPath);
+        }
+    }];
+}
 
 /**
   初始化 MovieWriter
@@ -130,13 +207,13 @@ static SCCameraManager *_cameraManager;
 
     self.movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:videoURL
                                                                 size:videoSize];
-    GPUImageOutput *output = self.movieWriterFilters ? self.movieWriterFilters : self.camera;
-    [output addTarget:self.movieWriter];
+    GPUImageFilter *lastFilter = self.currentFilterHandler.lastFilter;
+    [lastFilter addTarget:self.movieWriter];
     self.camera.audioEncodingTarget = self.movieWriter;
     self.movieWriter.shouldPassthroughAudio = YES;
 
     self.currentTmpVideoPath = videoPath;
- }
+}
 
 /**
  移除 MovieWriter
@@ -145,15 +222,44 @@ static SCCameraManager *_cameraManager;
     if (!self.movieWriter) {
         return;
     }
-    [self.camera removeTarget:self.movieWriter];
-    [self.movieWriterFilters removeTarget:self.movieWriter];
+    [self.currentFilterHandler.lastFilter removeTarget:self.movieWriter];
     self.camera.audioEncodingTarget = nil;
     self.movieWriter = nil;
+}
 
-    if (self.movieWriterFilters != self.currentFilters) {
-        [self.camera removeTarget:self.movieWriterFilters];
-        self.movieWriterFilters = nil;
+/**
+  将 flashMode 的值同步到设备
+  */
+- (void)syncFlashState {
+    AVCaptureDevice *device = self.camera.inputCamera;
+    if (![device hasFlash] || self.camera.cameraPosition == AVCaptureDevicePositionFront) {
+        [self closeFlashIfNeed];
+        return;
     }
- }
+
+    [device lockForConfiguration:nil];
+
+    switch (self.flashMode) {
+        case SCCameraFlashModeOff:
+            device.torchMode = AVCaptureTorchModeOff;
+            device.flashMode = AVCaptureFlashModeOff;
+            break;
+        case SCCameraFlashModeOn:
+            device.torchMode = AVCaptureTorchModeOff;
+            device.flashMode = AVCaptureFlashModeOn;
+            break;
+        case SCCameraFlashModeAuto:
+            device.torchMode = AVCaptureTorchModeOff;
+            device.flashMode = AVCaptureFlashModeAuto;
+            break;
+        case SCCameraFlashModeTorch:
+            device.torchMode = AVCaptureTorchModeOn;
+            device.flashMode = AVCaptureFlashModeOff;
+            break;
+        default:
+            break;
+    }
+    [device unlockForConfiguration];
+}
 
 @end

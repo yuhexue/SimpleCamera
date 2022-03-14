@@ -18,6 +18,7 @@
 #import "SCCapturingModeSwitchView.h"
 #import "UIView+Extention.h"
 #import "GPUImageBeautifyFilter.h"
+#import "SCFilterHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,9 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *nextButton;
 @property (nonatomic, strong) SCCameraTopView *cameraTopView;
 @property (nonatomic, strong) SCCapturingModeSwitchView *modeSwitchView;
+@property (nonatomic, strong) UIView *cameraFocusView;  // 聚焦框
+@property (nonatomic, assign) CGFloat currentVideoScale;  // 当前预览屏的缩放倍数，默认1
 
-@property (nonatomic, strong) GPUImageOutput<GPUImageInput> *currentFilters;
 @property (nonatomic, copy) NSArray<SCFilterMaterialModel *> *defaultFilterMaterials;
+@property (nonatomic, copy) NSArray<SCFilterMaterialModel *> *tikTokFilterMaterials;
 
 @property (nonatomic, assign) BOOL isRecordingVideo;  // 是否正在录制视频
 @property (nonatomic, strong) NSMutableArray<SCVideoModel *> *videos;
@@ -51,13 +54,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// 刷新下一步按钮的显示状态
 - (void)refreshNextButton;
 
-#pragma mark - Filter
+/// 刷新闪光灯按钮
+- (void)updateFlashButtonWithFlashMode:(SCCameraFlashMode)mode;
+/// 显示聚焦框
+- (void)showFocusViewAtLocation:(CGPoint)location;
 
-- (void)setupFilters;
+#pragma mark - Filter
 /// 添加美颜滤镜，会做为滤镜链的第一个
 - (void)addBeautifyFilter;
 /// 移除美颜滤镜
 - (void)removeBeautifyFilter;
+/// 根据分类索引，获取滤镜列表
+- (NSArray<SCFilterMaterialModel *> *)filtersWithCategoryIndex:(NSInteger)index;
+
 #pragma mark - TakePhoto
 
 - (void)takePhoto;

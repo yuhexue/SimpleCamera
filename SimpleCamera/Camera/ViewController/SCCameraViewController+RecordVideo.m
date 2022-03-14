@@ -20,7 +20,8 @@
      }
      self.isRecordingVideo = YES;
      [self.modeSwitchView setHidden:YES animated:YES completion:NULL];
-     [[SCCameraManager shareInstance] recordVideoWithFilters:self.currentFilters];
+     [[SCCameraManager shareInstance] recordVideo];
+     [self refreshNextButton];
  }
 
  - (void)stopRecordVideo {

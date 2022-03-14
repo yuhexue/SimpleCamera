@@ -20,8 +20,19 @@
     
     SCCameraManager *cameraManager = [SCCameraManager shareInstance];
     [cameraManager addOutputView:self.cameraView];
-    [cameraManager setCameraFilters:self.currentFilters];
     [cameraManager startCapturing];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [[SCCameraManager shareInstance] updateFlash];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [[SCCameraManager shareInstance] closeFlashIfNeed];
 }
 
 #pragma mark - Public
@@ -30,8 +41,7 @@
 
 - (void)commonInit {
     self.videos = [[NSMutableArray alloc] init];
-    self.defaultFilterMaterials = [[SCFilterManager shareInstance] defaultFilters];
-    [self setupFilters];
+    self.currentVideoScale = 1.0f;
     
     UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     tap.delegate = self;
@@ -53,6 +63,13 @@
     [self.navigationController pushViewController:vc animated:NO];
 }
 
+- (void)cameraTopViewDidClickFlashButton:(SCCameraTopView *)cameraTopView {
+    SCCameraFlashMode mode = [SCCameraManager shareInstance].flashMode;
+    mode = (mode + 1) % 4;
+    [SCCameraManager shareInstance].flashMode = mode;
+    [self updateFlashButtonWithFlashMode:mode];
+}
+
 #pragma mark - Action
 - (void)tapAction:(UITapGestureRecognizer *)gestureRecognizer {
     [self setFilterBarViewHidden:YES animated:YES];
@@ -67,14 +84,38 @@
 }
 
 - (void)refreshNextButton {
-    self.nextButton.hidden = self.videos.count == 0;
+    [self.nextButton setHidden:self.videos.count == 0 || self.isRecordingVideo
+                      animated:YES
+                    completion:NULL];
 }
 
 - (void)nextAction:(id)sender {
     [self forwardToVideoResult];
     [self refreshNextButton];
     [self.modeSwitchView setHidden:NO animated:NO completion:NULL];
- }
+}
+
+- (void)cameraViewTapAction:(UITapGestureRecognizer *)tap {
+    if (self.filterBarView.showing) {
+        [self tapAction:nil];
+        return;
+    }
+
+    CGPoint location = [tap locationInView:self.cameraView];
+    [[SCCameraManager shareInstance] setFocusPoint:location];
+    [self showFocusViewAtLocation:location];
+}
+
+- (void)cameraViewPinchAction:(UIPinchGestureRecognizer *)pinch {
+    SCCameraManager *manager = [SCCameraManager shareInstance];
+    CGFloat scale = pinch.scale * self.currentVideoScale;
+    scale = [manager availableVideoScaleWithScale:scale];
+    [manager setVideoScale:scale];
+
+    if (pinch.state == UIGestureRecognizerStateEnded) {
+        self.currentVideoScale = scale;
+    }
+}
 
 #pragma mark - SCCapturingButtonDelegate
 
@@ -100,10 +141,9 @@
 #pragma mark - SCFilterBarViewDelegate
 
 - (void)filterBarView:(SCFilterBarView *)filterBarView materialDidScrollToIndex:(NSUInteger)index {
-    SCCameraManager *cameraManager = [SCCameraManager shareInstance];
-    SCFilterMaterialModel *model = self.defaultFilterMaterials[index];
-    self.currentFilters = [[SCFilterManager shareInstance] filterWithFilterID:model.filterID];
-    [cameraManager setCameraFilters:self.currentFilters];
+    NSArray<SCFilterMaterialModel *> *models = [self filtersWithCategoryIndex:self.filterBarView.currentCategoryIndex];
+    SCFilterMaterialModel *model = models[index];
+    [[SCCameraManager shareInstance].currentFilterHandler setEffectFilter:[[SCFilterManager shareInstance] filterWithFilterID:model.filterID]];
 }
 
 - (void)filterBarView:(SCFilterBarView *)filterBarView beautifySwitchIsOn:(BOOL)isOn {
@@ -113,10 +153,20 @@
         [self removeBeautifyFilter];
     }
 }
+
+- (void)filterBarView:(SCFilterBarView *)filterBarView categoryDidScrollToIndex:(NSUInteger)index {
+    if (index == 0 && !self.filterBarView.defaultFilterMaterials) {
+        self.filterBarView.defaultFilterMaterials = self.defaultFilterMaterials;
+    } else if (index == 1 && !self.filterBarView.tikTokFilterMaterials) {
+        self.filterBarView.tikTokFilterMaterials = self.tikTokFilterMaterials;
+    }
+}
+
 #pragma mark - SCCameraTopViewDelegate
 - (void)cameraTopViewDidClickRotateButton:(SCCameraTopView *)cameraTopView {
     dispatch_async(dispatch_get_main_queue(), ^{
         [[SCCameraManager shareInstance] rotateCamera];
+        self.currentVideoScale = 1.0f;  // 切换摄像头，重置缩放比例
     });
 }
 
@@ -126,6 +176,20 @@
         return NO;
     }
     return YES;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)defaultFilterMaterials {
+    if (!_defaultFilterMaterials) {
+        _defaultFilterMaterials = [[SCFilterManager shareInstance] defaultFilters];
+    }
+    return _defaultFilterMaterials;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)tikTokFilterMaterials {
+    if (!_tikTokFilterMaterials) {
+        _tikTokFilterMaterials = [[SCFilterManager shareInstance] tiktokFilters];
+    }
+    return _tikTokFilterMaterials;
 }
 
 @end

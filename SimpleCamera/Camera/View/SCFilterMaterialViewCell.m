@@ -5,8 +5,7 @@
 //  Created by maxslma on 2022/1/6.
 //
 
-#import <GPUImage.h>
-
+#import "SCGPUImageBaseFilter.h"
 #import "SCFilterHelper.h"
 #import "SCFilterManager.h"
 
@@ -73,19 +72,21 @@
     self.titleLabel.text = filterMaterialModel.filterName;
     
     GPUImageFilter *filter = [[SCFilterManager shareInstance] filterWithFilterID:filterMaterialModel.filterID];
+    
+    if ([filter isKindOfClass:[SCGPUImageBaseFilter class]]) {
+        ((SCGPUImageBaseFilter *)filter).time = 0.2f;
+    }
+    
     [self.picture addTarget:filter];
     [filter addTarget:self.imageView];
-
-    // 放到下次runloop执行
-    dispatch_async(dispatch_get_main_queue(), ^{
+    
+    if (!self.superview) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.picture processImage];
+        });
+    } else {
         [self.picture processImage];
-    });
+    }
 }
 
 @end
-
-
-
-
-
-

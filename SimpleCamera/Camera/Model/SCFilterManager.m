@@ -12,6 +12,12 @@ static SCFilterManager *_filterManager;
 @interface SCFilterManager ()
 
 @property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *defaultFilters;
+@property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *tikTokFilters;
+
+@property (nonatomic, strong) NSDictionary *defaultFilterMaterialsInfo;
+@property (nonatomic, strong) NSDictionary *tikTokFilterMaterialsInfo;
+
+@property (nonatomic, strong) NSMutableDictionary *filterClassInfo;
 
 @end
 
@@ -25,32 +31,57 @@ static SCFilterManager *_filterManager;
     return _filterManager;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
 #pragma mark - Public
 
 - (GPUImageFilter *)filterWithFilterID:(NSString *)filterID {
-    if ([filterID isEqualToString:@"sketch"]) {
-        return [[GPUImageSketchFilter alloc] init];
-    } else {
-        return [[GPUImageFilter alloc] init];
-    }
+    NSString *className = self.filterClassInfo[filterID];
+    
+    Class filterClass = NSClassFromString(className);
+    return [[filterClass alloc] init];
 }
 
 #pragma mark - Private
 
-- (NSArray<SCFilterMaterialModel *> *)setupDefaultFilters {
+- (void)commonInit {
+    self.filterClassInfo = [[NSMutableDictionary alloc] init];
+    [self setupDefaultFilterMaterialsInfo];
+    [self setupTikTokFilterMaterialsInfo];
+}
+
+- (void)setupDefaultFilterMaterialsInfo {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DefaultFilterMaterials" ofType:@"plist"];
+    NSDictionary *info = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    self.defaultFilterMaterialsInfo = [info copy];
+}
+
+- (void)setupTikTokFilterMaterialsInfo {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"TikTokFilterMaterials" ofType:@"plist"];
+    NSDictionary *info = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    self.tikTokFilterMaterialsInfo = [info copy];
+}
+
+- (NSArray<SCFilterMaterialModel *> *)setupFiltersWithInfo:(NSDictionary *)info {
     NSMutableArray *mutArr = [[NSMutableArray alloc] init];
     
-    SCFilterMaterialModel *filterMaterialModel = [[SCFilterMaterialModel alloc] init];
-    filterMaterialModel.filterID = @"none";
-    filterMaterialModel.filterName = @"原图";
+    NSArray *defaultArray = info[@"Default"];
     
-    [mutArr addObject:filterMaterialModel];
-    
-    SCFilterMaterialModel *filterMaterialModel1 = [[SCFilterMaterialModel alloc] init];
-    filterMaterialModel1.filterID = @"sketch";
-    filterMaterialModel1.filterName = @"素描";
-    
-    [mutArr addObject:filterMaterialModel1];
+    for (NSDictionary *dict in defaultArray) {
+        SCFilterMaterialModel *model = [[SCFilterMaterialModel alloc] init];
+        model.filterID = dict[@"filter_id"];
+        model.filterName = dict[@"filter_name"];
+        
+        [mutArr addObject:model];
+        
+        self.filterClassInfo[dict[@"filter_id"]] = dict[@"filter_class"];
+    }
     
     return [mutArr copy];
 }
@@ -59,9 +90,16 @@ static SCFilterManager *_filterManager;
 
 - (NSArray<SCFilterMaterialModel *> *)defaultFilters {
     if (!_defaultFilters) {
-        _defaultFilters = [self setupDefaultFilters];
+        _defaultFilters = [self setupFiltersWithInfo:self.defaultFilterMaterialsInfo];
     }
     return _defaultFilters;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)tiktokFilters {
+    if (!_tikTokFilters) {
+        _tikTokFilters = [self setupFiltersWithInfo:self.tikTokFilterMaterialsInfo];
+    }
+    return _tikTokFilters;
 }
 
 @end
