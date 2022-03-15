@@ -17,6 +17,8 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
 @property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewLayout;
 @property (nonatomic, assign) NSInteger currentIndex;
 
+@property (nonatomic, strong) SCFilterMaterialModel *selectMaterialModel;
+
 @end
 
 @implementation SCFilterMaterialView
@@ -55,6 +57,10 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerClass:[SCFilterMaterialViewCell class] forCellWithReuseIdentifier:kSCFilterMaterialViewReuseIdentifier];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self selectIndex:0];
+    });
 }
 
 - (void)createCollectionViewLayout {
@@ -70,8 +76,15 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
 }
 
 - (void)selectIndex:(NSIndexPath *)indexPath {
-    _currentIndex = indexPath.row;
-    [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    SCFilterMaterialViewCell *lastSelectCell = (SCFilterMaterialViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+    SCFilterMaterialViewCell *currentSelectCell = (SCFilterMaterialViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    lastSelectCell.isSelect = NO;
+    currentSelectCell.isSelect = YES;
+    
+    self.currentIndex = indexPath.row;
+    self.selectMaterialModel = self.itemList[self.currentIndex];
+
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(filterMaterialView:didScrollToIndex:)]) {
         [self.delegate filterMaterialView:self didScrollToIndex:indexPath.row];
@@ -86,6 +99,12 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
 - (void)setItemList:(NSArray<SCFilterMaterialModel *> *)itemList {
     _itemList = [itemList copy];
     [self.collectionView reloadData];
+    if ([itemList containsObject:self.selectMaterialModel]) {
+        NSInteger index = [itemList indexOfObject:self.selectMaterialModel];
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    } else {
+        [self scrollToTop];
+    }
 }
 
 #pragma mark - UICollectionViewDelegate && UICollectionViewDataSource
@@ -101,6 +120,7 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SCFilterMaterialViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kSCFilterMaterialViewReuseIdentifier forIndexPath:indexPath];
     cell.filterMaterialModel = self.itemList[indexPath.row];
+    cell.isSelect = cell.filterMaterialModel == self.selectMaterialModel;
     
     return cell;
 }

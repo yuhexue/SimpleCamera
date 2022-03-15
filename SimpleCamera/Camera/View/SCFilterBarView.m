@@ -17,6 +17,7 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
 @property (nonatomic, strong) SCFilterMaterialView *filterMaterialView;
 @property (nonatomic, strong) SCFilterCategoryView *filterCategoryView;
 @property (nonatomic, strong) UISwitch *beautifySwitch;
+@property (nonatomic, strong) UISlider *beautifySlider;
 
 @end
 
@@ -46,6 +47,7 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
     [self setupFilterCategoryView];
     [self setupFilterMaterialView];
     [self setupBeautifySwitch];
+    [self setupBeautifySlider];
 }
 
 - (void)setupFilterCategoryView {
@@ -100,6 +102,23 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
     }];
 }
 
+- (void)setupBeautifySlider {
+    self.beautifySlider = [[UISlider alloc] init];
+    self.beautifySlider.transform = CGAffineTransformMakeScale(0.8, 0.8);
+    self.beautifySlider.minimumTrackTintColor = [UIColor whiteColor];
+    self.beautifySlider.maximumTrackTintColor = RGBA(255, 255, 255, 0.6);
+    self.beautifySlider.value = 0.5;
+    self.beautifySlider.alpha = 0;
+    [self.beautifySlider addTarget:self
+                            action:@selector(beautifySliderValueChanged:)
+                  forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.beautifySlider];
+    [self.beautifySlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.beautifySwitch.mas_right).offset(30);
+        make.centerY.equalTo(self.beautifySwitch);
+        make.right.equalTo(self).offset(-10);
+    }];
+}
 #pragma mark - Public
 
 - (NSInteger)currentCategoryIndex {
@@ -109,8 +128,15 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
 #pragma mark - Action
 
 - (void)beautifySwitchValueChanged:(id)sender {
+    self.beautifySlider.hidden = !self.beautifySwitch.isOn;
     if ([self.delegate respondsToSelector:@selector(filterBarView:beautifySwitchIsOn:)]) {
         [self.delegate filterBarView:self beautifySwitchIsOn:self.beautifySwitch.isOn];
+    }
+}
+
+- (void)beautifySliderValueChanged:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(filterBarView:beautifySliderChangeToValue:)]) {
+        [self.delegate filterBarView:self beautifySliderChangeToValue:self.beautifySlider.value];
     }
 }
 
@@ -149,7 +175,7 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
     } else if (currentIndex == 1) {
         self.filterMaterialView.itemList = self.tikTokFilterMaterials;
     }
-    [self.filterMaterialView scrollToTop];
+    
     
     if ([self.delegate respondsToSelector:@selector(filterBarView:categoryDidScrollToIndex:)]) {
         [self.delegate filterBarView:self categoryDidScrollToIndex:index];

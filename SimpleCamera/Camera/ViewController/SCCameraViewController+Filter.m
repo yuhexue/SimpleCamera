@@ -14,12 +14,11 @@
 @implementation SCCameraViewController (Filter)
 
 - (void)addBeautifyFilter {
-    GPUImageFilter *beautifyFilter = (GPUImageFilter *)[[GPUImageBeautifyFilter alloc] init];
-    [[SCCameraManager shareInstance].currentFilterHandler setBeautifyFilter:beautifyFilter];
+    [SCCameraManager shareInstance].currentFilterHandler.beautifyFilterEnable = YES;
 }
 
 - (void)removeBeautifyFilter {
-    [[SCCameraManager shareInstance].currentFilterHandler setBeautifyFilter:nil];
+    [SCCameraManager shareInstance].currentFilterHandler.beautifyFilterEnable = NO;
 }
 
 - (NSArray<SCFilterMaterialModel *> *)filtersWithCategoryIndex:(NSInteger)index {

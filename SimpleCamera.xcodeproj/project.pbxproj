@@ -47,6 +47,7 @@
 		504AB44127DF67E800A05DDD /* SCGPUImageScaleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB43A27DF67E800A05DDD /* SCGPUImageScaleFilter.m */; };
 		504AB44227DF67E800A05DDD /* SCGPUImageGlitchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB43C27DF67E800A05DDD /* SCGPUImageGlitchFilter.m */; };
 		504AB44327DF67E800A05DDD /* SCGPUImageShineWhiteFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB43D27DF67E800A05DDD /* SCGPUImageShineWhiteFilter.m */; };
+		504AB44627E0CF0D00A05DDD /* LFGPUImageBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504AB44527E0CF0C00A05DDD /* LFGPUImageBeautyFilter.m */; };
 		509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */; };
 		50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD027B7712A00200CCF /* SCCameraTopView.m */; };
 		50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD327B7793800200CCF /* SCFileHelper.m */; };
@@ -158,6 +159,8 @@
 		504AB43B27DF67E800A05DDD /* SCGPUImageShakeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageShakeFilter.h; sourceTree = "<group>"; };
 		504AB43C27DF67E800A05DDD /* SCGPUImageGlitchFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageGlitchFilter.m; sourceTree = "<group>"; };
 		504AB43D27DF67E800A05DDD /* SCGPUImageShineWhiteFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageShineWhiteFilter.m; sourceTree = "<group>"; };
+		504AB44427E0CF0C00A05DDD /* LFGPUImageBeautyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageBeautyFilter.h; sourceTree = "<group>"; };
+		504AB44527E0CF0C00A05DDD /* LFGPUImageBeautyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFGPUImageBeautyFilter.m; sourceTree = "<group>"; };
 		509FBA2627CF9CF9002D0E64 /* SCAssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAssetHelper.h; sourceTree = "<group>"; };
 		509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAssetHelper.m; sourceTree = "<group>"; };
 		50B5DCD027B7712A00200CCF /* SCCameraTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCameraTopView.m; sourceTree = "<group>"; };
@@ -465,6 +468,8 @@
 			children = (
 				504AB41A27D6413E00A05DDD /* GPUImageBeautifyFilter.h */,
 				504AB41B27D6413E00A05DDD /* GPUImageBeautifyFilter.m */,
+				504AB44427E0CF0C00A05DDD /* LFGPUImageBeautyFilter.h */,
+				504AB44527E0CF0C00A05DDD /* LFGPUImageBeautyFilter.m */,
 			);
 			path = ThirdDemo;
 			sourceTree = "<group>";
@@ -757,6 +762,7 @@
 				504AB42527DDE3ED00A05DDD /* SCFilterCategoryView.m in Sources */,
 				19A3BA64278710830027386F /* main.m in Sources */,
 				504AB43027DF67E300A05DDD /* SCGPUImageBaseFilter.m in Sources */,
+				504AB44627E0CF0D00A05DDD /* LFGPUImageBeautyFilter.m in Sources */,
 				502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */,
 				504AB41F27DD8E2D00A05DDD /* SCFilterHandler.m in Sources */,
 				504AB44327DF67E800A05DDD /* SCGPUImageShineWhiteFilter.m in Sources */,

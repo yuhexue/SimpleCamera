@@ -172,16 +172,17 @@ static CGFloat const kFilterBarViewHeight = 200.0f;  // 滤镜栏高度
         }];
     };
     
+    self.filterBarView.showing = !hidden;
+    
     if (animated) {
         [UIView animateWithDuration:0.25f animations:^{
             updateBlock();
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
-            self.filterBarView.showing = !hidden;
+            
         }];
     } else {
         updateBlock();
-        self.filterBarView.showing = !hidden;
     }
 }
 

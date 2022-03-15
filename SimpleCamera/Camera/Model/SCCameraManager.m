@@ -50,7 +50,7 @@ static SCCameraManager *_cameraManager;
   */
 - (void)setupFilterHandler {
     self.currentFilterHandler = [[SCFilterHandler alloc] init];
-    [self.currentFilterHandler setBeautifyFilter:nil];
+    
     [self.currentFilterHandler setEffectFilter:nil];
 }
 
@@ -161,14 +161,15 @@ static SCCameraManager *_cameraManager;
 
 - (void)takePhotoWithCompletion:(TakePhotoResult)completion {
     GPUImageFilter *lastFilter = self.currentFilterHandler.lastFilter;
-    [self.camera capturePhotoAsJPEGProcessedUpToFilter:lastFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+    
+    [self.camera capturePhotoAsImageProcessedUpToFilter:lastFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
         if (error && completion) {
             completion(nil, error);
             return;
         }
-        UIImage *image = [UIImage imageWithData:processedJPEG];
+        
         if (completion) {
-            completion(image, nil);
+            completion(processedImage, nil);
         }
     }];
 }

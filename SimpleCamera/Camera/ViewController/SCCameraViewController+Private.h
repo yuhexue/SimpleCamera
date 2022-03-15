@@ -17,7 +17,7 @@
 #import "SCVideoResultViewController.h"
 #import "SCCapturingModeSwitchView.h"
 #import "UIView+Extention.h"
-#import "GPUImageBeautifyFilter.h"
+#import "LFGPUImageBeautyFilter.h"
 #import "SCFilterHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -51,8 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setFilterBarViewHidden:(BOOL)hidden animated:(BOOL)animated;
 
-/// 刷新下一步按钮的显示状态
-- (void)refreshNextButton;
+/// 在录制视频的时候，刷新UI
+- (void)refreshUIWhenRecordVideo;
+
+/// 在滤镜栏显示或隐藏的时候，刷新UI
+- (void)refreshUIWhenFilterBarShowOrHide;
 
 /// 刷新闪光灯按钮
 - (void)updateFlashButtonWithFlashMode:(SCCameraFlashMode)mode;

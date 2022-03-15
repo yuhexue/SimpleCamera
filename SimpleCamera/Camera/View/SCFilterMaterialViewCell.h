@@ -12,5 +12,6 @@
 @interface SCFilterMaterialViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) SCFilterMaterialModel *filterMaterialModel;
+@property (nonatomic, assign) BOOL isSelect;
 
 @end

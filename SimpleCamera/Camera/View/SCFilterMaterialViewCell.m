@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @property (nonatomic, strong) GPUImagePicture *picture;
+@property (nonatomic, strong) UIView *selectView;
 
 @end
 
@@ -33,6 +34,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     [self.picture removeAllTargets];
+    self.selectView.hidden = YES;
  }
 
 #pragma mark - Private
@@ -40,6 +42,7 @@
 - (void)commonInit {
     [self setupImageView];
     [self setupTitleLabel];
+    [self setupSelectView];
     self.picture = [[GPUImagePicture alloc] initWithImage:[UIImage imageNamed:@"filter_sample.jpg"]];
 }
 
@@ -64,6 +67,22 @@
     }];
 }
 
+- (void)setupSelectView {
+    self.selectView = [[UIView alloc] init];
+    self.selectView.hidden = YES;
+    self.selectView.backgroundColor = ThemeColorA(0.8);
+    [self addSubview:self.selectView];
+    [self.selectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.imageView);
+    }];
+
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_select"]];
+    [self.selectView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.selectView);
+        make.size.mas_equalTo(CGSizeMake(36, 36));
+    }];
+}
 #pragma mark - Custom Accessor
 
 - (void)setFilterMaterialModel:(SCFilterMaterialModel *)filterMaterialModel {
@@ -87,6 +106,13 @@
     } else {
         [self.picture processImage];
     }
+}
+
+- (void)setIsSelect:(BOOL)isSelect {
+    _isSelect = isSelect;
+
+    self.selectView.hidden = !isSelect;
+    self.titleLabel.textColor = isSelect ? ThemeColor : [UIColor whiteColor];
 }
 
 @end

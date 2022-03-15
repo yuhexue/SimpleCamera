@@ -73,26 +73,90 @@
 #pragma mark - Action
 - (void)tapAction:(UITapGestureRecognizer *)gestureRecognizer {
     [self setFilterBarViewHidden:YES animated:YES];
+    [self refreshUIWhenFilterBarShowOrHide];
 }
 
 - (void)filterAction:(id)sender {
     [self setFilterBarViewHidden:NO animated:YES];
+    [self refreshUIWhenFilterBarShowOrHide];
     // 第一次展开的时候，添加数据
     if (!self.filterBarView.defaultFilterMaterials) {
         self.filterBarView.defaultFilterMaterials = self.defaultFilterMaterials;
     }
 }
 
-- (void)refreshNextButton {
-    [self.nextButton setHidden:self.videos.count == 0 || self.isRecordingVideo
-                      animated:YES
-                    completion:NULL];
+- (void)refreshUIWhenRecordVideo {
+    [self refreshCloseButton];
+    [self refreshFlashButton];
+    [self refreshRotateButton];
+    [self refreshNextButton];
+    [self refreshModeSwitchView];
 }
+
+- (void)refreshUIWhenFilterBarShowOrHide {
+    [self refreshCapturingButton];
+    [self refreshModeSwitchView];
+    [self refreshFilterButton];
+    [self refreshNextButton];
+}
+
+/// 刷新下一步按钮
+- (void)refreshNextButton {
+    BOOL hidden = self.videos.count == 0 || self.isRecordingVideo || self.filterBarView.showing;
+    [self.nextButton setHidden:hidden animated:YES completion:NULL];
+}
+
+/// 刷新顶部栏
+- (void)refreshTopView {
+    BOOL hidden = self.videos.count > 0 || self.isRecordingVideo;
+    [self.cameraTopView setHidden:hidden animated:YES completion:NULL];
+}
+
+ /// 刷新模式切换控件
+- (void)refreshModeSwitchView {
+    BOOL hidden = self.videos.count > 0 || self.isRecordingVideo || self.filterBarView.showing;
+    [self.modeSwitchView setHidden:hidden animated:YES completion:NULL];
+}
+
+/// 刷新拍照按钮
+- (void)refreshCapturingButton {
+    [self.capturingButton setHidden:self.filterBarView.showing animated:YES completion:NULL];
+}
+
+/// 刷新滤镜按钮
+- (void)refreshFilterButton {
+    [self.filterButton setHidden:self.filterBarView.showing animated:YES completion:NULL];
+}
+
+
+/// 刷新闪光灯按钮
+- (void)refreshFlashButton {
+    BOOL hidden = self.videos.count > 0 || self.isRecordingVideo;
+    [self.cameraTopView setHidden:hidden animated:YES completion:NULL];
+    [self.cameraTopView.flashButton setHidden:hidden animated:YES completion:NULL];
+}
+
+/// 刷新旋转按钮
+- (void)refreshRotateButton {
+    BOOL hidden = self.videos.count > 0 || self.isRecordingVideo;
+    [self.cameraTopView.rotateButton setHidden:hidden animated:YES completion:NULL];
+}
+
+/// 刷新关闭按钮
+- (void)refreshCloseButton {
+    BOOL hidden = self.videos.count == 0 || self.isRecordingVideo;
+    [self.cameraTopView.closeButton setHidden:hidden animated:YES completion:NULL];
+}
+    
+- (void)cameraTopViewDidClickCloseButton:(SCCameraTopView *)cameraTopView {
+    [self.videos removeAllObjects];
+    [self refreshUIWhenRecordVideo];
+}
+
 
 - (void)nextAction:(id)sender {
     [self forwardToVideoResult];
-    [self refreshNextButton];
-    [self.modeSwitchView setHidden:NO animated:NO completion:NULL];
+    [self refreshUIWhenRecordVideo];
 }
 
 - (void)cameraViewTapAction:(UITapGestureRecognizer *)tap {
@@ -115,6 +179,10 @@
     if (pinch.state == UIGestureRecognizerStateEnded) {
         self.currentVideoScale = scale;
     }
+}
+
+- (void)filterBarView:(SCFilterBarView *)filterBarView beautifySliderChangeToValue:(CGFloat)value {
+    [SCCameraManager shareInstance].currentFilterHandler.beautifyFilterDegree = value;
 }
 
 #pragma mark - SCCapturingButtonDelegate

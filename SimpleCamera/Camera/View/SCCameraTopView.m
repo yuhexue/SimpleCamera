@@ -11,6 +11,7 @@
 
 @property (nonatomic, strong, readwrite) UIButton *rotateButton;
 @property (nonatomic, strong, readwrite) UIButton *flashButton;
+@property (nonatomic, strong, readwrite) UIButton *closeButton;
 @property (nonatomic, assign) BOOL isRotating;
 
 @end
@@ -51,6 +52,19 @@
                 forControlEvents:UIControlEventTouchUpInside];
     [self.flashButton setImage:[UIImage imageNamed:@"btn_flash_off"]
                     forState:UIControlStateNormal];
+    
+    
+    self.closeButton = [[UIButton alloc] init];
+    self.closeButton.hidden = YES;
+    [self addSubview:self.closeButton];
+    [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self);
+        make.left.equalTo(self).offset(20);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+    }];
+    [self.closeButton addTarget:self action:@selector(closeAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.closeButton setImage:[UIImage imageNamed:@"btn_close"]
+                    forState:UIControlStateNormal];
 }
 
 #pragma mark - Action
@@ -76,6 +90,12 @@
 - (void)flashAction:(UIButton *)button {
     if ([self.delegate respondsToSelector:@selector(cameraTopViewDidClickFlashButton:)]) {
         [self.delegate cameraTopViewDidClickFlashButton:self];
+    }
+}
+
+- (void)closeAction:(UIButton *)button {
+    if ([self.delegate respondsToSelector:@selector(cameraTopViewDidClickCloseButton:)]) {
+        [self.delegate cameraTopViewDidClickCloseButton:self];
     }
 }
 
