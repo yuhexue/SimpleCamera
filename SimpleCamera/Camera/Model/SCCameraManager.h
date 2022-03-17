@@ -41,6 +41,7 @@ typedef void (^RecordVideoResult)(NSString *videoPath);
 
 /// 通过调整焦距来实现视图放大缩小效果，最小是1
 @property (nonatomic, assign) CGFloat videoScale;
+
 /**
  获取实例
  */
@@ -90,5 +91,10 @@ typedef void (^RecordVideoResult)(NSString *videoPath);
   将缩放倍数转化到可用的范围
   */
 - (CGFloat)availableVideoScaleWithScale:(CGFloat)scale;
+
+/**
+  当前是否前置
+  */
+- (BOOL)isPositionFront;
 
 @end

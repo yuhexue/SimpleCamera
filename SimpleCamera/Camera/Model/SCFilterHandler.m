@@ -26,6 +26,10 @@
 
 - (void)dealloc {
     [self endDisplayLink];
+    if (_facesPoints) {
+        free(_facesPoints);
+        _facesPoints = nil;
+    }
 }
 
 - (instancetype)init {
@@ -34,6 +38,20 @@
         [self commonInit];
     }
     return self;
+}
+
+- (void)setFacesPoints:(GLfloat *)facesPoints {
+    if (_facesPoints) {
+        free(_facesPoints);
+        _facesPoints = nil;
+    }
+
+    _facesPoints = facesPoints;
+    for (GPUImageFilter *filter in self.filters) {
+        if ([filter isKindOfClass:[SCGPUImageBaseFilter class]]) {
+            ((SCGPUImageBaseFilter *)filter).facesPoints = facesPoints;
+        }
+    }
 }
 
 #pragma mark - Public

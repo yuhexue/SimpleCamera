@@ -2,6 +2,7 @@ PODS:
   - GPUImage (0.1.7)
   - LookinServer (1.0.4)
   - Masonry (1.1.0)
+  - OpenCV2-contrib (3.2.0.1)
   - RSSwizzle (0.1.0)
   - Toast (4.0.0)
 
@@ -9,6 +10,7 @@ DEPENDENCIES:
   - GPUImage
   - LookinServer
   - Masonry
+  - OpenCV2-contrib
   - RSSwizzle
   - Toast (~> 4.0.0)
 
@@ -17,6 +19,7 @@ SPEC REPOS:
     - GPUImage
     - LookinServer
     - Masonry
+    - OpenCV2-contrib
     - RSSwizzle
     - Toast
 
@@ -24,9 +27,10 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  OpenCV2-contrib: 314f0aa0159767a4b2e4208a35d646542bc15da6
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: a2917a24f7b80435fe17c6bb531a6747409a6d88
+PODFILE CHECKSUM: 78c21ce8ccbddda59f8a190eaa61ea047bb02f2d
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.9.3

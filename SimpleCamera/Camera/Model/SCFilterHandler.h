@@ -26,4 +26,7 @@
 /// 设置效果滤镜
 - (void)setEffectFilter:(GPUImageFilter *)filter;
 
+/// 人脸点
+@property (nonatomic, assign) GLfloat *facesPoints;
+
 @end

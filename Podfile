@@ -7,5 +7,6 @@ target 'SimpleCamera' do
   pod 'RSSwizzle'
   pod 'Toast', '~> 4.0.0'
   pod 'LookinServer', :configurations => ['Debug']
+  pod 'OpenCV2-contrib'
 
 end
