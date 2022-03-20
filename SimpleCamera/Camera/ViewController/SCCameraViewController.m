@@ -228,6 +228,8 @@
         self.filterBarView.tikTokFilterMaterials = self.tikTokFilterMaterials;
     } else if (index == 2 && !self.filterBarView.splitFilterMaterials) {
         self.filterBarView.splitFilterMaterials = self.splitFilterMaterials;
+    } else if (index == 3 && !self.filterBarView.colorFilterMaterials) {
+        self.filterBarView.colorFilterMaterials = self.colorFilterMaterials;
     }
 }
 
@@ -266,6 +268,13 @@
         _splitFilterMaterials = [[SCFilterManager shareInstance] splitFilters];
     }
     return _splitFilterMaterials;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)colorFilterMaterials {
+    if (!_colorFilterMaterials) {
+        _colorFilterMaterials = [[SCFilterManager shareInstance] colorFilters];
+    }
+    return _colorFilterMaterials;
 }
 
 @end

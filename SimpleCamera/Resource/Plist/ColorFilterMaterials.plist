@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Default</key>
+	<array>
+		<dict>
+			<key>filter_id</key>
+			<string>color_brightness</string>
+			<key>filter_name</key>
+			<string>亮度</string>
+			<key>filter_class</key>
+			<string>SCGPUImageBrightnessFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>color_contrast</string>
+			<key>filter_name</key>
+			<string>对比度</string>
+			<key>filter_class</key>
+			<string>SCGPUImageContrastFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>color_temperature</string>
+			<key>filter_name</key>
+			<string>色温</string>
+			<key>filter_class</key>
+			<string>SCGPUImageTemperatureFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>color_saturation</string>
+			<key>filter_name</key>
+			<string>饱和度</string>
+			<key>filter_class</key>
+			<string>SCGPUImageSaturationFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>color_grain</string>
+			<key>filter_name</key>
+			<string>颗粒度</string>
+			<key>filter_class</key>
+			<string>SCGPUImageGrainFilter</string>
+		</dict>
+		<dict>
+			<key>filter_id</key>
+			<string>color_sharpness</string>
+			<key>filter_name</key>
+			<string>锐度</string>
+			<key>filter_class</key>
+			<string>SCGPUImageSharpnessFilter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

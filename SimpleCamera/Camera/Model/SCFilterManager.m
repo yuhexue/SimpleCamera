@@ -14,10 +14,12 @@ static SCFilterManager *_filterManager;
 @property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *defaultFilters;
 @property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *tikTokFilters;
 @property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *splitFilters;
+@property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *colorFilters;
 
 @property (nonatomic, strong) NSDictionary *defaultFilterMaterialsInfo;
 @property (nonatomic, strong) NSDictionary *tikTokFilterMaterialsInfo;
 @property (nonatomic, strong) NSDictionary *splitFilterMaterialsInfo;
+@property (nonatomic, strong) NSDictionary *colorFilterMaterialsInfo;
 
 @property (nonatomic, strong) NSMutableDictionary *filterClassInfo;
 
@@ -57,6 +59,7 @@ static SCFilterManager *_filterManager;
     [self setupDefaultFilterMaterialsInfo];
     [self setupTikTokFilterMaterialsInfo];
     [self setupSplitFilterMaterialsInfo];
+    [self setupColorFilterMaterialsInfo];
 }
 
 - (void)setupDefaultFilterMaterialsInfo {
@@ -77,21 +80,22 @@ static SCFilterManager *_filterManager;
     self.splitFilterMaterialsInfo = [info copy];
 }
 
+- (void)setupColorFilterMaterialsInfo {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ColorFilterMaterials" ofType:@"plist"];
+    NSDictionary *info = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    self.colorFilterMaterialsInfo = [info copy];
+}
+
 - (NSArray<SCFilterMaterialModel *> *)setupFiltersWithInfo:(NSDictionary *)info {
     NSMutableArray *mutArr = [[NSMutableArray alloc] init];
-    
     NSArray *defaultArray = info[@"Default"];
-    
     for (NSDictionary *dict in defaultArray) {
         SCFilterMaterialModel *model = [[SCFilterMaterialModel alloc] init];
         model.filterID = dict[@"filter_id"];
         model.filterName = dict[@"filter_name"];
-        
         [mutArr addObject:model];
-        
         self.filterClassInfo[dict[@"filter_id"]] = dict[@"filter_class"];
     }
-    
     return [mutArr copy];
 }
 
@@ -116,6 +120,13 @@ static SCFilterManager *_filterManager;
         _splitFilters = [self setupFiltersWithInfo:self.splitFilterMaterialsInfo];
     }
     return _splitFilters;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)colorFilters {
+    if (!_colorFilters) {
+        _colorFilters = [self setupFiltersWithInfo:self.colorFilterMaterialsInfo];
+    }
+    return _colorFilters;
 }
 
 @end

@@ -410,6 +410,13 @@
 		504ABA4327E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3F27E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m */; };
 		504ABA4627E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA4527E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m */; };
 		504ABA4827E6ED2000A05DDD /* SplitFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 504ABA4727E6ED2000A05DDD /* SplitFilterMaterials.plist */; };
+		504ABA4C27E7174600A05DDD /* SCGPUImageBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA4A27E7174600A05DDD /* SCGPUImageBrightnessFilter.m */; };
+		504ABA6027E71CA900A05DDD /* ColorFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 504ABA5F27E71CA800A05DDD /* ColorFilterMaterials.plist */; };
+		504ABA7727E72ACE00A05DDD /* SCGPUImageSaturationFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA6D27E72ACD00A05DDD /* SCGPUImageSaturationFilter.m */; };
+		504ABA7827E72ACE00A05DDD /* SCGPUImageSharpnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA6E27E72ACD00A05DDD /* SCGPUImageSharpnessFilter.m */; };
+		504ABA7927E72ACE00A05DDD /* SCGPUImageContrastFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA6F27E72ACD00A05DDD /* SCGPUImageContrastFilter.m */; };
+		504ABA7A27E72ACE00A05DDD /* SCGPUImageGrainFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA7327E72ACE00A05DDD /* SCGPUImageGrainFilter.m */; };
+		504ABA7B27E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA7627E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m */; };
 		509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */; };
 		50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD027B7712A00200CCF /* SCCameraTopView.m */; };
 		50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD327B7793800200CCF /* SCFileHelper.m */; };
@@ -930,6 +937,19 @@
 		504ABA4427E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageDynamicSplitFilter.h; sourceTree = "<group>"; };
 		504ABA4527E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageDynamicSplitFilter.m; sourceTree = "<group>"; };
 		504ABA4727E6ED2000A05DDD /* SplitFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SplitFilterMaterials.plist; sourceTree = "<group>"; };
+		504ABA4A27E7174600A05DDD /* SCGPUImageBrightnessFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageBrightnessFilter.m; sourceTree = "<group>"; };
+		504ABA4B27E7174600A05DDD /* SCGPUImageBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageBrightnessFilter.h; sourceTree = "<group>"; };
+		504ABA5F27E71CA800A05DDD /* ColorFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorFilterMaterials.plist; sourceTree = "<group>"; };
+		504ABA6D27E72ACD00A05DDD /* SCGPUImageSaturationFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageSaturationFilter.m; sourceTree = "<group>"; };
+		504ABA6E27E72ACD00A05DDD /* SCGPUImageSharpnessFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageSharpnessFilter.m; sourceTree = "<group>"; };
+		504ABA6F27E72ACD00A05DDD /* SCGPUImageContrastFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageContrastFilter.m; sourceTree = "<group>"; };
+		504ABA7027E72ACE00A05DDD /* SCGPUImageContrastFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageContrastFilter.h; sourceTree = "<group>"; };
+		504ABA7127E72ACE00A05DDD /* SCGPUImageSaturationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSaturationFilter.h; sourceTree = "<group>"; };
+		504ABA7227E72ACE00A05DDD /* SCGPUImageTemperatureFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageTemperatureFilter.h; sourceTree = "<group>"; };
+		504ABA7327E72ACE00A05DDD /* SCGPUImageGrainFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageGrainFilter.m; sourceTree = "<group>"; };
+		504ABA7427E72ACE00A05DDD /* SCGPUImageSharpnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSharpnessFilter.h; sourceTree = "<group>"; };
+		504ABA7527E72ACE00A05DDD /* SCGPUImageGrainFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageGrainFilter.h; sourceTree = "<group>"; };
+		504ABA7627E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageTemperatureFilter.m; sourceTree = "<group>"; };
 		509FBA2627CF9CF9002D0E64 /* SCAssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAssetHelper.h; sourceTree = "<group>"; };
 		509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAssetHelper.m; sourceTree = "<group>"; };
 		50B5DCD027B7712A00200CCF /* SCCameraTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCameraTopView.m; sourceTree = "<group>"; };
@@ -1125,6 +1145,7 @@
 		19A3BADA278719A10027386F /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				504ABA5F27E71CA800A05DDD /* ColorFilterMaterials.plist */,
 				504ABA4727E6ED2000A05DDD /* SplitFilterMaterials.plist */,
 				19A3BADC278719A10027386F /* FaceRecognizerMaterials.plist */,
 				19A3BADD278719A10027386F /* TikTokFilterMaterials.plist */,
@@ -1250,6 +1271,7 @@
 		504AB42627DDE44A00A05DDD /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				504ABA4927E7174600A05DDD /* Color */,
 				504ABA3427E6DD9000A05DDD /* Split */,
 				504ABA0227E3688600A05DDD /* Face */,
 				504AB43127DF67E800A05DDD /* TikTok */,
@@ -1783,6 +1805,25 @@
 			path = Split;
 			sourceTree = "<group>";
 		};
+		504ABA4927E7174600A05DDD /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				504ABA4B27E7174600A05DDD /* SCGPUImageBrightnessFilter.h */,
+				504ABA4A27E7174600A05DDD /* SCGPUImageBrightnessFilter.m */,
+				504ABA7027E72ACE00A05DDD /* SCGPUImageContrastFilter.h */,
+				504ABA6F27E72ACD00A05DDD /* SCGPUImageContrastFilter.m */,
+				504ABA7227E72ACE00A05DDD /* SCGPUImageTemperatureFilter.h */,
+				504ABA7627E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m */,
+				504ABA7127E72ACE00A05DDD /* SCGPUImageSaturationFilter.h */,
+				504ABA6D27E72ACD00A05DDD /* SCGPUImageSaturationFilter.m */,
+				504ABA7527E72ACE00A05DDD /* SCGPUImageGrainFilter.h */,
+				504ABA7327E72ACE00A05DDD /* SCGPUImageGrainFilter.m */,
+				504ABA7427E72ACE00A05DDD /* SCGPUImageSharpnessFilter.h */,
+				504ABA6E27E72ACD00A05DDD /* SCGPUImageSharpnessFilter.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		50B5DCD927B7852300200CCF /* VideoResult */ = {
 			isa = PBXGroup;
 			children = (
@@ -1971,6 +2012,7 @@
 				504AB9CC27E361D500A05DDD /* yaw00_lev3_p69_classic.mh in Resources */,
 				504AB8E327E361D500A05DDD /* yaw00_lev3_p62_classic.mh in Resources */,
 				504AB97B27E361D500A05DDD /* yaw00_lev0_p31_hat.mh in Resources */,
+				504ABA6027E71CA900A05DDD /* ColorFilterMaterials.plist in Resources */,
 				504AB9FD27E361D500A05DDD /* haarcascade_russian_plate_number.xml in Resources */,
 				504AB9A427E361D500A05DDD /* yaw00_lev1_p28_hat.mh in Resources */,
 				504AB8CE27E361D500A05DDD /* yaw00_shapemodel.mh in Resources */,
@@ -2374,6 +2416,7 @@
 				19A3BA64278710830027386F /* main.m in Sources */,
 				504AB8B027E361D500A05DDD /* shapehacks.cpp in Sources */,
 				504AB43027DF67E300A05DDD /* SCGPUImageBaseFilter.m in Sources */,
+				504ABA7927E72ACE00A05DDD /* SCGPUImageContrastFilter.m in Sources */,
 				504AB44627E0CF0D00A05DDD /* LFGPUImageBeautyFilter.m in Sources */,
 				504AB8AF27E361D500A05DDD /* landmarks.cpp in Sources */,
 				502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */,
@@ -2392,8 +2435,10 @@
 				504ABA3D27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m in Sources */,
 				19A3BACC278716410027386F /* SCCameraViewController.m in Sources */,
 				504AB8AA27E361D500A05DDD /* eyedet.cpp in Sources */,
+				504ABA7B27E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m in Sources */,
 				504AB43F27DF67E800A05DDD /* SCGPUImageVertigoFilter.m in Sources */,
 				19A3BB3027885D260027386F /* SCCapturingButton.m in Sources */,
+				504ABA7727E72ACE00A05DDD /* SCGPUImageSaturationFilter.m in Sources */,
 				504AB44027DF67E800A05DDD /* SCGPUImageSoulOutFilter.m in Sources */,
 				504AB8A427E361D500A05DDD /* startshape.cpp in Sources */,
 				504AB44227DF67E800A05DDD /* SCGPUImageGlitchFilter.m in Sources */,
@@ -2401,6 +2446,7 @@
 				50CF75F1278F0EE000415211 /* SCFilterBarView.m in Sources */,
 				19A3BB2427885C850027386F /* SCCameraViewController+Private.m in Sources */,
 				19A3BB2727885C990027386F /* SCCameraViewController+UI.m in Sources */,
+				504ABA4C27E7174600A05DDD /* SCGPUImageBrightnessFilter.m in Sources */,
 				19A3BB1E2788514E0027386F /* SCCameraManager.m in Sources */,
 				504AB8B527E361D500A05DDD /* asm.cpp in Sources */,
 				504AB41C27D6413F00A05DDD /* GPUImageBeautifyFilter.m in Sources */,
@@ -2423,7 +2469,9 @@
 				50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */,
 				504AB43E27DF67E800A05DDD /* SCGPUImageShakeFilter.m in Sources */,
 				504AB72527E3614800A05DDD /* SCFaceDetectorManager.mm in Sources */,
+				504ABA7A27E72ACE00A05DDD /* SCGPUImageGrainFilter.m in Sources */,
 				504AB42227DDE3D100A05DDD /* SCFilterCategoryCell.m in Sources */,
+				504ABA7827E72ACE00A05DDD /* SCGPUImageSharpnessFilter.m in Sources */,
 				50B5DCE927B79C1600200CCF /* SCCapturingModeSwitchView.m in Sources */,
 				50B5DCE627B78D7300200CCF /* SCVideoModel.m in Sources */,
 				504AB44127DF67E800A05DDD /* SCGPUImageScaleFilter.m in Sources */,

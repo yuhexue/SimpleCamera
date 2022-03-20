@@ -55,7 +55,7 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
     self.filterCategoryView.delegate = self;
     self.filterCategoryView.itemNormalColor = [UIColor whiteColor];
     self.filterCategoryView.itemSelectColor = ThemeColor;
-    self.filterCategoryView.itemList = @[@"内置", @"抖音", @"分屏"];
+    self.filterCategoryView.itemList = @[@"内置", @"抖音", @"分屏", @"颜色"];
     self.filterCategoryView.itemFont = [UIFont systemFontOfSize:14];
     self.filterCategoryView.itemWidth = 65;
     self.filterCategoryView.bottomLineWidth = 30;
@@ -166,6 +166,14 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
     }
 }
 
+- (void)setColorFilterMaterials:(NSArray<SCFilterMaterialModel *> *)colorFilterMaterials {
+    _colorFilterMaterials = [colorFilterMaterials copy];
+
+    if (self.filterCategoryView.currentIndex == 3) {
+        self.filterMaterialView.itemList = colorFilterMaterials;
+    }
+}
+
 #pragma mark - SCFilterMaterialViewDelegate
 
 - (void)filterMaterialView:(SCFilterMaterialView *)filterMaterialView didScrollToIndex:(NSUInteger)index {
@@ -184,6 +192,8 @@ static CGFloat const kFilterMaterialViewHeight = 100.0f;
         self.filterMaterialView.itemList = self.tikTokFilterMaterials;
     } else if (currentIndex == 2) {
         self.filterMaterialView.itemList = self.splitFilterMaterials;
+    } else if (currentIndex == 3) {
+        self.filterMaterialView.itemList = self.colorFilterMaterials;
     }
     
     if ([self.delegate respondsToSelector:@selector(filterBarView:categoryDidScrollToIndex:)]) {
