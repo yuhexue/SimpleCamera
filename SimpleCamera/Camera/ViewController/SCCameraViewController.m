@@ -153,7 +153,6 @@
     [self refreshUIWhenRecordVideo];
 }
 
-
 - (void)nextAction:(id)sender {
     [self forwardToVideoResult];
     [self refreshUIWhenRecordVideo];
@@ -227,6 +226,8 @@
         self.filterBarView.defaultFilterMaterials = self.defaultFilterMaterials;
     } else if (index == 1 && !self.filterBarView.tikTokFilterMaterials) {
         self.filterBarView.tikTokFilterMaterials = self.tikTokFilterMaterials;
+    } else if (index == 2 && !self.filterBarView.splitFilterMaterials) {
+        self.filterBarView.splitFilterMaterials = self.splitFilterMaterials;
     }
 }
 
@@ -258,6 +259,13 @@
         _tikTokFilterMaterials = [[SCFilterManager shareInstance] tiktokFilters];
     }
     return _tikTokFilterMaterials;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)splitFilterMaterials {
+    if (!_splitFilterMaterials) {
+        _splitFilterMaterials = [[SCFilterManager shareInstance] splitFilters];
+    }
+    return _splitFilterMaterials;
 }
 
 @end

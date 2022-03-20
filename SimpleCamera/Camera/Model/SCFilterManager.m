@@ -13,9 +13,11 @@ static SCFilterManager *_filterManager;
 
 @property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *defaultFilters;
 @property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *tikTokFilters;
+@property (nonatomic, strong, readwrite) NSArray<SCFilterMaterialModel *> *splitFilters;
 
 @property (nonatomic, strong) NSDictionary *defaultFilterMaterialsInfo;
 @property (nonatomic, strong) NSDictionary *tikTokFilterMaterialsInfo;
+@property (nonatomic, strong) NSDictionary *splitFilterMaterialsInfo;
 
 @property (nonatomic, strong) NSMutableDictionary *filterClassInfo;
 
@@ -54,6 +56,7 @@ static SCFilterManager *_filterManager;
     self.filterClassInfo = [[NSMutableDictionary alloc] init];
     [self setupDefaultFilterMaterialsInfo];
     [self setupTikTokFilterMaterialsInfo];
+    [self setupSplitFilterMaterialsInfo];
 }
 
 - (void)setupDefaultFilterMaterialsInfo {
@@ -66,6 +69,12 @@ static SCFilterManager *_filterManager;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"TikTokFilterMaterials" ofType:@"plist"];
     NSDictionary *info = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     self.tikTokFilterMaterialsInfo = [info copy];
+}
+
+- (void)setupSplitFilterMaterialsInfo {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"SplitFilterMaterials" ofType:@"plist"];
+    NSDictionary *info = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    self.splitFilterMaterialsInfo = [info copy];
 }
 
 - (NSArray<SCFilterMaterialModel *> *)setupFiltersWithInfo:(NSDictionary *)info {
@@ -100,6 +109,13 @@ static SCFilterManager *_filterManager;
         _tikTokFilters = [self setupFiltersWithInfo:self.tikTokFilterMaterialsInfo];
     }
     return _tikTokFilters;
+}
+
+- (NSArray<SCFilterMaterialModel *> *)splitFilters {
+    if (!_splitFilters) {
+        _splitFilters = [self setupFiltersWithInfo:self.splitFilterMaterialsInfo];
+    }
+    return _splitFilters;
 }
 
 @end

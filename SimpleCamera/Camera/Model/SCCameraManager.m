@@ -273,7 +273,6 @@ static SCCameraManager *_cameraManager;
 #pragma mark - GPUImageVideoCameraDelegate
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
     float *facePoints = [SCFaceDetectorManager detectWithSampleBuffer:sampleBuffer isMirror:[self isPositionFront]];
-    NSLog(@"maxslma %lf", facePoints);
     self.currentFilterHandler.facesPoints = facePoints;
 }
 

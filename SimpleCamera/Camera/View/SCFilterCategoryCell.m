@@ -13,7 +13,6 @@ static NSInteger kFilterCategoryCellBottomLineHeight = 2;
 @implementation SCFilterCategoryCell
 
 - (instancetype)init {
-    
     self = [super init];
     if (self) {
         [self commonInit];
@@ -22,7 +21,6 @@ static NSInteger kFilterCategoryCellBottomLineHeight = 2;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
@@ -31,7 +29,6 @@ static NSInteger kFilterCategoryCellBottomLineHeight = 2;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    
     self = [super initWithFrame:frame];
     if (self) {
         [self commonInit];
@@ -40,7 +37,6 @@ static NSInteger kFilterCategoryCellBottomLineHeight = 2;
 }
 
 - (void)commonInit {
-    
     _titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_titleLabel];

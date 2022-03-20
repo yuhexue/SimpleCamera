@@ -27,9 +27,10 @@
 
 /// 内置滤镜
 @property (nonatomic, copy) NSArray<SCFilterMaterialModel *> *defaultFilterMaterials;
-
 /// 抖音滤镜
 @property (nonatomic, copy) NSArray<SCFilterMaterialModel *> *tikTokFilterMaterials;
+/// 分屏滤镜
+@property (nonatomic, copy) NSArray<SCFilterMaterialModel *> *splitFilterMaterials;
 
 - (NSInteger)currentCategoryIndex;
 

@@ -13,7 +13,6 @@
 		19A3BA79278710840027386F /* SimpleCameraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A3BA78278710840027386F /* SimpleCameraUITests.m */; };
 		19A3BACC278716410027386F /* SCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A3BACB278716410027386F /* SCCameraViewController.m */; };
 		19A3BAD12787164B0027386F /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A3BAD02787164B0027386F /* SCViewController.m */; };
-		19A3BAE6278719A10027386F /* SplitFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADB278719A10027386F /* SplitFilterMaterials.plist */; };
 		19A3BAE7278719A10027386F /* FaceRecognizerMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADC278719A10027386F /* FaceRecognizerMaterials.plist */; };
 		19A3BAE8278719A10027386F /* TikTokFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADD278719A10027386F /* TikTokFilterMaterials.plist */; };
 		19A3BAE9278719A10027386F /* DefaultFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADE278719A10027386F /* DefaultFilterMaterials.plist */; };
@@ -404,6 +403,13 @@
 		504ABA3127E36DA600A05DDD /* MGFaceLicenseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA2527E36DA600A05DDD /* MGFaceLicenseHandle.m */; };
 		504ABA3227E36DA600A05DDD /* libMGFacepp-0.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 504ABA2727E36DA600A05DDD /* libMGFacepp-0.5.2.a */; };
 		504ABA3327E36DA600A05DDD /* megviifacepp_0_5_2_model in Resources */ = {isa = PBXBuildFile; fileRef = 504ABA2F27E36DA600A05DDD /* megviifacepp_0_5_2_model */; };
+		504ABA3727E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3527E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m */; };
+		504ABA3C27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3A27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m */; };
+		504ABA3D27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3B27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m */; };
+		504ABA4227E6E03700A05DDD /* SCGPUImageSplit4V4Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3E27E6E03700A05DDD /* SCGPUImageSplit4V4Filter.m */; };
+		504ABA4327E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3F27E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m */; };
+		504ABA4627E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA4527E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m */; };
+		504ABA4827E6ED2000A05DDD /* SplitFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 504ABA4727E6ED2000A05DDD /* SplitFilterMaterials.plist */; };
 		509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */; };
 		50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD027B7712A00200CCF /* SCCameraTopView.m */; };
 		50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD327B7793800200CCF /* SCFileHelper.m */; };
@@ -456,7 +462,6 @@
 		19A3BACF2787164B0027386F /* SCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCViewController.h; sourceTree = "<group>"; };
 		19A3BAD02787164B0027386F /* SCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCViewController.m; sourceTree = "<group>"; };
 		19A3BAD2278717270027386F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		19A3BADB278719A10027386F /* SplitFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SplitFilterMaterials.plist; sourceTree = "<group>"; };
 		19A3BADC278719A10027386F /* FaceRecognizerMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FaceRecognizerMaterials.plist; sourceTree = "<group>"; };
 		19A3BADD278719A10027386F /* TikTokFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TikTokFilterMaterials.plist; sourceTree = "<group>"; };
 		19A3BADE278719A10027386F /* DefaultFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultFilterMaterials.plist; sourceTree = "<group>"; };
@@ -912,6 +917,19 @@
 		504ABA2D27E36DA600A05DDD /* MGImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImageData.h; sourceTree = "<group>"; };
 		504ABA2E27E36DA600A05DDD /* MGFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceInfo.h; sourceTree = "<group>"; };
 		504ABA2F27E36DA600A05DDD /* megviifacepp_0_5_2_model */ = {isa = PBXFileReference; lastKnownFileType = file; path = megviifacepp_0_5_2_model; sourceTree = "<group>"; };
+		504ABA3527E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageStaticSplitFilter.m; sourceTree = "<group>"; };
+		504ABA3627E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageStaticSplitFilter.h; sourceTree = "<group>"; };
+		504ABA3827E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSplit3V2Filter.h; sourceTree = "<group>"; };
+		504ABA3927E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSplit1V3Filter.h; sourceTree = "<group>"; };
+		504ABA3A27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageSplit3V2Filter.m; sourceTree = "<group>"; };
+		504ABA3B27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageSplit1V3Filter.m; sourceTree = "<group>"; };
+		504ABA3E27E6E03700A05DDD /* SCGPUImageSplit4V4Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageSplit4V4Filter.m; sourceTree = "<group>"; };
+		504ABA3F27E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageSplit3V3Filter.m; sourceTree = "<group>"; };
+		504ABA4027E6E03700A05DDD /* SCGPUImageSplit3V3Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSplit3V3Filter.h; sourceTree = "<group>"; };
+		504ABA4127E6E03700A05DDD /* SCGPUImageSplit4V4Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSplit4V4Filter.h; sourceTree = "<group>"; };
+		504ABA4427E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageDynamicSplitFilter.h; sourceTree = "<group>"; };
+		504ABA4527E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageDynamicSplitFilter.m; sourceTree = "<group>"; };
+		504ABA4727E6ED2000A05DDD /* SplitFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SplitFilterMaterials.plist; sourceTree = "<group>"; };
 		509FBA2627CF9CF9002D0E64 /* SCAssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAssetHelper.h; sourceTree = "<group>"; };
 		509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAssetHelper.m; sourceTree = "<group>"; };
 		50B5DCD027B7712A00200CCF /* SCCameraTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCameraTopView.m; sourceTree = "<group>"; };
@@ -1107,7 +1125,7 @@
 		19A3BADA278719A10027386F /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				19A3BADB278719A10027386F /* SplitFilterMaterials.plist */,
+				504ABA4727E6ED2000A05DDD /* SplitFilterMaterials.plist */,
 				19A3BADC278719A10027386F /* FaceRecognizerMaterials.plist */,
 				19A3BADD278719A10027386F /* TikTokFilterMaterials.plist */,
 				19A3BADE278719A10027386F /* DefaultFilterMaterials.plist */,
@@ -1232,6 +1250,7 @@
 		504AB42627DDE44A00A05DDD /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				504ABA3427E6DD9000A05DDD /* Split */,
 				504ABA0227E3688600A05DDD /* Face */,
 				504AB43127DF67E800A05DDD /* TikTok */,
 				504AB42D27DF67E300A05DDD /* Base */,
@@ -1745,6 +1764,25 @@
 			path = MGFaceppSDK;
 			sourceTree = "<group>";
 		};
+		504ABA3427E6DD9000A05DDD /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				504ABA4427E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.h */,
+				504ABA4527E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m */,
+				504ABA3627E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.h */,
+				504ABA3527E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m */,
+				504ABA3927E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.h */,
+				504ABA3B27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m */,
+				504ABA3827E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.h */,
+				504ABA3A27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m */,
+				504ABA4027E6E03700A05DDD /* SCGPUImageSplit3V3Filter.h */,
+				504ABA3F27E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m */,
+				504ABA4127E6E03700A05DDD /* SCGPUImageSplit4V4Filter.h */,
+				504ABA3E27E6E03700A05DDD /* SCGPUImageSplit4V4Filter.m */,
+			);
+			path = Split;
+			sourceTree = "<group>";
+		};
 		50B5DCD927B7852300200CCF /* VideoResult */ = {
 			isa = PBXGroup;
 			children = (
@@ -2098,7 +2136,6 @@
 				504AB90127E361D500A05DDD /* yaw00_lev0_p41_hat.mh in Resources */,
 				504AB99027E361D500A05DDD /* yaw00_lev3_p18_classic.mh in Resources */,
 				504AB94227E361D500A05DDD /* yaw00_lev1_p27_hat.mh in Resources */,
-				19A3BAE6278719A10027386F /* SplitFilterMaterials.plist in Resources */,
 				504AB98B27E361D500A05DDD /* yaw00_lev3_p09_classic.mh in Resources */,
 				504AB8EA27E361D500A05DDD /* yaw00_lev2_p47_hat.mh in Resources */,
 				504AB90E27E361D500A05DDD /* yaw00_lev3_p16_classic.mh in Resources */,
@@ -2187,6 +2224,7 @@
 				504AB8C527E361D500A05DDD /* yaw00_lev3_p08_classic.mh in Resources */,
 				504AB92D27E361D500A05DDD /* yaw00_lev1_p72_hat.mh in Resources */,
 				504AB8DB27E361D500A05DDD /* yaw00_lev3_p32_classic.mh in Resources */,
+				504ABA4827E6ED2000A05DDD /* SplitFilterMaterials.plist in Resources */,
 				504AB90027E361D500A05DDD /* yaw00_lev0_p22_hat.mh in Resources */,
 				504AB95327E361D500A05DDD /* yaw00_lev2_p04_classic.mh in Resources */,
 				504AB9A227E361D500A05DDD /* yaw00_lev1_p59_hat.mh in Resources */,
@@ -2320,6 +2358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				504ABA4327E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m in Sources */,
 				19A3BA53278710820027386F /* AppDelegate.m in Sources */,
 				504AB8AC27E361D500A05DDD /* shape17.cpp in Sources */,
 				504AB8B627E361D500A05DDD /* initasm.cpp in Sources */,
@@ -2331,6 +2370,7 @@
 				504AB9ED27E361D500A05DDD /* facedet.cpp in Sources */,
 				504AB8A727E361D500A05DDD /* misc.cpp in Sources */,
 				504AB42527DDE3ED00A05DDD /* SCFilterCategoryView.m in Sources */,
+				504ABA3727E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m in Sources */,
 				19A3BA64278710830027386F /* main.m in Sources */,
 				504AB8B027E361D500A05DDD /* shapehacks.cpp in Sources */,
 				504AB43027DF67E300A05DDD /* SCGPUImageBaseFilter.m in Sources */,
@@ -2349,6 +2389,7 @@
 				504AB8AE27E361D500A05DDD /* classicdesc.cpp in Sources */,
 				19A3BAD12787164B0027386F /* SCViewController.m in Sources */,
 				50CF75F2278F0EE000415211 /* SCFilterMaterialView.m in Sources */,
+				504ABA3D27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m in Sources */,
 				19A3BACC278716410027386F /* SCCameraViewController.m in Sources */,
 				504AB8AA27E361D500A05DDD /* eyedet.cpp in Sources */,
 				504AB43F27DF67E800A05DDD /* SCGPUImageVertigoFilter.m in Sources */,
@@ -2373,9 +2414,12 @@
 				50CF75F3278F0EE000415211 /* SCFilterMaterialViewCell.m in Sources */,
 				50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */,
 				50B5DCED27B7A12B00200CCF /* UIView+Extention.m in Sources */,
+				504ABA3C27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m in Sources */,
+				504ABA4627E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m in Sources */,
 				504ABA3127E36DA600A05DDD /* MGFaceLicenseHandle.m in Sources */,
 				504AB8B227E361D500A05DDD /* convshape.cpp in Sources */,
 				504AB41527D6385000A05DDD /* SCGPUImageMovieWriter.m in Sources */,
+				504ABA4227E6E03700A05DDD /* SCGPUImageSplit4V4Filter.m in Sources */,
 				50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */,
 				504AB43E27DF67E800A05DDD /* SCGPUImageShakeFilter.m in Sources */,
 				504AB72527E3614800A05DDD /* SCFaceDetectorManager.mm in Sources */,
