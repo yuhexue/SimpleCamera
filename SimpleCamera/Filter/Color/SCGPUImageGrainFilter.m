@@ -17,25 +17,24 @@ NSString * const kSCGPUImageGrainFilterShaderString = SHADER_STRING
 
  void main() {
    lowp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);
-   float noise = (fract(sin(dot(textureCoordinate, vec2(12.9898, 78.233) * 2.0)) * 43758.5453));
-   gl_FragColor = textureColor - noise * grain;
-//   gl_FragColor = vec4((textureColor.rgb + vec3(noise * grain)), textureColor.a);
+   lowp float noise = fract(sin(dot(textureCoordinate, vec2(12.9898, 78.233) * 2.0)) * 43758.5453);
+   gl_FragColor = vec4((textureColor.rgb + vec3(grain * noise)), textureColor.a);
  }
 
 );
 
 @implementation SCGPUImageGrainFilter
 
-//- (id)init {
-//    self = [super initWithFragmentShaderFromString:kSCGPUImageGrainFilterShaderString];
-//    self.grain = 0.5;
-//    return self;
-//}
-//
-//- (void)setGrain:(CGFloat)grain {
-//    _grain = grain;
-//
-//    [self setFloat:MAX(grain, 1.0) forUniformName:@"grain"];
-//}
+- (id)init {
+    self = [super initWithFragmentShaderFromString:kSCGPUImageGrainFilterShaderString];
+    self.grain = 0.5;
+    return self;
+}
+
+- (void)setGrain:(CGFloat)grain {
+    _grain = grain;
+
+    [self setFloat:MAX(grain, 0.0) forUniformName:@"grain"];
+}
 
 @end

@@ -74,16 +74,17 @@ NSString * const kSCGPUImageSharpnessFilterFragementShaderString = SHADER_STRING
 
 @implementation SCGPUImageSharpnessFilter
 
-//- (id)init {
-//    self = [super initWithFragmentShaderFromString:kSCGPUImageSharpnessFilterShaderString];
-//    self.sharpness = 1.0;
-//    return self;
-//}
-//
-//- (void)setSharpness:(CGFloat)sharpness {
-//    _sharpness = sharpness;
-//
-//    [self setFloat:MAX(sharpness, 1.0) forUniformName:@"sharpness"];
-//}
+- (id)init {
+    self = [super initWithVertexShaderFromString:kSCGPUImageSharpnessFilterVertexShaderString
+                        fragmentShaderFromString:kSCGPUImageSharpnessFilterFragementShaderString];
+    self.sharpness = 1.0;
+    return self;
+}
+
+- (void)setSharpness:(CGFloat)sharpness {
+    _sharpness = sharpness;
+
+    [self setFloat:MAX(sharpness, 1.0) forUniformName:@"sharpness"];
+}
 
 @end
