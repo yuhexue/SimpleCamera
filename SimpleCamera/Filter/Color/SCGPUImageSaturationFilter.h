@@ -5,9 +5,9 @@
 //  Created by maxslma on 2022/3/20.
 //
 
-#import "SCGPUImageBaseFilter.h"
+#import "SCGPUImageColorBaseFilter.h"
 
-@interface SCGPUImageSaturationFilter : SCGPUImageBaseFilter
+@interface SCGPUImageSaturationFilter : SCGPUImageColorBaseFilter
 
 @property (nonatomic, assign) CGFloat saturation; //饱和度调节，0.0f ~ 2.0f，其中1.0f表示原图。
 

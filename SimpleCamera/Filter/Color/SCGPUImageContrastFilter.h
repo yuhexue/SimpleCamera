@@ -6,9 +6,9 @@
 //
 
 //对比度
-#import "SCGPUImageBaseFilter.h"
+#import "SCGPUImageColorBaseFilter.h"
 
-@interface SCGPUImageContrastFilter : SCGPUImageBaseFilter
+@interface SCGPUImageContrastFilter : SCGPUImageColorBaseFilter
 
 @property (nonatomic, assign) CGFloat contrast; //对比度调节，0.0f ~ 2.0f，其中1.0f表示原图。
 

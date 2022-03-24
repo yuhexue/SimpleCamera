@@ -7,6 +7,9 @@
 
 #import "SCGPUImageContrastFilter.h"
 
+static CGFloat const kMAXContrast = 2.0f;
+static CGFloat const kMinContrast = 0.0f;
+
 NSString * const kSCGPUImageContrastFilterShaderString = SHADER_STRING
 (
  varying highp vec2 textureCoordinate;
@@ -24,14 +27,22 @@ NSString * const kSCGPUImageContrastFilterShaderString = SHADER_STRING
 
 - (id)init {
     self = [super initWithFragmentShaderFromString:kSCGPUImageContrastFilterShaderString];
-    self.contrast = 0.5;
+    self.ratio = 0.5f;
     return self;
 }
 
-- (void)setContrast:(CGFloat)contrast {
-    _contrast = contrast;
+- (void)setRatio:(CGFloat)ratio {
+    [super setRatio:ratio];
+    
+    self.contrast = ratio * (kMAXContrast - kMinContrast) + kMinContrast;
+}
 
-    [self setFloat:MAX(contrast, 1.0) forUniformName:@"contrast"];
+- (void)setContrast:(CGFloat)contrast {
+    contrast = MIN(contrast, kMAXContrast);
+    contrast = MAX(contrast, kMinContrast);
+    
+    _contrast = contrast;
+    [self setFloat:contrast forUniformName:@"contrast"];
 }
 
 @end

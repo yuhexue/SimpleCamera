@@ -91,7 +91,7 @@
     self.titleLabel.text = filterMaterialModel.filterName;
     
     GPUImageFilter *filter = [[SCFilterManager shareInstance] filterWithFilterID:filterMaterialModel.filterID];
-    
+  
     if ([filter isKindOfClass:[SCGPUImageBaseFilter class]]) {
         ((SCGPUImageBaseFilter *)filter).time = 0.2f;
     }

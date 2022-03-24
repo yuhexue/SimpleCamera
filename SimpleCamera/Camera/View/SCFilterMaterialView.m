@@ -6,7 +6,6 @@
 //
 
 #import "SCFilterMaterialViewCell.h"
-
 #import "SCFilterMaterialView.h"
 
 static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMaterialViewReuseIdentifier";
@@ -121,7 +120,6 @@ static NSString * const kSCFilterMaterialViewReuseIdentifier = @"SCFilterMateria
     SCFilterMaterialViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kSCFilterMaterialViewReuseIdentifier forIndexPath:indexPath];
     cell.filterMaterialModel = self.itemList[indexPath.row];
     cell.isSelect = cell.filterMaterialModel == self.selectMaterialModel;
-    
     return cell;
 }
 

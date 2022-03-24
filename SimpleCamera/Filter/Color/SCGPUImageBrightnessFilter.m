@@ -7,6 +7,9 @@
 
 #import "SCGPUImageBrightnessFilter.h"
 
+static CGFloat const kMAXBrightness = 1.0f;
+static CGFloat const kMinBrightness = -1.0f;
+
 NSString * const kSCGPUImageBrightnessFilterShaderString = SHADER_STRING
 (
  varying highp vec2 textureCoordinate;
@@ -24,16 +27,23 @@ NSString * const kSCGPUImageBrightnessFilterShaderString = SHADER_STRING
 
 - (id)init {
     self = [super initWithFragmentShaderFromString:kSCGPUImageBrightnessFilterShaderString];
-    self.brightness = 0;
+    self.ratio = 0.5f;
     return self;
 }
 
-- (void)setBrightness:(CGFloat)brightness {
-    _brightness = brightness;
 
-//    [self setFloat:MAX(brightness, 1.0) forUniformName:@"brightness"];
-    [self setFloat:brightness forUniformName:@"brightness"];
+- (void)setRatio:(CGFloat)ratio {
+    [super setRatio:ratio];
     
+    self.brightness = ratio * (kMAXBrightness - kMinBrightness) + kMinBrightness;
+}
+
+- (void)setBrightness:(CGFloat)brightness {
+    brightness = MIN(brightness, kMAXBrightness);
+    brightness = MAX(brightness, kMinBrightness);
+    
+    _brightness = brightness;
+    [self setFloat:brightness forUniformName:@"brightness"];
 }
 
 @end

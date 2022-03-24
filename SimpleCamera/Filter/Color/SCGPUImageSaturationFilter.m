@@ -7,6 +7,9 @@
 
 #import "SCGPUImageSaturationFilter.h"
 
+static CGFloat const kMAXSaturation = 2.0f;
+static CGFloat const kMinSaturation = 0.0f;
+
 NSString * const kSCGPUImageSaturationFilterShaderString = SHADER_STRING
 (
  varying highp vec2 textureCoordinate;
@@ -29,14 +32,22 @@ NSString * const kSCGPUImageSaturationFilterShaderString = SHADER_STRING
 
 - (id)init {
     self = [super initWithFragmentShaderFromString:kSCGPUImageSaturationFilterShaderString];
-    self.saturation = 1.0;
+    self.ratio = 0.5f;
     return self;
 }
 
-- (void)setSaturation:(CGFloat)saturation {
-    _saturation = saturation;
+- (void)setRatio:(CGFloat)ratio {
+    [super setRatio:ratio];
+    
+    self.saturation = ratio * (kMAXSaturation - kMinSaturation) + kMinSaturation;
+}
 
-    [self setFloat:MAX(saturation, 1.0) forUniformName:@"saturation"];
+- (void)setSaturation:(CGFloat)saturation {
+    saturation = MIN(saturation, kMAXSaturation);
+    saturation = MAX(saturation, kMinSaturation);
+    
+    _saturation = saturation;
+    [self setFloat:saturation forUniformName:@"saturation"];
 }
 
 @end

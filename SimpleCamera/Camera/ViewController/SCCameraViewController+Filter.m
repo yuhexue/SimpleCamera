@@ -28,6 +28,8 @@
         return self.tikTokFilterMaterials;
     } else if (index == 2) {
         return self.splitFilterMaterials;
+    } else if (index == 3) {
+        return self.colorFilterMaterials;
     }
     return nil;
 }

@@ -7,6 +7,9 @@
 
 #import "SCGPUImageTemperatureFilter.h"
 
+static CGFloat const kMAXTemperature = 8000.0f;
+static CGFloat const kMinTemperature = 2000.0f;
+
 NSString * const kSCGPUImageTemperatureFilterShaderString = SHADER_STRING
 (
  uniform sampler2D inputImageTexture;
@@ -40,14 +43,22 @@ NSString * const kSCGPUImageTemperatureFilterShaderString = SHADER_STRING
 
 - (id)init {
     self = [super initWithFragmentShaderFromString:kSCGPUImageTemperatureFilterShaderString];
-    self.temperature = 0.5;
+    self.ratio = 0.5f;
     return self;
 }
 
-- (void)setTemperature:(CGFloat)temperature {
-    _temperature = temperature;
+- (void)setRatio:(CGFloat)ratio {
+    [super setRatio:ratio];
+    
+    self.temperature = ratio * (kMAXTemperature - kMinTemperature) + kMinTemperature;
+}
 
-    [self setFloat:MAX(temperature, 1.0) forUniformName:@"temperature"];
+- (void)setTemperature:(CGFloat)temperature {
+    temperature = MIN(temperature, kMAXTemperature);
+    temperature = MAX(temperature, kMinTemperature);
+    
+    _temperature = temperature;
+    [self setFloat:temperature forUniformName:@"temperature"];
 }
 
 - (void)setTint:(CGFloat)tint {

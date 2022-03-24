@@ -33,7 +33,8 @@ NSString * const kSCGPUImageScaleFilterShaderString = SHADER_STRING
 @implementation SCGPUImageScaleFilter
 
 - (id)init {
-    self = [super initWithVertexShaderFromString:kSCGPUImageScaleFilterShaderString fragmentShaderFromString:kGPUImagePassthroughFragmentShaderString];
+    self = [super initWithVertexShaderFromString:kSCGPUImageScaleFilterShaderString
+                        fragmentShaderFromString:kGPUImagePassthroughFragmentShaderString];
     return self;
 }
 

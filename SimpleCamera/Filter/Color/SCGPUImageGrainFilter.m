@@ -7,6 +7,9 @@
 
 #import "SCGPUImageGrainFilter.h"
 
+static CGFloat const kMAXGrain = 0.5f;
+static CGFloat const kMinGrain = 0.0f;
+
 NSString * const kSCGPUImageGrainFilterShaderString = SHADER_STRING
 (
  varying highp vec2 textureCoordinate;
@@ -27,14 +30,22 @@ NSString * const kSCGPUImageGrainFilterShaderString = SHADER_STRING
 
 - (id)init {
     self = [super initWithFragmentShaderFromString:kSCGPUImageGrainFilterShaderString];
-    self.grain = 0.5;
+    self.ratio = 0.5f;
     return self;
 }
 
-- (void)setGrain:(CGFloat)grain {
-    _grain = grain;
+- (void)setRatio:(CGFloat)ratio {
+    [super setRatio:ratio];
+    
+    self.grain = ratio * (kMAXGrain - kMinGrain) + kMinGrain;
+}
 
-    [self setFloat:MAX(grain, 0.0) forUniformName:@"grain"];
+- (void)setGrain:(CGFloat)grain {
+    grain = MIN(grain, kMAXGrain);
+    grain = MAX(grain, kMinGrain);
+    
+    _grain = grain;
+    [self setFloat:grain forUniformName:@"grain"];
 }
 
 @end

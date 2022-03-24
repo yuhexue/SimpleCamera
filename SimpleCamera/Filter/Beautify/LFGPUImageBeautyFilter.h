@@ -5,6 +5,7 @@
 #endif
 
 @interface LFGPUImageBeautyFilter : GPUImageFilter {
+    
 }
 
 @property (nonatomic, assign) CGFloat beautyLevel;

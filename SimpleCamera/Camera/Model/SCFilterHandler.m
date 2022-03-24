@@ -7,6 +7,7 @@
 
 #import "SCGPUImageBaseFilter.h"
 #import "LFGPUImageBeautyFilter.h"
+#import "SCGPUImageColorBaseFilter.h"
 #import "SCFilterHandler.h"
 
 @interface SCFilterHandler ()
@@ -14,9 +15,10 @@
 @property (nonatomic, strong) NSMutableArray<GPUImageFilter *> *filters;
 
 @property (nonatomic, strong) GPUImageCropFilter *currentCropFilter;
-@property (nonatomic, strong) LFGPUImageBeautyFilter *defaultBeautifyFilter;
 @property (nonatomic, weak) GPUImageFilter *currentBeautifyFilter;
 @property (nonatomic, weak) GPUImageFilter *currentEffectFilter;
+@property (nonatomic, weak) GPUImageFilter *currentColorFilter;
+@property (nonatomic, strong) LFGPUImageBeautyFilter *defaultBeautifyFilter;
 
 @property (nonatomic, strong) CADisplayLink *displayLink;  // 用来刷新时间
 
@@ -131,12 +133,20 @@
     [self setBeautifyFilter:beautifyFilterEnable ? (GPUImageFilter *)self.defaultBeautifyFilter : nil];
 }
 
-- (void)setBeautifyFilterDegree:(CGFloat)beautifyFilterDegree {
+- (void)setBeautifyFilterRatio:(CGFloat)beautifyFilterRatio {
     if (!self.beautifyFilterEnable) {
         return;
     }
-    _beautifyFilterDegree = beautifyFilterDegree;
-    self.defaultBeautifyFilter.beautyLevel = beautifyFilterDegree;
+    _beautifyFilterRatio = beautifyFilterRatio;
+    self.defaultBeautifyFilter.beautyLevel = beautifyFilterRatio;
+}
+
+- (void)setColorFilterRatio:(CGFloat)colorFilterRatio {
+    _colorFilterRatio = colorFilterRatio;
+    if ([self.currentEffectFilter isKindOfClass:[SCGPUImageColorBaseFilter class]]) {
+        SCGPUImageColorBaseFilter *filter = (SCGPUImageColorBaseFilter *)self.currentEffectFilter;
+        filter.ratio = colorFilterRatio;
+    }
 }
 
 - (LFGPUImageBeautyFilter *)defaultBeautifyFilter {
@@ -149,7 +159,8 @@
 #pragma mark - Private
 
 - (void)commonInit {
-    _beautifyFilterDegree = 0.5f;
+    self.beautifyFilterRatio = 0.5f;
+    self.colorFilterRatio = 0.5f;
     self.filters = [[NSMutableArray alloc] init];
     [self addCropFilter];
     [self addBeautifyFilter];

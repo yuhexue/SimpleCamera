@@ -68,7 +68,6 @@
 }
 
 #pragma mark - Action
-
 - (void)rotateAction:(UIButton *)button {
     if (self.isRotating) {
         return;

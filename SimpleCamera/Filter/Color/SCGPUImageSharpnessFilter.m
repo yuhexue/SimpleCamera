@@ -7,6 +7,9 @@
 
 #import "SCGPUImageSharpnessFilter.h"
 
+static CGFloat const kMAXSharpness = 4.0f;
+static CGFloat const kMinSharpness = -4.0f;
+
 NSString * const kSCGPUImageSharpnessFilterVertexShaderString = SHADER_STRING
 (
  attribute vec4 position;
@@ -77,14 +80,22 @@ NSString * const kSCGPUImageSharpnessFilterFragementShaderString = SHADER_STRING
 - (id)init {
     self = [super initWithVertexShaderFromString:kSCGPUImageSharpnessFilterVertexShaderString
                         fragmentShaderFromString:kSCGPUImageSharpnessFilterFragementShaderString];
-    self.sharpness = 1.0;
+    self.ratio = 1.0;
     return self;
 }
 
+- (void)setRatio:(CGFloat)ratio {
+    [super setRatio:ratio];
+    
+    self.sharpness = ratio * (kMAXSharpness - kMinSharpness) + kMinSharpness;
+}
+    
 - (void)setSharpness:(CGFloat)sharpness {
+    sharpness = MIN(sharpness, kMAXSharpness);
+    sharpness = MAX(sharpness, kMinSharpness);
     _sharpness = sharpness;
 
-    [self setFloat:MAX(sharpness, 1.0) forUniformName:@"sharpness"];
+    [self setFloat:sharpness forUniformName:@"sharpness"];
 }
 
 @end

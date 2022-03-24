@@ -180,8 +180,12 @@
     }
 }
 
-- (void)filterBarView:(SCFilterBarView *)filterBarView beautifySliderChangeToValue:(CGFloat)value {
-    [SCCameraManager shareInstance].currentFilterHandler.beautifyFilterDegree = value;
+- (void)filterBarView:(SCFilterBarView *)filterBarView type:(SCFilterBarViewFilterType)type sliderChangeToValue:(CGFloat)value {
+    if (type == SCFilterBarViewFilterTypeBeautify) {
+        [SCCameraManager shareInstance].currentFilterHandler.beautifyFilterRatio = value;
+    } else {
+        [SCCameraManager shareInstance].currentFilterHandler.colorFilterRatio = value;
+    }
 }
 
 #pragma mark - SCCapturingButtonDelegate
@@ -211,10 +215,11 @@
     NSArray<SCFilterMaterialModel *> *models = [self filtersWithCategoryIndex:self.filterBarView.currentCategoryIndex];
     SCFilterMaterialModel *model = models[index];
     [[SCCameraManager shareInstance].currentFilterHandler setEffectFilter:[[SCFilterManager shareInstance] filterWithFilterID:model.filterID]];
+    
 }
 
-- (void)filterBarView:(SCFilterBarView *)filterBarView beautifySwitchIsOn:(BOOL)isOn {
-    if (isOn) {
+- (void)filterBarView:(SCFilterBarView *)filterBarView enableBeautify:(BOOL)enable {
+    if (enable) {
         [self addBeautifyFilter];
     } else {
         [self removeBeautifyFilter];
