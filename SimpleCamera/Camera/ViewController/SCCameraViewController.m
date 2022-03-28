@@ -7,6 +7,7 @@
 
 #import "SCCameraViewController.h"
 #import "SCCameraViewController+Private.h"
+#import "MKShortVideoViewController.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
@@ -240,10 +241,13 @@
 
 #pragma mark - SCCameraTopViewDelegate
 - (void)cameraTopViewDidClickRotateButton:(SCCameraTopView *)cameraTopView {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[SCCameraManager shareInstance] rotateCamera];
-        self.currentVideoScale = 1.0f;  // 切换摄像头，重置缩放比例
-    });
+    MKShortVideoViewController *camera = [[MKShortVideoViewController alloc] init];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:camera] animated:true completion:nil];
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [[SCCameraManager shareInstance] rotateCamera];
+//        self.currentVideoScale = 1.0f;  // 切换摄像头，重置缩放比例
+//    });
 }
 
 #pragma mark - UIGestureRecognizerDelegate

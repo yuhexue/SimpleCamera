@@ -16,11 +16,6 @@
 		19A3BAE7278719A10027386F /* FaceRecognizerMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADC278719A10027386F /* FaceRecognizerMaterials.plist */; };
 		19A3BAE8278719A10027386F /* TikTokFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADD278719A10027386F /* TikTokFilterMaterials.plist */; };
 		19A3BAE9278719A10027386F /* DefaultFilterMaterials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BADE278719A10027386F /* DefaultFilterMaterials.plist */; };
-		19A3BAEA278719A10027386F /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BAE1278719A10027386F /* Contents.json */; };
-		19A3BAEB278719A10027386F /* icon_app_launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BAE2278719A10027386F /* icon_app_launch@2x.png */; };
-		19A3BAEC278719A10027386F /* icon_app_launch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BAE3278719A10027386F /* icon_app_launch@3x.png */; };
-		19A3BAED278719A10027386F /* filter_sample_face_feature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BAE4278719A10027386F /* filter_sample_face_feature.jpg */; };
-		19A3BAEE278719A10027386F /* filter_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BAE5278719A10027386F /* filter_sample.jpg */; };
 		19A3BAFA27871B9D0027386F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A3BAD2278717270027386F /* Assets.xcassets */; };
 		19A3BB1E2788514E0027386F /* SCCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A3BB1D2788514E0027386F /* SCCameraManager.m */; };
 		19A3BB2427885C850027386F /* SCCameraViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A3BB2327885C850027386F /* SCCameraViewController+Private.m */; };
@@ -399,10 +394,6 @@
 		504ABA0027E361D500A05DDD /* haarcascade_fullbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = 504AB8A227E361D500A05DDD /* haarcascade_fullbody.xml */; };
 		504ABA0127E361D500A05DDD /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = 504AB8A327E361D500A05DDD /* haarcascade_eye_tree_eyeglasses.xml */; };
 		504ABA0527E3688600A05DDD /* SCGPUImageFaceFeatureFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA0327E3688600A05DDD /* SCGPUImageFaceFeatureFilter.m */; };
-		504ABA3027E36DA600A05DDD /* libMGLicMgrSDK-0.3.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 504ABA1F27E36DA600A05DDD /* libMGLicMgrSDK-0.3.1.a */; };
-		504ABA3127E36DA600A05DDD /* MGFaceLicenseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA2527E36DA600A05DDD /* MGFaceLicenseHandle.m */; };
-		504ABA3227E36DA600A05DDD /* libMGFacepp-0.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 504ABA2727E36DA600A05DDD /* libMGFacepp-0.5.2.a */; };
-		504ABA3327E36DA600A05DDD /* megviifacepp_0_5_2_model in Resources */ = {isa = PBXBuildFile; fileRef = 504ABA2F27E36DA600A05DDD /* megviifacepp_0_5_2_model */; };
 		504ABA3727E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3527E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m */; };
 		504ABA3C27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3A27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m */; };
 		504ABA3D27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA3B27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m */; };
@@ -419,6 +410,63 @@
 		504ABA7B27E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA7627E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m */; };
 		504ABA7E27E8C73000A05DDD /* SCGPUImageColorBaseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA7D27E8C73000A05DDD /* SCGPUImageColorBaseFilter.m */; };
 		504ABA8227EB546500A05DDD /* LNKGPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABA8127EB546500A05DDD /* LNKGPUImageBeautifyFilter.m */; };
+		504ABC0C27EC9E6000A05DDD /* MKGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBA527EC9E6000A05DDD /* MKGLProgram.m */; };
+		504ABC0D27EC9E6000A05DDD /* MKGPUImageKeyPointFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBA727EC9E6000A05DDD /* MKGPUImageKeyPointFilter.m */; };
+		504ABC0E27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBAA27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.m */; };
+		504ABC0F27EC9E6000A05DDD /* MKGPUImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBAD27EC9E6000A05DDD /* MKGPUImageFilter.m */; };
+		504ABC1027EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBAE27EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.m */; };
+		504ABC1127EC9E6000A05DDD /* MKGPUImageTwoInputFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBAF27EC9E6000A05DDD /* MKGPUImageTwoInputFilter.m */; };
+		504ABC1227EC9E6000A05DDD /* MKGPUImageLookupFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBB027EC9E6000A05DDD /* MKGPUImageLookupFilter.m */; };
+		504ABC1327EC9E6000A05DDD /* MKGPUImagePlasticFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBB327EC9E6000A05DDD /* MKGPUImagePlasticFilter.m */; };
+		504ABC1427EC9E6000A05DDD /* MKGPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBB427EC9E6000A05DDD /* MKGPUImageBeautifyFilter.m */; };
+		504ABC1527EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBB727EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.m */; };
+		504ABC1627EC9E6000A05DDD /* MKGPUImageFilterGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBB927EC9E6000A05DDD /* MKGPUImageFilterGroup.m */; };
+		504ABC1727EC9E6000A05DDD /* MKGPUImageFramebufferCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBC127EC9E6000A05DDD /* MKGPUImageFramebufferCache.m */; };
+		504ABC1827EC9E6000A05DDD /* MKGPUImageTextureInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBC527EC9E6000A05DDD /* MKGPUImageTextureInput.m */; };
+		504ABC1927EC9E6000A05DDD /* MKGPUImageColorConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBC727EC9E6000A05DDD /* MKGPUImageColorConversion.m */; };
+		504ABC1A27EC9E6000A05DDD /* MKGPUImagePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBCA27EC9E6000A05DDD /* MKGPUImagePicture.m */; };
+		504ABC1B27EC9E6000A05DDD /* MKGPUImageOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBCB27EC9E6000A05DDD /* MKGPUImageOutput.m */; };
+		504ABC1C27EC9E6000A05DDD /* MKGPUImageTrackOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBCC27EC9E6000A05DDD /* MKGPUImageTrackOutput.m */; };
+		504ABC1D27EC9E6000A05DDD /* MKGPUImageFramebuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBCE27EC9E6000A05DDD /* MKGPUImageFramebuffer.m */; };
+		504ABC1E27EC9E6000A05DDD /* MKGPUImageTextureOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBD127EC9E6000A05DDD /* MKGPUImageTextureOutput.m */; };
+		504ABC1F27EC9E6000A05DDD /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBD327EC9E6000A05DDD /* MKGPUImageView.m */; };
+		504ABC2027EC9E6000A05DDD /* MKGPUImageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBD427EC9E6000A05DDD /* MKGPUImageContext.m */; };
+		504ABC2127EC9E6000A05DDD /* MKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBD927EC9E6000A05DDD /* MKTool.m */; };
+		504ABC2227EC9E6000A05DDD /* MKFaceBaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBDA27EC9E6000A05DDD /* MKFaceBaseData.m */; };
+		504ABC2327EC9E6000A05DDD /* MKLandmarkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBDC27EC9E6000A05DDD /* MKLandmarkEngine.m */; };
+		504ABC2427EC9E6000A05DDD /* MKLandmarkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBDD27EC9E6000A05DDD /* MKLandmarkManager.m */; };
+		504ABC2527EC9E6000A05DDD /* MKShortEffectHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBE127EC9E6000A05DDD /* MKShortEffectHandler.m */; };
+		504ABC2627EC9E6000A05DDD /* MKEffectHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBE427EC9E6000A05DDD /* MKEffectHandler.m */; };
+		504ABC2727EC9E6000A05DDD /* MKBaseVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBE827EC9E6000A05DDD /* MKBaseVideoCamera.m */; };
+		504ABC2827EC9E6000A05DDD /* MKShortVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBEB27EC9E6000A05DDD /* MKShortVideoCamera.m */; };
+		504ABC2927EC9E6000A05DDD /* MKPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBEE27EC9E6000A05DDD /* MKPreviewView.m */; };
+		504ABC2A27EC9E6000A05DDD /* MKShootRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBF027EC9E6000A05DDD /* MKShootRecordView.m */; };
+		504ABC2B27EC9E6000A05DDD /* MKRecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBF227EC9E6000A05DDD /* MKRecordProgressView.m */; };
+		504ABC2C27EC9E6000A05DDD /* MKSegmentMovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBF327EC9E6000A05DDD /* MKSegmentMovieWriter.m */; };
+		504ABC2D27EC9E6000A05DDD /* MKVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBF527EC9E6000A05DDD /* MKVideoEditViewController.m */; };
+		504ABC2E27EC9E6000A05DDD /* MKVideoAssetAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBF727EC9E6000A05DDD /* MKVideoAssetAdapter.m */; };
+		504ABC2F27EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBFA27EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.m */; };
+		504ABC3027EC9E6000A05DDD /* MKEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABBFD27EC9E6000A05DDD /* MKEffectFilter.m */; };
+		504ABC3127EC9E6000A05DDD /* MKFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABC0027EC9E6000A05DDD /* MKFilterModel.m */; };
+		504ABC3227EC9E6000A05DDD /* MKCameraFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABC0327EC9E6000A05DDD /* MKCameraFilterView.m */; };
+		504ABC3327EC9E6000A05DDD /* MKOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABC0427EC9E6000A05DDD /* MKOverlayView.m */; };
+		504ABC3427EC9E6000A05DDD /* MKCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABC0627EC9E6000A05DDD /* MKCameraView.m */; };
+		504ABC3527EC9E6000A05DDD /* MKShortVideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 504ABC0A27EC9E6000A05DDD /* MKShortVideoViewController.mm */; };
+		504ABC4927ECA00600A05DDD /* libMGLicMgrSDK-0.3.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 504ABC3827ECA00600A05DDD /* libMGLicMgrSDK-0.3.1.a */; };
+		504ABC4A27ECA00600A05DDD /* MGFaceLicenseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 504ABC3E27ECA00600A05DDD /* MGFaceLicenseHandle.m */; };
+		504ABC4B27ECA00600A05DDD /* libMGFacepp-0.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 504ABC4027ECA00600A05DDD /* libMGFacepp-0.5.2.a */; };
+		504ABC4C27ECA00600A05DDD /* megviifacepp_0_5_2_model in Resources */ = {isa = PBXBuildFile; fileRef = 504ABC4827ECA00600A05DDD /* megviifacepp_0_5_2_model */; };
+		504ABD9B27ECA2CC00A05DDD /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 504ABCF727ECA2CC00A05DDD /* Contents.json */; };
+		504ABD9C27ECA2CC00A05DDD /* icon_app_launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 504ABCF827ECA2CC00A05DDD /* icon_app_launch@2x.png */; };
+		504ABD9D27ECA2CC00A05DDD /* icon_app_launch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 504ABCF927ECA2CC00A05DDD /* icon_app_launch@3x.png */; };
+		504ABD9E27ECA2CC00A05DDD /* filter_sample_face_feature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 504ABCFA27ECA2CC00A05DDD /* filter_sample_face_feature.jpg */; };
+		504ABD9F27ECA2CC00A05DDD /* filter_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 504ABCFB27ECA2CC00A05DDD /* filter_sample.jpg */; };
+		504ABEEC27ECAACF00A05DDD /* makeup_lips_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 504ABEEB27ECAA8600A05DDD /* makeup_lips_mask.png */; };
+		504ABEED27ECAAD200A05DDD /* beautify.png in Resources */ = {isa = PBXBuildFile; fileRef = 504ABEE827ECAA7900A05DDD /* beautify.png */; };
+		504ABEEE27ECAAD400A05DDD /* lookup_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 504ABEE927ECAA7D00A05DDD /* lookup_new.png */; };
+		504ABEEF27ECAAD700A05DDD /* lut.png in Resources */ = {isa = PBXBuildFile; fileRef = 504ABEEA27ECAA8000A05DDD /* lut.png */; };
+		504AC6C227ECBF6800A05DDD /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = 504AC6C127ECBE3200A05DDD /* Stickers */; };
+		504AC6C627ECC07A00A05DDD /* Filters in Resources */ = {isa = PBXBuildFile; fileRef = 504AC6C527ECC07A00A05DDD /* Filters */; };
 		509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */; };
 		50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD027B7712A00200CCF /* SCCameraTopView.m */; };
 		50B5DCD527B7793800200CCF /* SCFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5DCD327B7793800200CCF /* SCFileHelper.m */; };
@@ -474,11 +522,6 @@
 		19A3BADC278719A10027386F /* FaceRecognizerMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FaceRecognizerMaterials.plist; sourceTree = "<group>"; };
 		19A3BADD278719A10027386F /* TikTokFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TikTokFilterMaterials.plist; sourceTree = "<group>"; };
 		19A3BADE278719A10027386F /* DefaultFilterMaterials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultFilterMaterials.plist; sourceTree = "<group>"; };
-		19A3BAE1278719A10027386F /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		19A3BAE2278719A10027386F /* icon_app_launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_app_launch@2x.png"; sourceTree = "<group>"; };
-		19A3BAE3278719A10027386F /* icon_app_launch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_app_launch@3x.png"; sourceTree = "<group>"; };
-		19A3BAE4278719A10027386F /* filter_sample_face_feature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter_sample_face_feature.jpg; sourceTree = "<group>"; };
-		19A3BAE5278719A10027386F /* filter_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter_sample.jpg; sourceTree = "<group>"; };
 		19A3BB17278723800027386F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SimpleCamera/Info.plist; sourceTree = SOURCE_ROOT; };
 		19A3BB1C278851480027386F /* SCCameraManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCameraManager.h; sourceTree = "<group>"; };
 		19A3BB1D2788514E0027386F /* SCCameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCameraManager.m; sourceTree = "<group>"; };
@@ -911,21 +954,6 @@
 		504AB8A327E361D500A05DDD /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
 		504ABA0327E3688600A05DDD /* SCGPUImageFaceFeatureFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageFaceFeatureFilter.m; sourceTree = "<group>"; };
 		504ABA0427E3688600A05DDD /* SCGPUImageFaceFeatureFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageFaceFeatureFilter.h; sourceTree = "<group>"; };
-		504ABA1F27E36DA600A05DDD /* libMGLicMgrSDK-0.3.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGLicMgrSDK-0.3.1.a"; sourceTree = "<group>"; };
-		504ABA2027E36DA600A05DDD /* MGLicenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLicenseManager.h; sourceTree = "<group>"; };
-		504ABA2127E36DA600A05DDD /* MGLicenseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLicenseCommon.h; sourceTree = "<group>"; };
-		504ABA2327E36DA600A05DDD /* MGNetAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNetAccount.h; sourceTree = "<group>"; };
-		504ABA2427E36DA600A05DDD /* MGFaceLicenseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceLicenseHandle.h; sourceTree = "<group>"; };
-		504ABA2527E36DA600A05DDD /* MGFaceLicenseHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFaceLicenseHandle.m; sourceTree = "<group>"; };
-		504ABA2727E36DA600A05DDD /* libMGFacepp-0.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGFacepp-0.5.2.a"; sourceTree = "<group>"; };
-		504ABA2827E36DA600A05DDD /* MGFaceppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppConfig.h; sourceTree = "<group>"; };
-		504ABA2927E36DA600A05DDD /* MGAlgorithmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAlgorithmInfo.h; sourceTree = "<group>"; };
-		504ABA2A27E36DA600A05DDD /* MGFacepp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFacepp.h; sourceTree = "<group>"; };
-		504ABA2B27E36DA600A05DDD /* MGDetectRectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGDetectRectInfo.h; sourceTree = "<group>"; };
-		504ABA2C27E36DA600A05DDD /* MGFaceppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppCommon.h; sourceTree = "<group>"; };
-		504ABA2D27E36DA600A05DDD /* MGImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImageData.h; sourceTree = "<group>"; };
-		504ABA2E27E36DA600A05DDD /* MGFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceInfo.h; sourceTree = "<group>"; };
-		504ABA2F27E36DA600A05DDD /* megviifacepp_0_5_2_model */ = {isa = PBXFileReference; lastKnownFileType = file; path = megviifacepp_0_5_2_model; sourceTree = "<group>"; };
 		504ABA3527E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageStaticSplitFilter.m; sourceTree = "<group>"; };
 		504ABA3627E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageStaticSplitFilter.h; sourceTree = "<group>"; };
 		504ABA3827E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGPUImageSplit3V2Filter.h; sourceTree = "<group>"; };
@@ -956,6 +984,118 @@
 		504ABA7D27E8C73000A05DDD /* SCGPUImageColorBaseFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGPUImageColorBaseFilter.m; sourceTree = "<group>"; };
 		504ABA8027EB546400A05DDD /* LNKGPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNKGPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 		504ABA8127EB546500A05DDD /* LNKGPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNKGPUImageBeautifyFilter.m; sourceTree = "<group>"; };
+		504ABBA527EC9E6000A05DDD /* MKGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGLProgram.m; sourceTree = "<group>"; };
+		504ABBA727EC9E6000A05DDD /* MKGPUImageKeyPointFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageKeyPointFilter.m; sourceTree = "<group>"; };
+		504ABBA827EC9E6000A05DDD /* MKGPUImageLookupFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageLookupFilter.h; sourceTree = "<group>"; };
+		504ABBAA27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageDynamicSticker2DFilter.m; sourceTree = "<group>"; };
+		504ABBAB27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageDynamicSticker2DFilter.h; sourceTree = "<group>"; };
+		504ABBAC27EC9E6000A05DDD /* MKGPUImageFilterGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageFilterGroup.h; sourceTree = "<group>"; };
+		504ABBAD27EC9E6000A05DDD /* MKGPUImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageFilter.m; sourceTree = "<group>"; };
+		504ABBAE27EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageGaussianBlurFilter.m; sourceTree = "<group>"; };
+		504ABBAF27EC9E6000A05DDD /* MKGPUImageTwoInputFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageTwoInputFilter.m; sourceTree = "<group>"; };
+		504ABBB027EC9E6000A05DDD /* MKGPUImageLookupFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageLookupFilter.m; sourceTree = "<group>"; };
+		504ABBB127EC9E6000A05DDD /* MKGPUImageKeyPointFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageKeyPointFilter.h; sourceTree = "<group>"; };
+		504ABBB327EC9E6000A05DDD /* MKGPUImagePlasticFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImagePlasticFilter.m; sourceTree = "<group>"; };
+		504ABBB427EC9E6000A05DDD /* MKGPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageBeautifyFilter.m; sourceTree = "<group>"; };
+		504ABBB527EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageBeautyMakeupFilter.h; sourceTree = "<group>"; };
+		504ABBB627EC9E6000A05DDD /* MKGPUImagePlasticFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImagePlasticFilter.h; sourceTree = "<group>"; };
+		504ABBB727EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageBeautyMakeupFilter.m; sourceTree = "<group>"; };
+		504ABBB827EC9E6000A05DDD /* MKGPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageBeautifyFilter.h; sourceTree = "<group>"; };
+		504ABBB927EC9E6000A05DDD /* MKGPUImageFilterGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageFilterGroup.m; sourceTree = "<group>"; };
+		504ABBBA27EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageGaussianBlurFilter.h; sourceTree = "<group>"; };
+		504ABBBB27EC9E6000A05DDD /* MKGPUImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageFilter.h; sourceTree = "<group>"; };
+		504ABBBC27EC9E6000A05DDD /* MKGPUImageTwoInputFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageTwoInputFilter.h; sourceTree = "<group>"; };
+		504ABBBD27EC9E6000A05DDD /* MKGPUImageFramebufferCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageFramebufferCache.h; sourceTree = "<group>"; };
+		504ABBBE27EC9E6000A05DDD /* MKGPUImageFramebuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageFramebuffer.h; sourceTree = "<group>"; };
+		504ABBBF27EC9E6000A05DDD /* MKGPUImageContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageContext.h; sourceTree = "<group>"; };
+		504ABBC027EC9E6000A05DDD /* MKGPUImageConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageConstants.h; sourceTree = "<group>"; };
+		504ABBC127EC9E6000A05DDD /* MKGPUImageFramebufferCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageFramebufferCache.m; sourceTree = "<group>"; };
+		504ABBC227EC9E6000A05DDD /* MKGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGLProgram.h; sourceTree = "<group>"; };
+		504ABBC427EC9E6000A05DDD /* MKGPUImagePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImagePicture.h; sourceTree = "<group>"; };
+		504ABBC527EC9E6000A05DDD /* MKGPUImageTextureInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageTextureInput.m; sourceTree = "<group>"; };
+		504ABBC627EC9E6000A05DDD /* MKGPUImageOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageOutput.h; sourceTree = "<group>"; };
+		504ABBC727EC9E6000A05DDD /* MKGPUImageColorConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageColorConversion.m; sourceTree = "<group>"; };
+		504ABBC827EC9E6000A05DDD /* MKGPUImageTrackOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageTrackOutput.h; sourceTree = "<group>"; };
+		504ABBC927EC9E6000A05DDD /* MKGPUImageTextureInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageTextureInput.h; sourceTree = "<group>"; };
+		504ABBCA27EC9E6000A05DDD /* MKGPUImagePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImagePicture.m; sourceTree = "<group>"; };
+		504ABBCB27EC9E6000A05DDD /* MKGPUImageOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageOutput.m; sourceTree = "<group>"; };
+		504ABBCC27EC9E6000A05DDD /* MKGPUImageTrackOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageTrackOutput.m; sourceTree = "<group>"; };
+		504ABBCD27EC9E6000A05DDD /* MKGPUImageColorConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageColorConversion.h; sourceTree = "<group>"; };
+		504ABBCE27EC9E6000A05DDD /* MKGPUImageFramebuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageFramebuffer.m; sourceTree = "<group>"; };
+		504ABBD027EC9E6000A05DDD /* MKGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageView.h; sourceTree = "<group>"; };
+		504ABBD127EC9E6000A05DDD /* MKGPUImageTextureOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageTextureOutput.m; sourceTree = "<group>"; };
+		504ABBD227EC9E6000A05DDD /* MKGPUImageTextureOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageTextureOutput.h; sourceTree = "<group>"; };
+		504ABBD327EC9E6000A05DDD /* MKGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageView.m; sourceTree = "<group>"; };
+		504ABBD427EC9E6000A05DDD /* MKGPUImageContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageContext.m; sourceTree = "<group>"; };
+		504ABBD627EC9E6000A05DDD /* MKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKTool.h; sourceTree = "<group>"; };
+		504ABBD727EC9E6000A05DDD /* MKFaceBaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKFaceBaseData.h; sourceTree = "<group>"; };
+		504ABBD827EC9E6000A05DDD /* MKHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHeader.h; sourceTree = "<group>"; };
+		504ABBD927EC9E6000A05DDD /* MKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTool.m; sourceTree = "<group>"; };
+		504ABBDA27EC9E6000A05DDD /* MKFaceBaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKFaceBaseData.m; sourceTree = "<group>"; };
+		504ABBDC27EC9E6000A05DDD /* MKLandmarkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLandmarkEngine.m; sourceTree = "<group>"; };
+		504ABBDD27EC9E6000A05DDD /* MKLandmarkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLandmarkManager.m; sourceTree = "<group>"; };
+		504ABBDE27EC9E6000A05DDD /* MKLandmarkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLandmarkEngine.h; sourceTree = "<group>"; };
+		504ABBDF27EC9E6000A05DDD /* MKLandmarkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLandmarkManager.h; sourceTree = "<group>"; };
+		504ABBE127EC9E6000A05DDD /* MKShortEffectHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKShortEffectHandler.m; sourceTree = "<group>"; };
+		504ABBE227EC9E6000A05DDD /* MKEffectHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKEffectHandler.h; sourceTree = "<group>"; };
+		504ABBE327EC9E6000A05DDD /* MKShortEffectHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKShortEffectHandler.h; sourceTree = "<group>"; };
+		504ABBE427EC9E6000A05DDD /* MKEffectHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKEffectHandler.m; sourceTree = "<group>"; };
+		504ABBE727EC9E6000A05DDD /* MKShortVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKShortVideoCamera.h; sourceTree = "<group>"; };
+		504ABBE827EC9E6000A05DDD /* MKBaseVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKBaseVideoCamera.m; sourceTree = "<group>"; };
+		504ABBE927EC9E6000A05DDD /* MKSegmentMovieWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSegmentMovieWriter.h; sourceTree = "<group>"; };
+		504ABBEA27EC9E6000A05DDD /* MKBaseVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBaseVideoCamera.h; sourceTree = "<group>"; };
+		504ABBEB27EC9E6000A05DDD /* MKShortVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKShortVideoCamera.m; sourceTree = "<group>"; };
+		504ABBED27EC9E6000A05DDD /* MKShootRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKShootRecordView.h; sourceTree = "<group>"; };
+		504ABBEE27EC9E6000A05DDD /* MKPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPreviewView.m; sourceTree = "<group>"; };
+		504ABBEF27EC9E6000A05DDD /* MKRecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKRecordProgressView.h; sourceTree = "<group>"; };
+		504ABBF027EC9E6000A05DDD /* MKShootRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKShootRecordView.m; sourceTree = "<group>"; };
+		504ABBF127EC9E6000A05DDD /* MKPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPreviewView.h; sourceTree = "<group>"; };
+		504ABBF227EC9E6000A05DDD /* MKRecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKRecordProgressView.m; sourceTree = "<group>"; };
+		504ABBF327EC9E6000A05DDD /* MKSegmentMovieWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSegmentMovieWriter.m; sourceTree = "<group>"; };
+		504ABBF527EC9E6000A05DDD /* MKVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKVideoEditViewController.m; sourceTree = "<group>"; };
+		504ABBF727EC9E6000A05DDD /* MKVideoAssetAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKVideoAssetAdapter.m; sourceTree = "<group>"; };
+		504ABBF827EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSegmentVideoAssetAdapter.h; sourceTree = "<group>"; };
+		504ABBF927EC9E6000A05DDD /* MKVideoAssetAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKVideoAssetAdapter.h; sourceTree = "<group>"; };
+		504ABBFA27EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSegmentVideoAssetAdapter.m; sourceTree = "<group>"; };
+		504ABBFB27EC9E6000A05DDD /* MKVideoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKVideoEditViewController.h; sourceTree = "<group>"; };
+		504ABBFD27EC9E6000A05DDD /* MKEffectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKEffectFilter.m; sourceTree = "<group>"; };
+		504ABBFF27EC9E6000A05DDD /* MKFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKFilterModel.h; sourceTree = "<group>"; };
+		504ABC0027EC9E6000A05DDD /* MKFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKFilterModel.m; sourceTree = "<group>"; };
+		504ABC0227EC9E6000A05DDD /* MKCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCameraView.h; sourceTree = "<group>"; };
+		504ABC0327EC9E6000A05DDD /* MKCameraFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCameraFilterView.m; sourceTree = "<group>"; };
+		504ABC0427EC9E6000A05DDD /* MKOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKOverlayView.m; sourceTree = "<group>"; };
+		504ABC0527EC9E6000A05DDD /* MKCameraFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCameraFilterView.h; sourceTree = "<group>"; };
+		504ABC0627EC9E6000A05DDD /* MKCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCameraView.m; sourceTree = "<group>"; };
+		504ABC0727EC9E6000A05DDD /* MKOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOverlayView.h; sourceTree = "<group>"; };
+		504ABC0927EC9E6000A05DDD /* MKShortVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKShortVideoViewController.h; sourceTree = "<group>"; };
+		504ABC0A27EC9E6000A05DDD /* MKShortVideoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MKShortVideoViewController.mm; sourceTree = "<group>"; };
+		504ABC0B27EC9E6000A05DDD /* MKEffectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKEffectFilter.h; sourceTree = "<group>"; };
+		504ABC3827ECA00600A05DDD /* libMGLicMgrSDK-0.3.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGLicMgrSDK-0.3.1.a"; sourceTree = "<group>"; };
+		504ABC3927ECA00600A05DDD /* MGLicenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLicenseManager.h; sourceTree = "<group>"; };
+		504ABC3A27ECA00600A05DDD /* MGLicenseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLicenseCommon.h; sourceTree = "<group>"; };
+		504ABC3C27ECA00600A05DDD /* MGNetAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNetAccount.h; sourceTree = "<group>"; };
+		504ABC3D27ECA00600A05DDD /* MGFaceLicenseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceLicenseHandle.h; sourceTree = "<group>"; };
+		504ABC3E27ECA00600A05DDD /* MGFaceLicenseHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFaceLicenseHandle.m; sourceTree = "<group>"; };
+		504ABC4027ECA00600A05DDD /* libMGFacepp-0.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGFacepp-0.5.2.a"; sourceTree = "<group>"; };
+		504ABC4127ECA00600A05DDD /* MGFaceppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppConfig.h; sourceTree = "<group>"; };
+		504ABC4227ECA00600A05DDD /* MGAlgorithmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAlgorithmInfo.h; sourceTree = "<group>"; };
+		504ABC4327ECA00600A05DDD /* MGFacepp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFacepp.h; sourceTree = "<group>"; };
+		504ABC4427ECA00600A05DDD /* MGDetectRectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGDetectRectInfo.h; sourceTree = "<group>"; };
+		504ABC4527ECA00600A05DDD /* MGFaceppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppCommon.h; sourceTree = "<group>"; };
+		504ABC4627ECA00600A05DDD /* MGImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImageData.h; sourceTree = "<group>"; };
+		504ABC4727ECA00600A05DDD /* MGFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceInfo.h; sourceTree = "<group>"; };
+		504ABC4827ECA00600A05DDD /* megviifacepp_0_5_2_model */ = {isa = PBXFileReference; lastKnownFileType = file; path = megviifacepp_0_5_2_model; sourceTree = "<group>"; };
+		504ABCF727ECA2CC00A05DDD /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		504ABCF827ECA2CC00A05DDD /* icon_app_launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_app_launch@2x.png"; sourceTree = "<group>"; };
+		504ABCF927ECA2CC00A05DDD /* icon_app_launch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_app_launch@3x.png"; sourceTree = "<group>"; };
+		504ABCFA27ECA2CC00A05DDD /* filter_sample_face_feature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter_sample_face_feature.jpg; sourceTree = "<group>"; };
+		504ABCFB27ECA2CC00A05DDD /* filter_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter_sample.jpg; sourceTree = "<group>"; };
+		504ABEE827ECAA7900A05DDD /* beautify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beautify.png; sourceTree = "<group>"; };
+		504ABEE927ECAA7D00A05DDD /* lookup_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_new.png; sourceTree = "<group>"; };
+		504ABEEA27ECAA8000A05DDD /* lut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lut.png; sourceTree = "<group>"; };
+		504ABEEB27ECAA8600A05DDD /* makeup_lips_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_lips_mask.png; sourceTree = "<group>"; };
+		504AC6C127ECBE3200A05DDD /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stickers; sourceTree = "<group>"; };
+		504AC6C527ECC07A00A05DDD /* Filters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Filters; sourceTree = "<group>"; };
 		509FBA2627CF9CF9002D0E64 /* SCAssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAssetHelper.h; sourceTree = "<group>"; };
 		509FBA2727CF9CF9002D0E64 /* SCAssetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAssetHelper.m; sourceTree = "<group>"; };
 		50B5DCD027B7712A00200CCF /* SCCameraTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCameraTopView.m; sourceTree = "<group>"; };
@@ -998,8 +1138,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				309787DDC67EAD8D8208C37F /* libPods-SimpleCamera.a in Frameworks */,
-				504ABA3027E36DA600A05DDD /* libMGLicMgrSDK-0.3.1.a in Frameworks */,
-				504ABA3227E36DA600A05DDD /* libMGFacepp-0.5.2.a in Frameworks */,
+				504ABC4927ECA00600A05DDD /* libMGLicMgrSDK-0.3.1.a in Frameworks */,
+				504ABC4B27ECA00600A05DDD /* libMGFacepp-0.5.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1142,8 +1282,10 @@
 		19A3BAD9278719A10027386F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				504AC6C527ECC07A00A05DDD /* Filters */,
+				504AC6C127ECBE3200A05DDD /* Stickers */,
+				504ABC4D27ECA2CB00A05DDD /* Image */,
 				19A3BADA278719A10027386F /* Plist */,
-				19A3BADF278719A10027386F /* Image */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1158,26 +1300,6 @@
 				19A3BADE278719A10027386F /* DefaultFilterMaterials.plist */,
 			);
 			path = Plist;
-			sourceTree = "<group>";
-		};
-		19A3BADF278719A10027386F /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				19A3BAE0278719A10027386F /* icon_app_launch.imageset */,
-				19A3BAE4278719A10027386F /* filter_sample_face_feature.jpg */,
-				19A3BAE5278719A10027386F /* filter_sample.jpg */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		19A3BAE0278719A10027386F /* icon_app_launch.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				19A3BAE1278719A10027386F /* Contents.json */,
-				19A3BAE2278719A10027386F /* icon_app_launch@2x.png */,
-				19A3BAE3278719A10027386F /* icon_app_launch@3x.png */,
-			);
-			path = icon_app_launch.imageset;
 			sourceTree = "<group>";
 		};
 		19A3BB1A2788511B0027386F /* Model */ = {
@@ -1264,7 +1386,8 @@
 		504AB41927D6413E00A05DDD /* ThirdDemo */ = {
 			isa = PBXGroup;
 			children = (
-				504ABA1D27E36DA600A05DDD /* Facepp */,
+				504ABC3627ECA00600A05DDD /* Face-SDK */,
+				504ABBA227EC9E6000A05DDD /* MagicCamera */,
 				504AB72627E361D300A05DDD /* Stasm */,
 			);
 			path = ThirdDemo;
@@ -1743,52 +1866,6 @@
 			path = Face;
 			sourceTree = "<group>";
 		};
-		504ABA1D27E36DA600A05DDD /* Facepp */ = {
-			isa = PBXGroup;
-			children = (
-				504ABA1E27E36DA600A05DDD /* MegviiLicMgr-iOS-SDK */,
-				504ABA2227E36DA600A05DDD /* MGLicenseManagerHelper */,
-				504ABA2627E36DA600A05DDD /* MGFaceppSDK */,
-			);
-			path = Facepp;
-			sourceTree = "<group>";
-		};
-		504ABA1E27E36DA600A05DDD /* MegviiLicMgr-iOS-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				504ABA1F27E36DA600A05DDD /* libMGLicMgrSDK-0.3.1.a */,
-				504ABA2027E36DA600A05DDD /* MGLicenseManager.h */,
-				504ABA2127E36DA600A05DDD /* MGLicenseCommon.h */,
-			);
-			path = "MegviiLicMgr-iOS-SDK";
-			sourceTree = "<group>";
-		};
-		504ABA2227E36DA600A05DDD /* MGLicenseManagerHelper */ = {
-			isa = PBXGroup;
-			children = (
-				504ABA2327E36DA600A05DDD /* MGNetAccount.h */,
-				504ABA2427E36DA600A05DDD /* MGFaceLicenseHandle.h */,
-				504ABA2527E36DA600A05DDD /* MGFaceLicenseHandle.m */,
-			);
-			path = MGLicenseManagerHelper;
-			sourceTree = "<group>";
-		};
-		504ABA2627E36DA600A05DDD /* MGFaceppSDK */ = {
-			isa = PBXGroup;
-			children = (
-				504ABA2727E36DA600A05DDD /* libMGFacepp-0.5.2.a */,
-				504ABA2827E36DA600A05DDD /* MGFaceppConfig.h */,
-				504ABA2927E36DA600A05DDD /* MGAlgorithmInfo.h */,
-				504ABA2A27E36DA600A05DDD /* MGFacepp.h */,
-				504ABA2B27E36DA600A05DDD /* MGDetectRectInfo.h */,
-				504ABA2C27E36DA600A05DDD /* MGFaceppCommon.h */,
-				504ABA2D27E36DA600A05DDD /* MGImageData.h */,
-				504ABA2E27E36DA600A05DDD /* MGFaceInfo.h */,
-				504ABA2F27E36DA600A05DDD /* megviifacepp_0_5_2_model */,
-			);
-			path = MGFaceppSDK;
-			sourceTree = "<group>";
-		};
 		504ABA3427E6DD9000A05DDD /* Split */ = {
 			isa = PBXGroup;
 			children = (
@@ -1840,6 +1917,321 @@
 				504AB44527E0CF0C00A05DDD /* LFGPUImageBeautyFilter.m */,
 			);
 			path = Beautify;
+			sourceTree = "<group>";
+		};
+		504ABBA227EC9E6000A05DDD /* MagicCamera */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBA327EC9E6000A05DDD /* BeautyEffects */,
+				504ABBFC27EC9E6000A05DDD /* Main */,
+			);
+			path = MagicCamera;
+			sourceTree = "<group>";
+		};
+		504ABBA327EC9E6000A05DDD /* BeautyEffects */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBA427EC9E6000A05DDD /* MKGPUImage */,
+				504ABBD527EC9E6000A05DDD /* MKHelp */,
+				504ABBDB27EC9E6000A05DDD /* MKLandmark */,
+				504ABBE027EC9E6000A05DDD /* MKHandle */,
+				504ABBE527EC9E6000A05DDD /* MKVideo */,
+			);
+			path = BeautyEffects;
+			sourceTree = "<group>";
+		};
+		504ABBA427EC9E6000A05DDD /* MKGPUImage */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBA527EC9E6000A05DDD /* MKGLProgram.m */,
+				504ABBA627EC9E6000A05DDD /* Filters */,
+				504ABBBD27EC9E6000A05DDD /* MKGPUImageFramebufferCache.h */,
+				504ABBBE27EC9E6000A05DDD /* MKGPUImageFramebuffer.h */,
+				504ABBBF27EC9E6000A05DDD /* MKGPUImageContext.h */,
+				504ABBC027EC9E6000A05DDD /* MKGPUImageConstants.h */,
+				504ABBC127EC9E6000A05DDD /* MKGPUImageFramebufferCache.m */,
+				504ABBC227EC9E6000A05DDD /* MKGLProgram.h */,
+				504ABBC327EC9E6000A05DDD /* Sources */,
+				504ABBCE27EC9E6000A05DDD /* MKGPUImageFramebuffer.m */,
+				504ABBCF27EC9E6000A05DDD /* Outputs */,
+				504ABBD427EC9E6000A05DDD /* MKGPUImageContext.m */,
+			);
+			path = MKGPUImage;
+			sourceTree = "<group>";
+		};
+		504ABBA627EC9E6000A05DDD /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBA727EC9E6000A05DDD /* MKGPUImageKeyPointFilter.m */,
+				504ABBA827EC9E6000A05DDD /* MKGPUImageLookupFilter.h */,
+				504ABBA927EC9E6000A05DDD /* DynamicSticker */,
+				504ABBAC27EC9E6000A05DDD /* MKGPUImageFilterGroup.h */,
+				504ABBAD27EC9E6000A05DDD /* MKGPUImageFilter.m */,
+				504ABBAE27EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.m */,
+				504ABBAF27EC9E6000A05DDD /* MKGPUImageTwoInputFilter.m */,
+				504ABBB027EC9E6000A05DDD /* MKGPUImageLookupFilter.m */,
+				504ABBB127EC9E6000A05DDD /* MKGPUImageKeyPointFilter.h */,
+				504ABBB227EC9E6000A05DDD /* BeautyMakeup */,
+				504ABBB927EC9E6000A05DDD /* MKGPUImageFilterGroup.m */,
+				504ABBBA27EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.h */,
+				504ABBBB27EC9E6000A05DDD /* MKGPUImageFilter.h */,
+				504ABBBC27EC9E6000A05DDD /* MKGPUImageTwoInputFilter.h */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		504ABBA927EC9E6000A05DDD /* DynamicSticker */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBAA27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.m */,
+				504ABBAB27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.h */,
+			);
+			path = DynamicSticker;
+			sourceTree = "<group>";
+		};
+		504ABBB227EC9E6000A05DDD /* BeautyMakeup */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBB327EC9E6000A05DDD /* MKGPUImagePlasticFilter.m */,
+				504ABBB427EC9E6000A05DDD /* MKGPUImageBeautifyFilter.m */,
+				504ABBB527EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.h */,
+				504ABBB627EC9E6000A05DDD /* MKGPUImagePlasticFilter.h */,
+				504ABBB727EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.m */,
+				504ABBB827EC9E6000A05DDD /* MKGPUImageBeautifyFilter.h */,
+			);
+			path = BeautyMakeup;
+			sourceTree = "<group>";
+		};
+		504ABBC327EC9E6000A05DDD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBC427EC9E6000A05DDD /* MKGPUImagePicture.h */,
+				504ABBC527EC9E6000A05DDD /* MKGPUImageTextureInput.m */,
+				504ABBC627EC9E6000A05DDD /* MKGPUImageOutput.h */,
+				504ABBC727EC9E6000A05DDD /* MKGPUImageColorConversion.m */,
+				504ABBC827EC9E6000A05DDD /* MKGPUImageTrackOutput.h */,
+				504ABBC927EC9E6000A05DDD /* MKGPUImageTextureInput.h */,
+				504ABBCA27EC9E6000A05DDD /* MKGPUImagePicture.m */,
+				504ABBCB27EC9E6000A05DDD /* MKGPUImageOutput.m */,
+				504ABBCC27EC9E6000A05DDD /* MKGPUImageTrackOutput.m */,
+				504ABBCD27EC9E6000A05DDD /* MKGPUImageColorConversion.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		504ABBCF27EC9E6000A05DDD /* Outputs */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBD027EC9E6000A05DDD /* MKGPUImageView.h */,
+				504ABBD127EC9E6000A05DDD /* MKGPUImageTextureOutput.m */,
+				504ABBD227EC9E6000A05DDD /* MKGPUImageTextureOutput.h */,
+				504ABBD327EC9E6000A05DDD /* MKGPUImageView.m */,
+			);
+			path = Outputs;
+			sourceTree = "<group>";
+		};
+		504ABBD527EC9E6000A05DDD /* MKHelp */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBD627EC9E6000A05DDD /* MKTool.h */,
+				504ABBD727EC9E6000A05DDD /* MKFaceBaseData.h */,
+				504ABBD827EC9E6000A05DDD /* MKHeader.h */,
+				504ABBD927EC9E6000A05DDD /* MKTool.m */,
+				504ABBDA27EC9E6000A05DDD /* MKFaceBaseData.m */,
+			);
+			path = MKHelp;
+			sourceTree = "<group>";
+		};
+		504ABBDB27EC9E6000A05DDD /* MKLandmark */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBDC27EC9E6000A05DDD /* MKLandmarkEngine.m */,
+				504ABBDD27EC9E6000A05DDD /* MKLandmarkManager.m */,
+				504ABBDE27EC9E6000A05DDD /* MKLandmarkEngine.h */,
+				504ABBDF27EC9E6000A05DDD /* MKLandmarkManager.h */,
+			);
+			path = MKLandmark;
+			sourceTree = "<group>";
+		};
+		504ABBE027EC9E6000A05DDD /* MKHandle */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBE127EC9E6000A05DDD /* MKShortEffectHandler.m */,
+				504ABBE227EC9E6000A05DDD /* MKEffectHandler.h */,
+				504ABBE327EC9E6000A05DDD /* MKShortEffectHandler.h */,
+				504ABBE427EC9E6000A05DDD /* MKEffectHandler.m */,
+			);
+			path = MKHandle;
+			sourceTree = "<group>";
+		};
+		504ABBE527EC9E6000A05DDD /* MKVideo */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBE627EC9E6000A05DDD /* Record */,
+				504ABBF427EC9E6000A05DDD /* Edit */,
+			);
+			path = MKVideo;
+			sourceTree = "<group>";
+		};
+		504ABBE627EC9E6000A05DDD /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBE727EC9E6000A05DDD /* MKShortVideoCamera.h */,
+				504ABBE827EC9E6000A05DDD /* MKBaseVideoCamera.m */,
+				504ABBE927EC9E6000A05DDD /* MKSegmentMovieWriter.h */,
+				504ABBEA27EC9E6000A05DDD /* MKBaseVideoCamera.h */,
+				504ABBEB27EC9E6000A05DDD /* MKShortVideoCamera.m */,
+				504ABBEC27EC9E6000A05DDD /* View */,
+				504ABBF327EC9E6000A05DDD /* MKSegmentMovieWriter.m */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		504ABBEC27EC9E6000A05DDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBED27EC9E6000A05DDD /* MKShootRecordView.h */,
+				504ABBEE27EC9E6000A05DDD /* MKPreviewView.m */,
+				504ABBEF27EC9E6000A05DDD /* MKRecordProgressView.h */,
+				504ABBF027EC9E6000A05DDD /* MKShootRecordView.m */,
+				504ABBF127EC9E6000A05DDD /* MKPreviewView.h */,
+				504ABBF227EC9E6000A05DDD /* MKRecordProgressView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		504ABBF427EC9E6000A05DDD /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBF527EC9E6000A05DDD /* MKVideoEditViewController.m */,
+				504ABBF627EC9E6000A05DDD /* Adapter */,
+				504ABBFB27EC9E6000A05DDD /* MKVideoEditViewController.h */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		504ABBF627EC9E6000A05DDD /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBF727EC9E6000A05DDD /* MKVideoAssetAdapter.m */,
+				504ABBF827EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.h */,
+				504ABBF927EC9E6000A05DDD /* MKVideoAssetAdapter.h */,
+				504ABBFA27EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.m */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		504ABBFC27EC9E6000A05DDD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBFD27EC9E6000A05DDD /* MKEffectFilter.m */,
+				504ABBFE27EC9E6000A05DDD /* Model */,
+				504ABC0127EC9E6000A05DDD /* View */,
+				504ABC0827EC9E6000A05DDD /* Controllers */,
+				504ABC0B27EC9E6000A05DDD /* MKEffectFilter.h */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		504ABBFE27EC9E6000A05DDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				504ABBFF27EC9E6000A05DDD /* MKFilterModel.h */,
+				504ABC0027EC9E6000A05DDD /* MKFilterModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		504ABC0127EC9E6000A05DDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				504ABC0227EC9E6000A05DDD /* MKCameraView.h */,
+				504ABC0327EC9E6000A05DDD /* MKCameraFilterView.m */,
+				504ABC0427EC9E6000A05DDD /* MKOverlayView.m */,
+				504ABC0527EC9E6000A05DDD /* MKCameraFilterView.h */,
+				504ABC0627EC9E6000A05DDD /* MKCameraView.m */,
+				504ABC0727EC9E6000A05DDD /* MKOverlayView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		504ABC0827EC9E6000A05DDD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				504ABC0927EC9E6000A05DDD /* MKShortVideoViewController.h */,
+				504ABC0A27EC9E6000A05DDD /* MKShortVideoViewController.mm */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		504ABC3627ECA00600A05DDD /* Face-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				504ABC3727ECA00600A05DDD /* MegviiLicMgr-iOS-SDK */,
+				504ABC3B27ECA00600A05DDD /* MGLicenseManagerHelper */,
+				504ABC3F27ECA00600A05DDD /* MGFaceppSDK */,
+			);
+			path = "Face-SDK";
+			sourceTree = "<group>";
+		};
+		504ABC3727ECA00600A05DDD /* MegviiLicMgr-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				504ABC3827ECA00600A05DDD /* libMGLicMgrSDK-0.3.1.a */,
+				504ABC3927ECA00600A05DDD /* MGLicenseManager.h */,
+				504ABC3A27ECA00600A05DDD /* MGLicenseCommon.h */,
+			);
+			path = "MegviiLicMgr-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		504ABC3B27ECA00600A05DDD /* MGLicenseManagerHelper */ = {
+			isa = PBXGroup;
+			children = (
+				504ABC3C27ECA00600A05DDD /* MGNetAccount.h */,
+				504ABC3D27ECA00600A05DDD /* MGFaceLicenseHandle.h */,
+				504ABC3E27ECA00600A05DDD /* MGFaceLicenseHandle.m */,
+			);
+			path = MGLicenseManagerHelper;
+			sourceTree = "<group>";
+		};
+		504ABC3F27ECA00600A05DDD /* MGFaceppSDK */ = {
+			isa = PBXGroup;
+			children = (
+				504ABC4027ECA00600A05DDD /* libMGFacepp-0.5.2.a */,
+				504ABC4127ECA00600A05DDD /* MGFaceppConfig.h */,
+				504ABC4227ECA00600A05DDD /* MGAlgorithmInfo.h */,
+				504ABC4327ECA00600A05DDD /* MGFacepp.h */,
+				504ABC4427ECA00600A05DDD /* MGDetectRectInfo.h */,
+				504ABC4527ECA00600A05DDD /* MGFaceppCommon.h */,
+				504ABC4627ECA00600A05DDD /* MGImageData.h */,
+				504ABC4727ECA00600A05DDD /* MGFaceInfo.h */,
+				504ABC4827ECA00600A05DDD /* megviifacepp_0_5_2_model */,
+			);
+			path = MGFaceppSDK;
+			sourceTree = "<group>";
+		};
+		504ABC4D27ECA2CB00A05DDD /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				504ABCFB27ECA2CC00A05DDD /* filter_sample.jpg */,
+				504ABCFA27ECA2CC00A05DDD /* filter_sample_face_feature.jpg */,
+				504ABEEB27ECAA8600A05DDD /* makeup_lips_mask.png */,
+				504ABEE827ECAA7900A05DDD /* beautify.png */,
+				504ABEE927ECAA7D00A05DDD /* lookup_new.png */,
+				504ABEEA27ECAA8000A05DDD /* lut.png */,
+				504ABCF627ECA2CC00A05DDD /* icon_app_launch.imageset */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		504ABCF627ECA2CC00A05DDD /* icon_app_launch.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				504ABCF727ECA2CC00A05DDD /* Contents.json */,
+				504ABCF827ECA2CC00A05DDD /* icon_app_launch@2x.png */,
+				504ABCF927ECA2CC00A05DDD /* icon_app_launch@3x.png */,
+			);
+			path = icon_app_launch.imageset;
 			sourceTree = "<group>";
 		};
 		50B5DCD927B7852300200CCF /* VideoResult */ = {
@@ -2010,6 +2402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				504AC6C227ECBF6800A05DDD /* Stickers in Resources */,
 				504AB92127E361D500A05DDD /* yaw00_lev1_p58_hat.mh in Resources */,
 				504AB8F627E361D500A05DDD /* yaw00_lev0_p65_hat.mh in Resources */,
 				504AB99427E361D500A05DDD /* yaw00_lev2_p25_hat.mh in Resources */,
@@ -2038,6 +2431,7 @@
 				504AB94827E361D500A05DDD /* yaw00_lev2_p41_hat.mh in Resources */,
 				504AB99527E361D500A05DDD /* yaw00_lev2_p01_classic.mh in Resources */,
 				504AB8D827E361D500A05DDD /* yaw00_lev3_p50_classic.mh in Resources */,
+				504ABEEF27ECAAD700A05DDD /* lut.png in Resources */,
 				504AB94027E361D500A05DDD /* yaw00_lev0_p63_hat.mh in Resources */,
 				504AB8F227E361D500A05DDD /* yaw00_lev1_p50_hat.mh in Resources */,
 				504AB92C27E361D500A05DDD /* yaw00_lev0_p28_hat.mh in Resources */,
@@ -2046,11 +2440,9 @@
 				504AB96827E361D500A05DDD /* yaw00_lev3_p45_classic.mh in Resources */,
 				504AB9BB27E361D500A05DDD /* yaw00_lev2_p21_hat.mh in Resources */,
 				504AB9FC27E361D500A05DDD /* haarcascade_lowerbody.xml in Resources */,
-				19A3BAEA278719A10027386F /* Contents.json in Resources */,
 				504AB9A827E361D500A05DDD /* yaw00_lev3_p34_classic.mh in Resources */,
 				504AB9EF27E361D500A05DDD /* README.txt in Resources */,
 				504AB90D27E361D500A05DDD /* yaw00_lev2_p67_hat.mh in Resources */,
-				19A3BAEC278719A10027386F /* icon_app_launch@3x.png in Resources */,
 				504AB9C327E361D500A05DDD /* yaw00_lev0_p10_classic.mh in Resources */,
 				504AB96D27E361D500A05DDD /* yaw00_lev0_p12_classic.mh in Resources */,
 				504AB97227E361D500A05DDD /* yaw00_lev1_p41_hat.mh in Resources */,
@@ -2060,6 +2452,7 @@
 				504AB91727E361D500A05DDD /* yaw00_lev0_p05_classic.mh in Resources */,
 				504AB90927E361D500A05DDD /* yaw00_lev0_p08_classic.mh in Resources */,
 				504AB8B727E361D500A05DDD /* yaw00_lev3_p14_classic.mh in Resources */,
+				504ABD9F27ECA2CC00A05DDD /* filter_sample.jpg in Resources */,
 				504AB9E827E361D500A05DDD /* yaw00_lev0_p58_hat.mh in Resources */,
 				504AB8BF27E361D500A05DDD /* yaw00_lev1_p52_hat.mh in Resources */,
 				504AB9C227E361D500A05DDD /* yaw00_lev2_p33_hat.mh in Resources */,
@@ -2079,6 +2472,7 @@
 				504AB8D327E361D500A05DDD /* yaw00_lev2_p26_hat.mh in Resources */,
 				504AB92827E361D500A05DDD /* yaw00_lev1_p54_hat.mh in Resources */,
 				504AB8E927E361D500A05DDD /* yaw00_lev3_p37_classic.mh in Resources */,
+				504ABD9B27ECA2CC00A05DDD /* Contents.json in Resources */,
 				504AB9EE27E361D500A05DDD /* tasm.log in Resources */,
 				504AB9D827E361D500A05DDD /* yaw00_lev1_p49_hat.mh in Resources */,
 				504AB93A27E361D500A05DDD /* yaw00_lev0_p71_hat.mh in Resources */,
@@ -2092,8 +2486,10 @@
 				504AB8EC27E361D500A05DDD /* yaw00_lev0_p02_classic.mh in Resources */,
 				504AB8C127E361D500A05DDD /* yaw00_lev0_p16_hat.mh in Resources */,
 				504AB9B927E361D500A05DDD /* yaw00_lev2_p17_hat.mh in Resources */,
+				504AC6C627ECC07A00A05DDD /* Filters in Resources */,
 				504AB8E027E361D500A05DDD /* yaw00_lev3_p49_classic.mh in Resources */,
 				504AB93327E361D500A05DDD /* yaw00_lev1_p60_hat.mh in Resources */,
+				504ABEEC27ECAACF00A05DDD /* makeup_lips_mask.png in Resources */,
 				504AB98627E361D500A05DDD /* yaw00_lev0_p68_hat.mh in Resources */,
 				504AB9CE27E361D500A05DDD /* yaw00_lev2_p52_hat.mh in Resources */,
 				504AB8B927E361D500A05DDD /* yaw00_lev0_p67_hat.mh in Resources */,
@@ -2115,6 +2511,7 @@
 				504AB99D27E361D500A05DDD /* yaw00_lev0_p06_classic.mh in Resources */,
 				504AB91E27E361D500A05DDD /* yaw00_lev3_p07_classic.mh in Resources */,
 				504AB9B027E361D500A05DDD /* yaw00_lev1_p04_classic.mh in Resources */,
+				504ABEED27ECAAD200A05DDD /* beautify.png in Resources */,
 				504AB9C927E361D500A05DDD /* yaw00_lev2_p19_hat.mh in Resources */,
 				504AB97D27E361D500A05DDD /* yaw00_lev3_p15_classic.mh in Resources */,
 				504AB9CA27E361D500A05DDD /* yaw00_lev2_p64_hat.mh in Resources */,
@@ -2148,6 +2545,7 @@
 				504AB91427E361D500A05DDD /* yaw00_lev0_p26_hat.mh in Resources */,
 				504AB9BD27E361D500A05DDD /* yaw00_lev3_p25_classic.mh in Resources */,
 				504AB95D27E361D500A05DDD /* yaw00_lev0_p03_classic.mh in Resources */,
+				504ABD9D27ECA2CC00A05DDD /* icon_app_launch@3x.png in Resources */,
 				504AB8D427E361D500A05DDD /* yaw00_lev2_p38_hat.mh in Resources */,
 				504AB98F27E361D500A05DDD /* yaw00_lev1_p03_classic.mh in Resources */,
 				504AB91B27E361D500A05DDD /* yaw00_lev3_p65_classic.mh in Resources */,
@@ -2202,7 +2600,6 @@
 				504AB9C527E361D500A05DDD /* yaw00_lev0_p09_classic.mh in Resources */,
 				504AB9D927E361D500A05DDD /* yaw00_lev3_p53_classic.mh in Resources */,
 				504AB98C27E361D500A05DDD /* yaw00_lev1_p12_classic.mh in Resources */,
-				19A3BAED278719A10027386F /* filter_sample_face_feature.jpg in Resources */,
 				504AB8C327E361D500A05DDD /* yaw00_lev0_p43_hat.mh in Resources */,
 				504AB9F727E361D500A05DDD /* haarcascade_lefteye_2splits.xml in Resources */,
 				504AB9E027E361D500A05DDD /* yaw00_lev0_p62_hat.mh in Resources */,
@@ -2219,6 +2616,7 @@
 				504AB91627E361D500A05DDD /* yaw00_lev0_p38_hat.mh in Resources */,
 				504AB8FA27E361D500A05DDD /* yaw00_lev3_p73_classic.mh in Resources */,
 				504AB96B27E361D500A05DDD /* yaw00_lev1_p69_hat.mh in Resources */,
+				504ABD9C27ECA2CC00A05DDD /* icon_app_launch@2x.png in Resources */,
 				504AB93527E361D500A05DDD /* yaw00_lev0_p00_classic.mh in Resources */,
 				504AB92527E361D500A05DDD /* yaw00_lev0_p61_hat.mh in Resources */,
 				504AB90227E361D500A05DDD /* yaw00_lev3_p58_classic.mh in Resources */,
@@ -2232,8 +2630,6 @@
 				504AB93C27E361D500A05DDD /* yaw00_lev1_p35_hat.mh in Resources */,
 				504AB90427E361D500A05DDD /* yaw00_lev2_p43_hat.mh in Resources */,
 				504AB93B27E361D500A05DDD /* yaw00_lev1_p48_hat.mh in Resources */,
-				19A3BAEE278719A10027386F /* filter_sample.jpg in Resources */,
-				19A3BAEB278719A10027386F /* icon_app_launch@2x.png in Resources */,
 				504AB9B327E361D500A05DDD /* yaw00_lev0_p48_hat.mh in Resources */,
 				504AB94727E361D500A05DDD /* yaw00_lev2_p22_hat.mh in Resources */,
 				504AB96227E361D500A05DDD /* yaw00_lev3_p36_classic.mh in Resources */,
@@ -2242,7 +2638,6 @@
 				504AB9E327E361D500A05DDD /* yaw00_lev1_p01_classic.mh in Resources */,
 				504AB96327E361D500A05DDD /* yaw00_lev0_p21_hat.mh in Resources */,
 				504AB9C827E361D500A05DDD /* yaw00_lev2_p68_hat.mh in Resources */,
-				504ABA3327E36DA600A05DDD /* megviifacepp_0_5_2_model in Resources */,
 				504AB96E27E361D500A05DDD /* yaw00_lev2_p09_classic.mh in Resources */,
 				504AB9F227E361D500A05DDD /* haarcascade_frontalcatface_extended.xml in Resources */,
 				504AB9CD27E361D500A05DDD /* yaw00_lev0_p15_classic.mh in Resources */,
@@ -2251,6 +2646,7 @@
 				504AB8C027E361D500A05DDD /* yaw00_lev1_p31_hat.mh in Resources */,
 				504AB9D027E361D500A05DDD /* yaw00_lev3_p20_classic.mh in Resources */,
 				504AB94A27E361D500A05DDD /* yaw00_lev2_p69_hat.mh in Resources */,
+				504ABEEE27ECAAD400A05DDD /* lookup_new.png in Resources */,
 				504AB9F527E361D500A05DDD /* haarcascade_frontalface_alt2.xml in Resources */,
 				504AB9DC27E361D500A05DDD /* yaw00_lev3_p31_classic.mh in Resources */,
 				504AB9C427E361D500A05DDD /* yaw00_lev2_p50_hat.mh in Resources */,
@@ -2287,6 +2683,7 @@
 				504ABA4827E6ED2000A05DDD /* SplitFilterMaterials.plist in Resources */,
 				504AB90027E361D500A05DDD /* yaw00_lev0_p22_hat.mh in Resources */,
 				504AB95327E361D500A05DDD /* yaw00_lev2_p04_classic.mh in Resources */,
+				504ABD9E27ECA2CC00A05DDD /* filter_sample_face_feature.jpg in Resources */,
 				504AB9A227E361D500A05DDD /* yaw00_lev1_p59_hat.mh in Resources */,
 				504AB98327E361D500A05DDD /* yaw00_lev1_p51_hat.mh in Resources */,
 				504AB9F627E361D500A05DDD /* haarcascade_eye.xml in Resources */,
@@ -2337,6 +2734,7 @@
 				504AB90C27E361D500A05DDD /* yaw00_lev3_p21_classic.mh in Resources */,
 				504AB8E727E361D500A05DDD /* yaw00_lev3_p00_classic.mh in Resources */,
 				504AB9B427E361D500A05DDD /* yaw00_lev0_p35_hat.mh in Resources */,
+				504ABC4C27ECA00600A05DDD /* megviifacepp_0_5_2_model in Resources */,
 				504AB91C27E361D500A05DDD /* yaw00_lev3_p52_classic.mh in Resources */,
 				504AB9D427E361D500A05DDD /* yaw00_lev3_p75_classic.mh in Resources */,
 				504AB9CF27E361D500A05DDD /* yaw00_lev2_p31_hat.mh in Resources */,
@@ -2419,8 +2817,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				504ABA4327E6E03700A05DDD /* SCGPUImageSplit3V3Filter.m in Sources */,
+				504ABC1B27EC9E6000A05DDD /* MKGPUImageOutput.m in Sources */,
 				19A3BA53278710820027386F /* AppDelegate.m in Sources */,
+				504ABC0E27EC9E6000A05DDD /* MKGPUImageDynamicSticker2DFilter.m in Sources */,
+				504ABC2D27EC9E6000A05DDD /* MKVideoEditViewController.m in Sources */,
 				504AB8AC27E361D500A05DDD /* shape17.cpp in Sources */,
+				504ABC3327EC9E6000A05DDD /* MKOverlayView.m in Sources */,
 				504AB8B627E361D500A05DDD /* initasm.cpp in Sources */,
 				50B5DCD127B7712A00200CCF /* SCCameraTopView.m in Sources */,
 				504AB8B127E361D500A05DDD /* hat.cpp in Sources */,
@@ -2430,36 +2832,59 @@
 				504AB9ED27E361D500A05DDD /* facedet.cpp in Sources */,
 				504AB8A727E361D500A05DDD /* misc.cpp in Sources */,
 				504AB42527DDE3ED00A05DDD /* SCFilterCategoryView.m in Sources */,
+				504ABC1F27EC9E6000A05DDD /* MKGPUImageView.m in Sources */,
 				504ABA3727E6DD9000A05DDD /* SCGPUImageStaticSplitFilter.m in Sources */,
+				504ABC1127EC9E6000A05DDD /* MKGPUImageTwoInputFilter.m in Sources */,
 				19A3BA64278710830027386F /* main.m in Sources */,
+				504ABC2327EC9E6000A05DDD /* MKLandmarkEngine.m in Sources */,
+				504ABC1327EC9E6000A05DDD /* MKGPUImagePlasticFilter.m in Sources */,
 				504AB8B027E361D500A05DDD /* shapehacks.cpp in Sources */,
 				504AB43027DF67E300A05DDD /* SCGPUImageBaseFilter.m in Sources */,
+				504ABC3127EC9E6000A05DDD /* MKFilterModel.m in Sources */,
+				504ABC1727EC9E6000A05DDD /* MKGPUImageFramebufferCache.m in Sources */,
+				504ABC2C27EC9E6000A05DDD /* MKSegmentMovieWriter.m in Sources */,
 				504ABA7927E72ACE00A05DDD /* SCGPUImageContrastFilter.m in Sources */,
 				504AB44627E0CF0D00A05DDD /* LFGPUImageBeautyFilter.m in Sources */,
+				504ABC1C27EC9E6000A05DDD /* MKGPUImageTrackOutput.m in Sources */,
 				504AB8AF27E361D500A05DDD /* landmarks.cpp in Sources */,
+				504ABC2427EC9E6000A05DDD /* MKLandmarkManager.m in Sources */,
 				502522782788766B0060AB1F /* SCPhotoResultViewController+Private.m in Sources */,
 				504AB8A527E361D500A05DDD /* hatdesc.cpp in Sources */,
 				504AB8A627E361D500A05DDD /* err.cpp in Sources */,
 				504AB41F27DD8E2D00A05DDD /* SCFilterHandler.m in Sources */,
 				504AB8AD27E361D500A05DDD /* faceroi.cpp in Sources */,
+				504ABC1027EC9E6000A05DDD /* MKGPUImageGaussianBlurFilter.m in Sources */,
 				504AB44327DF67E800A05DDD /* SCGPUImageShineWhiteFilter.m in Sources */,
+				504ABC3527EC9E6000A05DDD /* MKShortVideoViewController.mm in Sources */,
 				50B5DCE327B7852300200CCF /* SCVideoResultViewController+UI.m in Sources */,
+				504ABC2727EC9E6000A05DDD /* MKBaseVideoCamera.m in Sources */,
+				504ABC1927EC9E6000A05DDD /* MKGPUImageColorConversion.m in Sources */,
 				502522792788766B0060AB1F /* SCPhotoResultViewController+UI.m in Sources */,
 				50CF75E7278F0D3F00415211 /* SCFilterMaterialModel.m in Sources */,
 				50B5DCE127B7852300200CCF /* SCVideoResultViewController.m in Sources */,
 				504AB8AE27E361D500A05DDD /* classicdesc.cpp in Sources */,
 				19A3BAD12787164B0027386F /* SCViewController.m in Sources */,
+				504ABC1827EC9E6000A05DDD /* MKGPUImageTextureInput.m in Sources */,
 				50CF75F2278F0EE000415211 /* SCFilterMaterialView.m in Sources */,
+				504ABC3227EC9E6000A05DDD /* MKCameraFilterView.m in Sources */,
+				504ABC1527EC9E6000A05DDD /* MKGPUImageBeautyMakeupFilter.m in Sources */,
 				504ABA3D27E6DEBE00A05DDD /* SCGPUImageSplit1V3Filter.m in Sources */,
 				19A3BACC278716410027386F /* SCCameraViewController.m in Sources */,
 				504AB8AA27E361D500A05DDD /* eyedet.cpp in Sources */,
 				504ABA7B27E72ACE00A05DDD /* SCGPUImageTemperatureFilter.m in Sources */,
+				504ABC1427EC9E6000A05DDD /* MKGPUImageBeautifyFilter.m in Sources */,
 				504AB43F27DF67E800A05DDD /* SCGPUImageVertigoFilter.m in Sources */,
+				504ABC2527EC9E6000A05DDD /* MKShortEffectHandler.m in Sources */,
 				19A3BB3027885D260027386F /* SCCapturingButton.m in Sources */,
+				504ABC1227EC9E6000A05DDD /* MKGPUImageLookupFilter.m in Sources */,
+				504ABC1A27EC9E6000A05DDD /* MKGPUImagePicture.m in Sources */,
 				504ABA7727E72ACE00A05DDD /* SCGPUImageSaturationFilter.m in Sources */,
+				504ABC4A27ECA00600A05DDD /* MGFaceLicenseHandle.m in Sources */,
+				504ABC3027EC9E6000A05DDD /* MKEffectFilter.m in Sources */,
 				504AB44027DF67E800A05DDD /* SCGPUImageSoulOutFilter.m in Sources */,
 				504AB8A427E361D500A05DDD /* startshape.cpp in Sources */,
 				504AB44227DF67E800A05DDD /* SCGPUImageGlitchFilter.m in Sources */,
+				504ABC2A27EC9E6000A05DDD /* MKShootRecordView.m in Sources */,
 				504AB8B327E361D500A05DDD /* shapemod.cpp in Sources */,
 				50CF75F1278F0EE000415211 /* SCFilterBarView.m in Sources */,
 				19A3BB2427885C850027386F /* SCCameraViewController+Private.m in Sources */,
@@ -2468,21 +2893,29 @@
 				19A3BB2727885C990027386F /* SCCameraViewController+UI.m in Sources */,
 				504ABA4C27E7174600A05DDD /* SCGPUImageBrightnessFilter.m in Sources */,
 				19A3BB1E2788514E0027386F /* SCCameraManager.m in Sources */,
+				504ABC2E27EC9E6000A05DDD /* MKVideoAssetAdapter.m in Sources */,
 				504AB8B527E361D500A05DDD /* asm.cpp in Sources */,
 				504AB41C27D6413F00A05DDD /* GPUImageBeautifyFilter.m in Sources */,
+				504ABC1627EC9E6000A05DDD /* MKGPUImageFilterGroup.m in Sources */,
+				504ABC2127EC9E6000A05DDD /* MKTool.m in Sources */,
+				504ABC2B27EC9E6000A05DDD /* MKRecordProgressView.m in Sources */,
 				504ABA0527E3688600A05DDD /* SCGPUImageFaceFeatureFilter.m in Sources */,
 				50CF75F7278F0FD800415211 /* SCFilterHelper.m in Sources */,
+				504ABC2227EC9E6000A05DDD /* MKFaceBaseData.m in Sources */,
+				504ABC0C27EC9E6000A05DDD /* MKGLProgram.m in Sources */,
 				504AB8B427E361D500A05DDD /* stasm_lib.cpp in Sources */,
 				504AB41827D63A6C00A05DDD /* GPUImageMovieWriter+BugFix.m in Sources */,
+				504ABC2927EC9E6000A05DDD /* MKPreviewView.m in Sources */,
 				50B5DCD827B783C500200CCF /* SCCameraViewController+RecordVideo.m in Sources */,
 				504AB8A927E361D500A05DDD /* print.cpp in Sources */,
 				504AB8A827E361D500A05DDD /* pinstart.cpp in Sources */,
 				50CF75F3278F0EE000415211 /* SCFilterMaterialViewCell.m in Sources */,
 				50CF75EA278F0D9600415211 /* SCFilterManager.m in Sources */,
+				504ABC0F27EC9E6000A05DDD /* MKGPUImageFilter.m in Sources */,
 				50B5DCED27B7A12B00200CCF /* UIView+Extention.m in Sources */,
 				504ABA3C27E6DEBE00A05DDD /* SCGPUImageSplit3V2Filter.m in Sources */,
+				504ABC2F27EC9E6000A05DDD /* MKSegmentVideoAssetAdapter.m in Sources */,
 				504ABA4627E6E0D100A05DDD /* SCGPUImageDynamicSplitFilter.m in Sources */,
-				504ABA3127E36DA600A05DDD /* MGFaceLicenseHandle.m in Sources */,
 				504AB8B227E361D500A05DDD /* convshape.cpp in Sources */,
 				504AB41527D6385000A05DDD /* SCGPUImageMovieWriter.m in Sources */,
 				504ABA4227E6E03700A05DDD /* SCGPUImageSplit4V4Filter.m in Sources */,
@@ -2491,12 +2924,19 @@
 				504AB72527E3614800A05DDD /* SCFaceDetectorManager.mm in Sources */,
 				504ABA7A27E72ACE00A05DDD /* SCGPUImageGrainFilter.m in Sources */,
 				504AB42227DDE3D100A05DDD /* SCFilterCategoryCell.m in Sources */,
+				504ABC2627EC9E6000A05DDD /* MKEffectHandler.m in Sources */,
 				504ABA7827E72ACE00A05DDD /* SCGPUImageSharpnessFilter.m in Sources */,
 				50B5DCE927B79C1600200CCF /* SCCapturingModeSwitchView.m in Sources */,
+				504ABC1D27EC9E6000A05DDD /* MKGPUImageFramebuffer.m in Sources */,
+				504ABC3427EC9E6000A05DDD /* MKCameraView.m in Sources */,
 				50B5DCE627B78D7300200CCF /* SCVideoModel.m in Sources */,
 				504AB44127DF67E800A05DDD /* SCGPUImageScaleFilter.m in Sources */,
+				504ABC0D27EC9E6000A05DDD /* MKGPUImageKeyPointFilter.m in Sources */,
 				509FBA2827CF9CF9002D0E64 /* SCAssetHelper.m in Sources */,
 				19A3BB33278862C80027386F /* SCCameraViewController+Filter.m in Sources */,
+				504ABC2827EC9E6000A05DDD /* MKShortVideoCamera.m in Sources */,
+				504ABC2027EC9E6000A05DDD /* MKGPUImageContext.m in Sources */,
+				504ABC1E27EC9E6000A05DDD /* MKGPUImageTextureOutput.m in Sources */,
 				504AB8AB27E361D500A05DDD /* eyedist.cpp in Sources */,
 				504AB9F027E361D500A05DDD /* stasm.cpp in Sources */,
 			);
@@ -2675,6 +3115,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Facepp/MegviiLicMgr-iOS-SDK",
 					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Facepp/MGFaceppSDK",
+					"$(PROJECT_DIR)/SimpleCamera/MagicCamera/Face-SDK/MegviiLicMgr-iOS-SDK",
+					"$(PROJECT_DIR)/SimpleCamera/MagicCamera/Face-SDK/MGFaceppSDK",
+					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Face-SDK/MegviiLicMgr-iOS-SDK",
+					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Face-SDK/MGFaceppSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mashanli.SimpleCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2700,6 +3144,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Facepp/MegviiLicMgr-iOS-SDK",
 					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Facepp/MGFaceppSDK",
+					"$(PROJECT_DIR)/SimpleCamera/MagicCamera/Face-SDK/MegviiLicMgr-iOS-SDK",
+					"$(PROJECT_DIR)/SimpleCamera/MagicCamera/Face-SDK/MGFaceppSDK",
+					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Face-SDK/MegviiLicMgr-iOS-SDK",
+					"$(PROJECT_DIR)/SimpleCamera/ThirdDemo/Face-SDK/MGFaceppSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mashanli.SimpleCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";

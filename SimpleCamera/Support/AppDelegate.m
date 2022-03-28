@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "SCCameraViewController.h"
+#import "MKLandmarkManager.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,7 @@
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.scWindow.rootViewController = navigationVC;
     [self.scWindow makeKeyAndVisible];
+    [MKLandmarkManager.shareManager faceLicenseAuthorization];
     return YES;
 }
 
